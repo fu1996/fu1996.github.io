@@ -1,0 +1,2836 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FCC中总结的css | 付俊奎的个人博客</title>
+  <meta name="keywords" content=" css ">
+  <meta name="description" content="FCC中总结的css | 付俊奎的个人博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3-hexo使用说明">
+<meta property="og:url" content="https://lhwz666.gitee.io/about/index.html">
+<meta property="og:site_name" content="付俊奎的个人博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-23T07:13:47.000Z">
+<meta property="article:modified_time" content="2022-02-07T06:41:46.690Z">
+<meta property="article:author" content="付俊奎">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="3-hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>付俊奎</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(118)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->正则">
+                                        
+                                        正则
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->git">
+                                        
+                                        git
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->todo">
+                                        
+                                        todo
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="大前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        大前端
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="大前端<--->react">
+                                        
+                                        react
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        后端
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="后端<--->数据库">
+                                        
+                                        数据库
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->django">
+                                        
+                                        django
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->docker">
+                                        
+                                        docker
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->k8s">
+                                        
+                                        k8s
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->linux">
+                                        
+                                        linux
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->python">
+                                        
+                                        python
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="css">
+                        
+                        css
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="h5">
+                        
+                        h5
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="js">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        js
+                        <small>(66)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="js<--->数据结构和算法">
+                                        
+                                        数据结构和算法
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->babel">
+                                        
+                                        babel
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js基础回顾">
+                                        
+                                        js基础回顾
+                                        
+                                            <small>(16
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js前端高手进阶">
+                                        
+                                        js前端高手进阶
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->webpack">
+                                        
+                                        webpack
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->work">
+                                        
+                                        work
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="ts">
+                        
+                        ts
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="118">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>变量声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>前端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据分析</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据结构和算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据可视化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>疑问</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>引用类型</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>自动化办公</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>amchart4</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>babel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css布局</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DevOps</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>django</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>drf</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ES6</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fiddler</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>h5</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>H5定位</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS基础</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js基础回顾</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js前端高手进阶</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>k8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>let var const</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mdn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>normalizr</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>odoo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react 生命周期</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>todo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ubuntu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>work</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 todo "
+           href="/2020/12/27/todo/index/"
+           data-tag="todo"
+           data-author="" >
+            <span class="post-title" title="Todo">Todo</span>
+            <span class="post-date" title="2020-12-27 15:42:00">2020/12/27</span>
+        </a>
+        
+        <a id="top" class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/index/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构主页">数据结构主页</span>
+            <span class="post-date" title="2020-12-27 15:56:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2022/04/09/react/redux/01-%E6%B7%B1%E5%85%A5redux/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-深入redux">01-深入redux</span>
+            <span class="post-date" title="2022-04-09 22:55:28">2022/04/09</span>
+        </a>
+        
+        <a  class="All js webpack "
+           href="/2021/08/26/js/webpack/webpack%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86/"
+           data-tag="js,webpack"
+           data-author="" >
+            <span class="post-title" title="webpack第一课：打包原理">webpack第一课：打包原理</span>
+            <span class="post-date" title="2021-08-26 22:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="All js babel "
+           href="/2021/08/21/js/babel/babel%E5%AD%A6%E4%B9%A0/"
+           data-tag="js,babel"
+           data-author="" >
+            <span class="post-title" title="babel学习">babel学习</span>
+            <span class="post-date" title="2021-08-21 22:17:14">2021/08/21</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/07/15/js/work/%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E4%B8%80%E4%B8%AA%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="如何调试一个第三方库">如何调试一个第三方库</span>
+            <span class="post-date" title="2021-07-15 17:05:24">2021/07/15</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/07/js/work/js%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js中的设计模式">js中的设计模式</span>
+            <span class="post-date" title="2021-04-07 19:37:22">2021/04/07</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/04/07/git/git%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git的日常使用">git的日常使用</span>
+            <span class="post-date" title="2021-04-07 14:44:47">2021/04/07</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/02/js/work/%E4%B8%8D%E5%A4%9F%E7%BB%86%E8%8A%82%E5%AF%BC%E8%87%B4%E7%9A%84BUG/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="不够细节导致的BUG">不够细节导致的BUG</span>
+            <span class="post-date" title="2021-04-02 14:06:21">2021/04/02</span>
+        </a>
+        
+        <a  class="All 后端 k8s "
+           href="/2021/03/30/k8s/minikube%E8%BF%9B%E8%A1%8Ck8s%E5%8D%95%E8%8A%82%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA/"
+           data-tag="k8s,DevOps"
+           data-author="" >
+            <span class="post-title" title="minikube进行k8s单节点的搭建">minikube进行k8s单节点的搭建</span>
+            <span class="post-date" title="2021-03-30 11:35:04">2021/03/30</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/03/29/docker/docker%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker常用的命令">docker常用的命令</span>
+            <span class="post-date" title="2021-03-29 21:45:14">2021/03/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/17/react/work/redux-sage%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%8A%A8/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="redux-sage的数据的流动">redux-sage的数据的流动</span>
+            <span class="post-date" title="2021-03-17 11:16:48">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E7%9A%84%E5%AE%98%E6%96%B9API/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr的官方API">normalizr的官方API</span>
+            <span class="post-date" title="2021-03-17 09:50:59">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE%E5%88%A9%E5%99%A8/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr格式化数据利器">normalizr格式化数据利器</span>
+            <span class="post-date" title="2021-03-17 09:50:42">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/15/js/work/%E4%BD%BF%E7%94%A8Memoization%E4%BC%98%E5%8C%96/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="使用Memoization空间换时间">使用Memoization空间换时间</span>
+            <span class="post-date" title="2021-03-15 20:09:27">2021/03/15</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/14/react/work/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="项目中常用的第三方库">项目中常用的第三方库</span>
+            <span class="post-date" title="2021-03-14 09:28:21">2021/03/14</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/09/react/ssr/01-react%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-react服务端渲染">01-react服务端渲染</span>
+            <span class="post-date" title="2021-03-09 09:24:40">2021/03/09</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E6%B7%B1%E5%85%A5%E6%95%B0%E7%BB%84%E7%9A%84%E5%90%84%E4%B8%AAAPI/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="深入数组的各个API">深入数组的各个API</span>
+            <span class="post-date" title="2021-02-27 15:32:48">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E5%89%8D%E7%AB%AF%E8%A6%81%E7%94%A8%E7%9A%84%E7%BC%93%E5%AD%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="前端要用的缓存">前端要用的缓存</span>
+            <span class="post-date" title="2021-02-27 11:17:17">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/26/js/work/js%E7%9A%84new%E5%8E%9F%E7%90%86%E5%92%8Capply-call-bind/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的new原理和apply-call-bind">js的new原理和apply-call-bind</span>
+            <span class="post-date" title="2021-02-26 17:19:33">2021/02/26</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/02/24/css/css%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%93%E9%A2%98/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的选择器专题">css的选择器专题</span>
+            <span class="post-date" title="2021-02-24 22:09:11">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的状态码专题">js的状态码专题</span>
+            <span class="post-date" title="2021-02-24 21:47:52">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E8%B7%A8%E5%9F%9F%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的跨域专题">js的跨域专题</span>
+            <span class="post-date" title="2021-02-24 21:29:01">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84Promise%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的Promise专题">js的Promise专题</span>
+            <span class="post-date" title="2021-02-24 21:21:31">2021/02/24</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/24/js/jsMDN/01-%E8%AF%AD%E6%B3%95%E5%92%8C%E7%B1%BB%E5%9E%8B/"
+           data-tag="js,mdn"
+           data-author="" >
+            <span class="post-title" title="01-语法和类型">01-语法和类型</span>
+            <span class="post-date" title="2021-02-24 17:22:46">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/23/js/work/js%E7%9A%84%E6%98%93%E6%B7%B7%E7%82%B9/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的易混点">js的易混点</span>
+            <span class="post-date" title="2021-02-23 21:03:57">2021/02/23</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/17/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-05-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%95%8C%E9%9D%A2%E7%9A%84%E8%BF%87%E7%A8%8B/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-05-浏览器渲染界面的过程">前端高手进阶-05-浏览器渲染界面的过程</span>
+            <span class="post-date" title="2021-02-17 21:19:52">2021/02/17</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/02/17/python/python%E7%9A%84Odoo12%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/"
+           data-tag="python,odoo"
+           data-author="" >
+            <span class="post-title" title="python的Odoo12的模块开发">python的Odoo12的模块开发</span>
+            <span class="post-date" title="2021-02-17 11:48:38">2021/02/17</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/16/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-04-%E6%8E%8C%E6%8F%A1CSS%E7%B2%BE%E9%AB%93%E2%80%94%E2%80%94%E5%B8%83%E5%B1%80/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-04-掌握CSS精髓——布局">前端高手进阶-04-掌握CSS精髓——布局</span>
+            <span class="post-date" title="2021-02-16 15:20:10">2021/02/16</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-03-DOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%B7%B1%E5%85%A5/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-03-DOM事件的深入">前端高手进阶-03-DOM事件的深入</span>
+            <span class="post-date" title="2021-02-15 17:09:51">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-02-%E9%AB%98%E6%95%88%E6%93%8D%E4%BD%9CDOM%E5%85%83%E7%B4%A0/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-02-高效操作DOM元素">前端高手进阶-02-高效操作DOM元素</span>
+            <span class="post-date" title="2021-02-15 15:54:14">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/14/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-01-%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%86%9F%E6%82%89HTML%E6%A0%87%E7%AD%BE%E5%90%97%EF%BC%9F/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-01-你真的熟悉HTML标签吗？">前端高手进阶-01-你真的熟悉HTML标签吗？</span>
+            <span class="post-date" title="2021-02-14 19:00:00">2021/02/14</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-05-ES6%E4%BD%BF%E7%94%A8/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-05-ES6使用">JS进阶-05-ES6使用</span>
+            <span class="post-date" title="2021-02-13 15:07:55">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-04-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-04-正则表达式">JS进阶-04-正则表达式</span>
+            <span class="post-date" title="2021-02-13 15:06:56">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-03-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8-this%E6%8C%87%E5%90%91-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-%E9%97%AD%E5%8C%85/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包">JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包</span>
+            <span class="post-date" title="2021-02-13 15:05:27">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-02-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E5%8E%9F%E5%9E%8B-%E7%BB%A7%E6%89%BF-ES5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-02-构造函数和原型-继承-ES5新增方法">JS进阶-02-构造函数和原型-继承-ES5新增方法</span>
+            <span class="post-date" title="2021-02-13 15:04:18">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-01-面向对象">JS进阶-01-面向对象</span>
+            <span class="post-date" title="2021-02-13 15:03:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-03-事件-对象-插件">JS中的jQuery的使用-03-事件-对象-插件</span>
+            <span class="post-date" title="2021-02-13 15:00:39">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-02-%E6%93%8D%E4%BD%9C%5B%E5%B1%9E%E6%80%A7-%E6%96%87%E6%9C%AC-%E5%85%83%E7%B4%A0-%E5%B0%BA%E5%AF%B8-%E4%BD%8D%E7%BD%AE%5D/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]">JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]</span>
+            <span class="post-date" title="2021-02-13 14:59:10">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-01-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%A0%B7%E5%BC%8F-%E6%95%88%E6%9E%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-01-基本使用-选择器-样式-效果">JS中的jQuery的使用-01-基本使用-选择器-样式-效果</span>
+            <span class="post-date" title="2021-02-13 14:57:38">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-07-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-07-移动端开发">JS中的WEB-APIS-07-移动端开发</span>
+            <span class="post-date" title="2021-02-13 14:44:57">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-06-%E5%B0%81%E8%A3%85%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0-%E5%B8%B8%E8%A7%81%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88-%E8%A7%A6%E5%B1%8F%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件">JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件</span>
+            <span class="post-date" title="2021-02-13 14:42:13">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-05-%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8Foffset-%E5%85%83%E7%B4%A0%E5%8F%AF%E8%A7%86%E5%8C%BAclient-%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数">JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数</span>
+            <span class="post-date" title="2021-02-13 14:32:09">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-04-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6-BOM-JS%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制">JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制</span>
+            <span class="post-date" title="2021-02-13 14:30:15">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-03-DOM%E6%80%BB%E7%BB%93-%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件">JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件</span>
+            <span class="post-date" title="2021-02-13 14:27:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-02-%E6%8E%92%E4%BB%96%E6%93%8D%E4%BD%9C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%92%8C%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-02-排他操作-自定义属性和节点操作">JS中的WEB-APIS-02-排他操作-自定义属性和节点操作</span>
+            <span class="post-date" title="2021-02-13 14:23:21">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-01/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-01">JS中的WEB-APIS-01</span>
+            <span class="post-date" title="2021-02-13 14:18:08">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的对象">JS中的对象</span>
+            <span class="post-date" title="2021-02-13 11:39:40">2021/02/13</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8020-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98%5B%E5%90%AB%E7%AD%94%E6%A1%88%5D/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础20-JS-面试真题[含答案]">JS基础20-JS-面试真题[含答案]</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8019-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础19-JS-面试真题">JS基础19-JS-面试真题</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8018-JS-%E5%85%A8%E8%AF%BE%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础18-JS-全课总结">JS基础18-JS-全课总结</span>
+            <span class="post-date" title="2021-02-08 19:41:55">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8017-JS-%E5%B0%8F%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础17-JS-小总结">JS基础17-JS-小总结</span>
+            <span class="post-date" title="2021-02-08 19:04:58">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8016-JS-%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础16-JS-安全问题">JS基础16-JS-安全问题</span>
+            <span class="post-date" title="2021-02-08 18:51:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8015-JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%98%B2%E6%8A%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础15-JS-性能优化之防抖">JS基础15-JS-性能优化之防抖</span>
+            <span class="post-date" title="2021-02-08 17:45:40">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8014-JS-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础14-JS-运行环境和性能优化">JS基础14-JS-运行环境和性能优化</span>
+            <span class="post-date" title="2021-02-08 16:35:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8013-JS-webpack-babel/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础13-JS-webpack-babel">JS基础13-JS-webpack-babel</span>
+            <span class="post-date" title="2021-02-06 20:18:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8012-JS-Web_API%E4%B9%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础12-JS-Web_API之开发环境">JS基础12-JS-Web_API之开发环境</span>
+            <span class="post-date" title="2021-02-06 20:00:59">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8011-JS-Web_API%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础11-JS-Web_API之数据存储">JS基础11-JS-Web_API之数据存储</span>
+            <span class="post-date" title="2021-02-06 15:09:33">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8010-JS-Web_API%E4%B9%8B%E8%B7%A8%E5%9F%9F/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础10-JS-Web_API之跨域">JS基础10-JS-Web_API之跨域</span>
+            <span class="post-date" title="2021-02-06 14:10:06">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8009-JS-Web_API%E4%B9%8BAjax/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础09-JS-Web_API之Ajax">JS基础09-JS-Web_API之Ajax</span>
+            <span class="post-date" title="2021-02-06 13:07:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8008-JS-Web_API%E4%B9%8B%E4%BA%8B%E4%BB%B6/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础08-JS-Web_API之事件">JS基础08-JS-Web_API之事件</span>
+            <span class="post-date" title="2021-02-06 00:14:09">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8007-JS-Web_API%E4%B9%8BBOM/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础07-JS-Web_API之BOM">JS基础07-JS-Web_API之BOM</span>
+            <span class="post-date" title="2021-02-06 00:05:10">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/05/js/jsBase/JS%E5%9F%BA%E7%A1%8006-JS-Web_API/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础06-JS-Web_API-DOM">JS基础06-JS-Web_API-DOM</span>
+            <span class="post-date" title="2021-02-05 23:18:51">2021/02/05</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8005-%E5%89%8D4%E7%AB%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础05-前4章内容回顾">JS基础05-前4章内容回顾</span>
+            <span class="post-date" title="2021-01-31 21:53:32">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8004-%E5%BC%82%E6%AD%A5%E5%92%8C%E5%8D%95%E7%BA%BF%E7%A8%8B/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础04-异步和单线程">JS基础04-异步和单线程</span>
+            <span class="post-date" title="2021-01-31 17:37:27">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8003-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E9%97%AD%E5%8C%85/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础03-作用域和闭包">JS基础03-作用域和闭包</span>
+            <span class="post-date" title="2021-01-31 15:36:57">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8002-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础02-原型和原型链">JS基础02-原型和原型链</span>
+            <span class="post-date" title="2021-01-31 12:12:52">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/30/js/jsBase/JS%E5%9F%BA%E7%A1%8001-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础01-变量类型和计算汇总">JS基础01-变量类型和计算汇总</span>
+            <span class="post-date" title="2021-01-30 23:34:27">2021/01/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/27/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C%E7%BB%A7%E6%89%BF%E5%B0%8Fdemo/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts中的类和继承的小demo">ts中的类和继承的小demo</span>
+            <span class="post-date" title="2021-01-27 23:52:58">2021/01/27</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/26/amcharts4/amcharts4%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E7%AC%AC%E4%B8%80%E7%AB%A0/"
+           data-tag="ts,amchart4,数据可视化"
+           data-author="" >
+            <span class="post-title" title="amcharts4源码解读第一章">amcharts4源码解读第一章</span>
+            <span class="post-date" title="2021-01-26 11:47:12">2021/01/26</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2021/01/18/linux/%E6%96%B0%E8%A3%85ubuntu20%E5%90%8E%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="新装ubuntu20后的配置">新装ubuntu20后的配置</span>
+            <span class="post-date" title="2021-01-18 23:22:54">2021/01/18</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的工程化">css的工程化</span>
+            <span class="post-date" title="2021-01-17 15:26:05">2021/01/17</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css预处理器">css预处理器</span>
+            <span class="post-date" title="2021-01-17 14:23:52">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 数据库 "
+           href="/2021/01/17/mysql/mysql%E5%85%81%E8%AE%B8%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql允许远程访问">mysql允许远程访问</span>
+            <span class="post-date" title="2021-01-17 00:17:22">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8mysql/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用mysql">docker使用mysql</span>
+            <span class="post-date" title="2021-01-16 21:24:27">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8jenkins/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用jenkins">docker使用jenkins</span>
+            <span class="post-date" title="2021-01-16 21:18:22">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2021/01/16/drf/djangoRestFul%E7%AC%AC%E4%B8%80%E8%AF%BE/"
+           data-tag="django,vue,drf"
+           data-author="" >
+            <span class="post-title" title="djangoRestFul第一课">djangoRestFul第一课</span>
+            <span class="post-date" title="2021-01-16 21:16:21">2021/01/16</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/16/css/css%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B1%80/"
+           data-tag="css,css布局,面试"
+           data-author="" >
+            <span class="post-title" title="css中的布局【超重要】">css中的布局【超重要】</span>
+            <span class="post-date" title="2021-01-16 13:36:03">2021/01/16</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/Fiddler%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E7%94%A8%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/"
+           data-tag="python,work,fiddler,H5定位"
+           data-author="" >
+            <span class="post-title" title="Fiddler抓包分析谷歌浏览器调用地理位置错误原因">Fiddler抓包分析谷歌浏览器调用地理位置错误原因</span>
+            <span class="post-date" title="2021-01-14 23:16:53">2021/01/14</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"
+           data-tag="work,H5定位"
+           data-author="" >
+            <span class="post-title" title="地理位置相关问题">地理位置相关问题</span>
+            <span class="post-date" title="2021-01-14 15:40:22">2021/01/14</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/01/12/git/%E5%B8%B8%E7%94%A8%E7%9A%84git%E5%91%BD%E4%BB%A4/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="常用的git命令">常用的git命令</span>
+            <span class="post-date" title="2021-01-12 20:07:13">2021/01/12</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="10- ts中的高级类型">10- ts中的高级类型</span>
+            <span class="post-date" title="2021-01-10 18:56:39">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84mixin%E5%B1%9E%E6%80%A7%E7%9A%84%E6%B7%B7%E5%92%8C/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="09-ts中的mixin属性的混和">09-ts中的mixin属性的混和</span>
+            <span class="post-date" title="2021-01-10 18:46:49">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/06/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E6%80%A7/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="08-ts中的类型推论和类型兼容性">08-ts中的类型推论和类型兼容性</span>
+            <span class="post-date" title="2021-01-06 21:03:32">2021/01/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/06/js/jsBase/FCC%E7%9A%84ES6%E7%AC%94%E8%AE%B0/"
+           data-tag="js,ES6"
+           data-author="" >
+            <span class="post-title" title="FCC的ES6笔记">FCC的ES6笔记</span>
+            <span class="post-date" title="2021-01-06 20:59:22">2021/01/06</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/01/02/python/python%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"
+           data-tag="django,python,linux,ubuntu"
+           data-author="" >
+            <span class="post-title" title="python安装虚拟环境">python安装虚拟环境</span>
+            <span class="post-date" title="2021-01-02 11:24:26">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/02/ts/ts%E4%B8%AD%E7%9A%84%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="07-ts中的枚举类型">07-ts中的枚举类型</span>
+            <span class="post-date" title="2021-01-02 08:38:22">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/01/ts/ts%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="06-ts中的函数">06-ts中的函数</span>
+            <span class="post-date" title="2021-01-01 13:12:53">2021/01/01</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/31/ts/ts%E4%B8%AD%E7%9A%84%E6%B3%9B%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="05-ts中的泛型">05-ts中的泛型</span>
+            <span class="post-date" title="2020-12-31 09:57:23">2020/12/31</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/30/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="04-ts中的类">04-ts中的类</span>
+            <span class="post-date" title="2020-12-30 14:12:19">2020/12/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3/"
+           data-tag="ts,类,对象"
+           data-author="" >
+            <span class="post-title" title="03-ts中的接口">03-ts中的接口</span>
+            <span class="post-date" title="2020-12-29 14:08:53">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E6%88%96js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"
+           data-tag="ts,变量声明,let var const"
+           data-author="" >
+            <span class="post-title" title="02-ts或js中的变量声明">02-ts或js中的变量声明</span>
+            <span class="post-date" title="2020-12-29 14:06:14">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="01-ts基础类型">01-ts基础类型</span>
+            <span class="post-date" title="2020-12-29 11:35:21">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%AE%98%E6%96%B9%E5%85%A5%E9%97%A8/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts官方入门">ts官方入门</span>
+            <span class="post-date" title="2020-12-29 10:52:39">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/index/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts主页">ts主页</span>
+            <span class="post-date" title="2020-12-29 10:51:59">2020/12/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/28/react/react%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"
+           data-tag="react,react 生命周期,引用类型"
+           data-author="" >
+            <span class="post-title" title="react中使用引用类型的注意事项">react中使用引用类型的注意事项</span>
+            <span class="post-date" title="2020-12-28 15:58:32">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="python,正则"
+           data-author="" >
+            <span class="post-title" title="常见的正则表达式">常见的正则表达式</span>
+            <span class="post-date" title="2020-12-28 11:06:24">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%8D%81%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A%E6%AD%A3%E5%88%99/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="十分钟学会正则">十分钟学会正则</span>
+            <span class="post-date" title="2020-12-28 10:53:09">2020/12/28</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/jsBase/index/"
+           data-tag="js,JS基础"
+           data-author="" >
+            <span class="post-title" title="JS的基础使用">JS的基础使用</span>
+            <span class="post-date" title="2020-12-27 18:11:49">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%89%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第三章">数据结构和算法 第三章</span>
+            <span class="post-date" title="2020-12-27 16:34:06">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第二章">数据结构和算法 第二章</span>
+            <span class="post-date" title="2020-12-27 16:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第一章">数据结构和算法 第一章</span>
+            <span class="post-date" title="2020-12-27 15:58:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo和Typora中添加图片">hexo和Typora中添加图片</span>
+            <span class="post-date" title="2020-12-27 12:59:29">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式基本使用">正则表达式基本使用</span>
+            <span class="post-date" title="2020-12-27 12:36:30">2020/12/27</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="FCC中总结的css">FCC中总结的css</span>
+            <span class="post-date" title="2020-12-27 11:04:18">2020/12/27</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/index/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="js">js</span>
+            <span class="post-date" title="2020-12-27 11:04:02">2020/12/27</span>
+        </a>
+        
+        <a  class="All h5 "
+           href="/2020/12/27/h5/index/"
+           data-tag="h5"
+           data-author="" >
+            <span class="post-title" title="h5">h5</span>
+            <span class="post-date" title="2020-12-27 11:03:43">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2020/12/27/django/index/"
+           data-tag="django,python"
+           data-author="" >
+            <span class="post-title" title="django">django</span>
+            <span class="post-date" title="2020-12-27 11:00:08">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/index/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo的基本使用">hexo的基本使用</span>
+            <span class="post-date" title="2020-12-27 10:51:52">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/index/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="re">re</span>
+            <span class="post-date" title="2020-12-27 10:49:23">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/27/react/demo/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="react">react</span>
+            <span class="post-date" title="2020-12-27 10:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2019/10/23/python/python%E7%9A%84xlwt%E6%93%8D%E4%BD%9CExcel%E6%96%87%E6%A1%A3/"
+           data-tag="python,自动化办公,数据分析"
+           data-author="" >
+            <span class="post-title" title="python的xlwt操作Excel文档">python的xlwt操作Excel文档</span>
+            <span class="post-date" title="2019-10-23 11:33:58">2019/10/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/23/linux/%E6%96%87%E4%BB%B6%E3%80%81%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="文件、磁盘管理">文件、磁盘管理</span>
+            <span class="post-date" title="2018-12-23 22:15:18">2018/12/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/22/linux/ssh%E5%92%8Cscp%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ssh和scp远程连接和远程拷贝">ssh和scp远程连接和远程拷贝</span>
+            <span class="post-date" title="2018-12-22 23:13:18">2018/12/22</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/21/linux/ubuntu%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ubuntu软件安装卸载">ubuntu软件安装卸载</span>
+            <span class="post-date" title="2018-12-21 23:08:47">2018/12/21</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/20/linux/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="系统管理">系统管理</span>
+            <span class="post-date" title="2018-12-20 23:02:17">2018/12/20</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/index/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="用户和权限管理">用户和权限管理</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-css/FCC中总结的css" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">FCC中总结的css</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="css">css</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">css</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-02-09 10:37:18'>2020-12-27 11:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#H5CSS3"><span class="toc-text">H5CSS3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-H5"><span class="toc-text">0.H5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">1.常见的元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-meta"><span class="toc-text">1.meta</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%82%E9%85%8D%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%B0%B1%E6%98%AF%EF%BC%9A%E5%A2%9E%E5%8A%A0viewport-%E5%B1%9E%E6%80%A7"><span class="toc-text">2.适配移动端的第一步就是：增加viewport 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%87%8D%E8%A6%81%E5%85%83%E7%B4%A0%E4%BB%A5%E5%8F%8A%E5%B1%9E%E6%80%A7"><span class="toc-text">3.重要元素以及属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3HTML-%E3%80%90%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%96%87%E6%A1%A3%E2%80%94%E2%80%94%E5%8C%BA%E5%9F%9F%E5%92%8C%E5%A4%A7%E7%BA%B2%E3%80%91"><span class="toc-text">4.如何理解HTML 【结构——文档——区域和大纲】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-html%E7%9A%84%E7%89%88%E6%9C%AC"><span class="toc-text">5.html的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CSS%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">6.CSS选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99-%E3%80%90%E5%88%86%E5%8F%B7%E6%98%AF%E5%88%86%E9%9A%94%E7%AC%A6%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%BB%93%E6%9D%9F%E7%AC%A6%E3%80%91"><span class="toc-text">1.基本规则 【分号是分隔符，不是结束符】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E8%A7%A3%E6%9E%90%E8%A7%84%E5%88%99-%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6-%E3%80%90%E5%87%8F%E5%B0%91%E5%8C%B9%E9%85%8D%E6%AC%A1%E6%95%B0%EF%BC%8C%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD%E3%80%91"><span class="toc-text">2.选择器的解析规则 从右向左 【减少匹配次数，提高性能】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">3.选择器的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E6%9D%83%E9%87%8D"><span class="toc-text">4.选择器的权重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E6%9D%83%E9%87%8D"><span class="toc-text">5.其他权重</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%9D%9E%E5%B8%83%E5%B1%80%E6%A0%B7%E5%BC%8F"><span class="toc-text">7.非布局样式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-font-family"><span class="toc-text">1.font-family</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%98%AF%E8%BF%9C%E7%A8%8B%E5%AD%97%E4%BD%93-%E6%B3%A8%E6%84%8F%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-text">自定义字体：如果是远程字体 注意跨域问题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%A1%8C%E9%AB%98line-height-%E5%92%8C-%E6%A8%AA%E5%90%91%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F-vertical-align%EF%BC%9A"><span class="toc-text">2.行高line-height 和 横向对齐方式 vertical-align：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%83%8C%E6%99%AF%E7%9A%84%E7%9F%A5%E8%AF%86"><span class="toc-text">3.背景的知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF%E8%89%B2"><span class="toc-text">1.背景色</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B8%90%E5%8F%98%E8%89%B2%E8%83%8C%E6%99%AF"><span class="toc-text">2.渐变色背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%A4%9A%E8%83%8C%E6%99%AF%E7%9A%84%E5%8F%A0%E5%8A%A0"><span class="toc-text">3.多背景的叠加</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E5%92%8C%E5%B1%9E%E6%80%A7%E3%80%90%E9%9B%AA%E7%A2%A7%E5%9B%BE%E3%80%91"><span class="toc-text">4.背景图片和属性【雪碧图】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-base64%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">5.base64和性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E5%8C%B9%E9%85%8D-%EF%BC%9A%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E5%9B%BE%E7%89%87%E6%9D%A5%E6%94%B9%E5%8F%98%E5%A4%A7%E5%B0%8F%E9%80%82%E9%85%8D"><span class="toc-text">6.多分辨率的匹配 ：高分辨率的图片来改变大小适配</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%BE%B9%E6%A1%86%E5%B1%9E%E6%80%A7"><span class="toc-text">4.边框属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%BA%BF%E5%BD%A2-%E5%A4%A7%E5%B0%8F-%E9%A2%9C%E8%89%B2"><span class="toc-text">1.线形 大小 颜色</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%BE%B9%E6%A1%86%E8%83%8C%E6%99%AF%E5%9B%BE"><span class="toc-text">2.边框背景图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%9A%E8%BE%B9%E6%A1%86%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%98%AF%E5%9B%A0%E4%B8%BA-%E8%BE%B9%E6%A1%86%E7%9A%84%E8%A1%94%E6%8E%A5%E9%83%A8%E5%88%86%E6%98%AF%E6%96%9C%E5%88%87%E7%9A%84"><span class="toc-text">3.三角形的实现：边框的实现是因为 边框的衔接部分是斜切的</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%BB%9A%E5%8A%A8scroll%EF%BC%9A%E5%86%85%E5%AE%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%A4%9A%E7%9A%84%E6%97%B6%E5%80%99%E4%BC%9A%E6%BB%9A%E5%8A%A8"><span class="toc-text">5.滚动scroll：内容比容器多的时候会滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C"><span class="toc-text">6.文字换行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E8%A3%85%E9%A5%B0%E6%80%A7%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">7.装饰性的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-css-hack"><span class="toc-text">8.css hack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%A1%88%E4%BE%8B"><span class="toc-text">9.案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CSS3-%E3%80%90%E5%B1%82%E5%8F%A0%E5%BC%8F%E6%A0%B7%E5%BC%8F%E8%A1%A8%E3%80%91"><span class="toc-text">1.CSS3 【层叠式样式表】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D"><span class="toc-text">1.长度单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CSS%E7%BB%A7%E6%89%BF%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">2.CSS继承以及优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%A2%9C%E8%89%B2%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">3.颜色表示方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CSS%E5%8F%98%E9%87%8F"><span class="toc-text">4.CSS变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">1.变量的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E9%BB%98%E8%AE%A4%E5%80%BC-GRAY"><span class="toc-text">2.变量的使用和默认值 GRAY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%E5%9C%A8-root%E4%B8%AD"><span class="toc-text">3.变量定义在:root中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8F%98%E9%87%8F%E7%9A%84%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A%E7%AE%80%E5%8C%96%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.变量的适用场景：简化媒体查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1"><span class="toc-text">2.视觉设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-text-align%EF%BC%9A"><span class="toc-text">1.text-align：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">2.小标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-font-size-%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F"><span class="toc-text">3.font-size:字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-box-shadow%EF%BC%9A%E8%BE%B9%E6%A1%86%E9%98%B4%E5%BD%B1"><span class="toc-text">4.box-shadow：边框阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-opacity%EF%BC%9A%E9%80%8F%E6%98%8E%E5%BA%A6%EF%BC%8C%E8%8C%83%E5%9B%B4%E4%B8%BA0-1"><span class="toc-text">5.opacity：透明度，范围为0-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-text-transform%EF%BC%9A%E6%A0%B7%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-text">6.text-transform：样式转换大小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-font-weight-%E8%AE%BE%E7%BD%AE%E5%AD%97%E4%BD%93%E7%9A%84%E7%B2%97%E7%BB%86"><span class="toc-text">7.font-weight:设置字体的粗细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-line-height%EF%BC%9A%E8%A1%8C%E9%AB%98%EF%BC%8C%E5%9E%82%E7%9B%B4%E7%9A%84%E9%97%B4%E8%B7%9D"><span class="toc-text">8.line-height：行高，垂直的间距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E4%BC%AA%E7%B1%BB%E3%80%90%E4%B8%80%E4%B8%AA%E5%86%92%E5%8F%B7%E7%9A%84%E8%A1%8C%E4%B8%BA%E3%80%91"><span class="toc-text">9.伪类【一个冒号的行为】</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%8F%AF%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%8C%E4%BB%A5%E4%BE%BF%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0%E7%9A%84%E7%89%B9%E5%AE%9A%E7%8A%B6%E6%80%81"><span class="toc-text">1.概念：可添加到选择器中的关键字，以便选择元素的特定状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-hover%EF%BC%9A%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C%E8%AF%A5%E5%85%83%E7%B4%A0%E6%97%B6%E5%80%99%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-text">2.  :hover：鼠标悬停该元素时候的状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E4%BC%AA%E5%85%83%E7%B4%A0%E3%80%90%E4%B8%A4%E4%B8%AA%E5%86%92%E5%8F%B7%E7%9A%84%E5%85%83%E7%B4%A0%E3%80%91"><span class="toc-text">9.1.伪元素【两个冒号的元素】</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BC%AA%E5%85%83%E7%B4%A0-%E7%94%A8%E4%BA%8E%E5%9C%A8%E9%80%89%E5%AE%9A%E5%85%83%E7%B4%A0%E5%89%8D%E5%90%8E-%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9%EF%BC%8C%E5%85%B6%E4%B8%ADcontent-%E4%BB%A3%E8%A1%A8%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%BA%E5%BF%85%E5%A1%AB%E9%A1%B9"><span class="toc-text">1.伪元素 用于在选定元素前后 添加内容，其中content 代表要添加的内容为必填项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">10.定位方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%9B%92%E6%A8%A1%E5%9E%8B-W3C-%E5%92%8C-IE%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-text">1.盒模型 W3C 和 IE盒模型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8C%89%E7%85%A7%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB"><span class="toc-text">2.按照默认样式元素分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-%E5%9D%97%E5%85%83%E7%B4%A0block%E3%80%90%E4%B8%80%E5%B1%82%E6%A5%BC%E3%80%91"><span class="toc-text">a.块元素block【一层楼】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0inline%E3%80%90%E6%A5%BC%E7%9A%84%E5%B0%8F%E6%88%BF%E9%97%B4%E3%80%91"><span class="toc-text">b.行内元素inline【楼的小房间】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c-%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0inline-block-%EF%BC%9Aselect"><span class="toc-text">c.行内块元素inline-block ：select</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-HTML%E7%9A%84%E5%85%83%E7%B4%A0%E5%B5%8C%E5%A5%97%E5%85%B3%E7%B3%BB"><span class="toc-text">4.HTML的元素嵌套关系</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-position%E3%80%90%E5%AE%9A%E4%BD%8D%E3%80%91%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">3.position【定位】【重点】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%B1%85%E4%B8%AD"><span class="toc-text">4.居中</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-margin%EF%BC%9Aauto%E6%97%B6%E5%80%99%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="toc-text">1.margin：auto时候水平居中</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E6%B7%BB%E5%8A%A0-%E3%80%90amcharts4%E3%80%91"><span class="toc-text">5.渐变色的添加 【amcharts4】</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8D%95%E4%B8%AA-%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">1.单个 渐变色的创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E9%87%8D%E5%A4%8D%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">2.重复渐变色的创建</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-background"><span class="toc-text">6.background:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-text">1.使用背景图片</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-transparent-%E5%8F%98%E9%80%8F%E6%98%8E"><span class="toc-text">2.transparent 变透明</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-transform-%E3%80%90%E5%8F%98%E6%8D%A2%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%9C%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E4%B8%8A%E3%80%91"><span class="toc-text">7.transform 【变换也可以用在伪元素上】</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F-scale"><span class="toc-text">1.放大缩小 scale</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%80%BE%E6%96%9C%E8%A7%92%E5%BA%A6%EF%BC%9AskewX-skewY"><span class="toc-text">2.倾斜角度：skewX skewY</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C-%E3%80%90%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%9C%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E4%B8%8A%E3%80%91"><span class="toc-text">8.动画效果 【可以用在伪元素上】</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">1.使用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-keyframes%E8%AF%A6%E8%A7%A3"><span class="toc-text">2.@keyframes详解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%8A%A8%E7%94%BB%E5%A1%AB%E5%85%85%E6%A8%A1%E5%BC%8F%EF%BC%88animation-fill-mode-%EF%BC%89%EF%BC%9A%E5%8A%A8%E7%94%BB%E5%A1%AB%E5%85%85%E6%A8%A1%E5%BC%8F%E6%8C%87%E5%AE%9A%E5%8A%A8%E7%94%BB%E5%AE%8C%E6%88%90%E5%90%8E%E5%BA%94%E7%94%A8%E4%BA%8E%E5%85%83%E7%B4%A0%E7%9A%84%E6%A0%B7%E5%BC%8F%E3%80%82"><span class="toc-text">3.动画填充模式（animation-fill-mode ）：动画填充模式指定动画完成后应用于元素的样式。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%8E%A7%E5%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E7%A7%BB%E5%8A%A8-%E3%80%90%E6%8E%A7%E5%88%B6%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%E6%88%96%E8%80%85%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E3%80%91"><span class="toc-text">4.控制元素的移动 【控制相对定位或者绝对定位】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E6%8E%A7%E5%88%B6%E5%8A%A8%E7%94%BB%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%88animation-iteration-count%EF%BC%89"><span class="toc-text">5.控制动画的次数（animation-iteration-count）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%8A%A8%E7%94%BB%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%88animation-timing-function%EF%BC%89"><span class="toc-text">6.动画的效果（animation-timing-function）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91%E5%BA%94%E7%94%A8%E7%9A%84%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7%E6%8C%91%E6%88%98"><span class="toc-text">3.【重点】应用的可访问性挑战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-img-%E6%A0%87%E7%AD%BE%E7%9A%84alt-%E5%B1%9E%E6%80%A7%EF%BC%9A%E6%9C%89%E5%80%BC%E6%88%96%E8%80%85%E7%95%99%E7%A9%BA"><span class="toc-text">1.img 标签的alt 属性：有值或者留空</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE-article-section-div-main-nav-header-footer-audio-video"><span class="toc-text">2.语义化标签 article section div  main nav header footer audio video</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE%E4%B9%8B%E5%9B%BE%E8%A1%A8%E5%8F%AF%E8%A7%86%E5%8C%96%E9%83%A8%E5%88%86figure-figcaption%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">3.语义化标签之图表可视化部分figure figcaption【重点】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8F%90%E9%AB%98%E8%A1%A8%E5%8D%95%E5%AD%97%E6%AE%B5%E7%9A%84%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7label-fieldset-legend-%E3%80%90%E9%87%8D%E7%82%B9%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E3%80%91"><span class="toc-text">4.提高表单字段的可访问性label fieldset  legend 【重点表单提交】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B-input-type-%E2%80%9Ddate%E2%80%9D-%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">5.表单类型 input type&#x3D;”date” 日期选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%97%B6%E9%97%B4%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96%E6%8F%8F%E8%BF%B0-time-%E6%A0%87%E7%AD%BE%E5%92%8C-%E5%85%B6datetime-%E5%B1%9E%E6%80%A7"><span class="toc-text">6.时间的标准化描述 time 标签和 其datetime 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE-accesskey"><span class="toc-text">7.键盘快捷键 accesskey</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E9%94%AE%E7%9B%98%E7%84%A6%E7%82%B9-tabindex"><span class="toc-text">8.键盘焦点 tabindex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%80%BB%E7%BB%93%E8%A1%A8%E5%8D%95%E6%96%B0%E5%A2%9E%E5%86%85%E5%AE%B9"><span class="toc-text">9.总结表单新增内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%93%8D%E5%BA%94%E5%BC%8Fweb%E5%B8%83%E5%B1%80"><span class="toc-text">4.响应式web布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2-media"><span class="toc-text">1.媒体查询 @media</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E5%83%8F%E5%AE%BD%E5%BA%A6"><span class="toc-text">2.响应式图像宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%BE%E5%83%8F%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%BD%E5%BA%A6%E5%92%8C%E9%AB%98%E5%BA%A6%E5%BA%94%E8%AF%A5%E4%B8%BA%E7%9C%9F%E5%AE%9E%E5%AE%BD%E9%AB%98%E7%9A%84%E4%B8%80%E5%8D%8A"><span class="toc-text">3.图像的最佳宽度和高度应该为真实宽高的一半</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%A0%B9%E6%8D%AE%E7%95%8C%E9%9D%A2%E8%BF%9B%E8%A1%8C%E5%93%8D%E5%BA%94%E5%BC%8F%E6%8E%92%E7%89%88-vw-vh-vmax-vmin"><span class="toc-text">4.根据界面进行响应式排版 vw vh vmax vmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-flex%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0-https-coding-imweb-io-demo-flex"><span class="toc-text">5.flex布局学习 https:&#x2F;&#x2F;coding.imweb.io&#x2F;demo&#x2F;flex&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B0%86%E5%AE%B9%E5%99%A8%E5%8F%98%E6%88%90flex%E5%B8%83%E5%B1%80%EF%BC%9Adisplay-flex"><span class="toc-text">1.将容器变成flex布局：display:flex;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-flex-direction-%E6%8E%A7%E5%88%B6%E5%B8%83%E5%B1%80%E7%9A%84%E6%8E%92%E5%88%97%E6%96%B9%E5%BC%8F"><span class="toc-text">2.flex-direction:控制布局的排列方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-justify-content%EF%BC%9A%E4%B8%BB%E8%BD%B4%E7%9A%84%E5%AF%B9%E9%BD%90%E5%92%8C%E5%88%86%E9%9A%94flex%E5%AD%90%E9%A1%B9%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">3.justify-content：主轴的对齐和分隔flex子项的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-align-items%EF%BC%9A%E4%BA%A4%E5%8F%89%E8%BD%B4%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F-https-www-runoob-com-cssref-css3-pr-align-items-html"><span class="toc-text">4.align-items：交叉轴的对齐方式 https:&#x2F;&#x2F;www.runoob.com&#x2F;cssref&#x2F;css3-pr-align-items.html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-flex-wrap%EF%BC%9A%E5%AD%90%E9%A1%B9%E7%9A%84%E6%8B%86%E5%88%86%E4%B8%BA%E5%A4%9A%E8%A1%8C%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AF%E4%B8%80%E8%A1%8C"><span class="toc-text">5.flex-wrap：子项的拆分为多行，默认是一行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%90%E4%BB%A5%E4%B8%8B%E5%85%A8%E4%B8%BAflex%E5%AD%90%E9%A1%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%91"><span class="toc-text">【以下全为flex子项的属性】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-flex-shrink-%E5%AD%90%E9%A1%B9%E5%9C%A8%E5%AE%B9%E5%99%A8%E6%94%B6%E7%BC%A9%E6%97%B6%E5%80%99%E7%9A%84%E6%94%BE%E7%BC%A9%E6%AF%94%E4%BE%8B-%E3%80%90flex%E5%AD%90%E9%A1%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%91"><span class="toc-text">6.flex-shrink:子项在容器收缩时候的放缩比例 【flex子项的属性】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-flex-grow%EF%BC%9A%E5%AD%90%E9%A1%B9%E5%9C%A8%E5%AE%B9%E5%99%A8%E6%96%B9%E6%B3%95%E6%97%B6%E5%80%99%E7%9A%84%E8%86%A8%E8%83%80%E6%AF%94%E4%BE%8B%E3%80%90flex%E5%AD%90%E9%A1%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%91"><span class="toc-text">7.flex-grow：子项在容器方法时候的膨胀比例【flex子项的属性】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-flex-basis-%E5%AD%90%E9%A1%B9%E5%9C%A8%E4%BD%BF%E7%94%A8flex-shrinl-%E5%92%8Cflex-grow-%E8%BF%9B%E8%A1%8C%E8%B0%83%E6%95%B4%E4%BB%A5%E5%89%8D%E7%9A%84%E5%88%9D%E5%A7%8B%E5%A4%A7%E5%B0%8F%E3%80%90%E5%AD%90%E9%A1%B9%E7%9A%84%E9%BB%98%E8%AE%A4%E5%AE%BD%E5%BA%A6%E5%B1%9E%E6%80%A7%E3%80%91"><span class="toc-text">8.flex-basis: 子项在使用flex-shrinl 和flex-grow 进行调整以前的初始大小【子项的默认宽度属性】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-flex%E5%AD%90%E9%A1%B9%E5%B1%9E%E6%80%A7%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9Aflex-0-1-auto-%E5%A2%9E%E5%A4%A7-%E4%BC%B8%E7%BC%A9-%E9%BB%98%E8%AE%A4%E5%AE%BD%E5%BA%A6"><span class="toc-text">9.flex子项属性的简写：flex: 0 1 auto; 增大 伸缩 默认宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-order-%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%AD%90%E9%A1%B9%E5%9C%A8%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F%EF%BC%8Corder%E8%B6%8A%E5%B0%8F%E8%B6%8A%E9%9D%A0%E5%89%8D"><span class="toc-text">10.order ：更改子项在容器中的排列顺序，order越小越靠前</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%A0%85%E6%A0%BC%E5%8C%96%E5%B8%83%E5%B1%80Grid"><span class="toc-text">6.栅格化布局Grid</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%A0%85%E6%A0%BC%E5%8C%96%E5%B8%83%E5%B1%80Grid-display-grid"><span class="toc-text">1.栅格化布局Grid : display:grid;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A0%85%E6%A0%BC%E7%9A%84%E6%95%B0%E9%87%8F-%E5%92%8C%E5%AE%BD%E5%BA%A6%E5%B1%9E%E6%80%A7-grid-template-columns"><span class="toc-text">2.栅格的数量 和宽度属性 grid-template-columns</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%A1%8C%E6%95%B0-%E5%92%8C%E8%A1%8C%E9%AB%98%EF%BC%9Agrid-template-rows"><span class="toc-text">3.手动设置行数 和行高：grid-template-rows</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Grid%E7%9A%84%E5%AE%BD%E5%BA%A6%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text">4.Grid的宽度的设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E6%A8%AA%E8%BD%B4%E7%9A%84%E5%AD%90%E9%A1%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E9%97%B4%E9%9A%99-grid-column-gap"><span class="toc-text">5.创建横轴的子项之间的间隙 grid-column-gap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BA%B5%E8%BD%B4%E4%B9%8B%E9%97%B4%E7%9A%84%E9%97%B4%E9%9A%99%EF%BC%9Agrid-row-gap"><span class="toc-text">6.纵轴之间的间隙：grid-row-gap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AD%90%E9%A1%B9%E9%97%B4%E9%9A%99%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9Agrid-gap%EF%BC%9A10px-20px"><span class="toc-text">7.子项间隙的简写：grid-gap：10px 20px</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%90%88%E5%B9%B6%E5%AD%90%E9%A1%B9%EF%BC%9Agrid-column-%E5%92%8Cgrid-row"><span class="toc-text">8.合并子项：grid-column 和grid-row</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%A8%AA%E8%BD%B4%E5%AD%90%E9%A1%B9%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%EF%BC%9Ajustify-self%EF%BC%8C%E5%85%A8%E9%83%A8%E5%AD%90%E9%A1%B9%EF%BC%9Ajustify-items"><span class="toc-text">9.横轴子项的对齐方式：justify-self，全部子项：justify-items</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E7%AB%96%E8%BD%B4%E5%AD%90%E9%A1%B9%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%EF%BC%9Aalign-self%EF%BC%8C%E5%85%A8%E9%83%A8%E5%AD%90%E9%A1%B9%EF%BC%9Aalign-items"><span class="toc-text">10.竖轴子项的对齐方式：align-self，全部子项：align-items</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%88%86%E5%8C%BA%E5%91%BD%E5%90%8D%E3%80%90%E5%8C%BA%E5%9F%9F%E6%A8%A1%E6%9D%BF%E3%80%91%EF%BC%9A%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7-grid-template-areas"><span class="toc-text">11.分区命名【区域模板】：容器属性 grid-template-areas</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E4%B8%BA%E5%88%86%E5%8C%BA%E5%91%BD%E5%90%8D%E7%9A%84%E5%AD%90%E9%A1%B9%E9%85%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F"><span class="toc-text">12.为分区命名的子项配置样式:</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><h1 id="H5CSS3"><a href="#H5CSS3" class="headerlink" title="H5CSS3"></a>H5CSS3</h1><p>学习网站：<a target="_blank" rel="noopener" href="https://www.freecodecamp.org/">https://www.freecodecamp.org/</a></p>
+<h2 id="0-H5"><a href="#0-H5" class="headerlink" title="0.H5"></a>0.H5</h2><h3 id="1-常见的元素"><a href="#1-常见的元素" class="headerlink" title="1.常见的元素"></a>1.常见的元素</h3><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212095600701-1609927523443.png" class title="image-20201212095600701">
+
+<h4 id="1-meta"><a href="#1-meta" class="headerlink" title="1.meta"></a>1.meta</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212100539342-1609927523443.png" class title="image-20201212100539342">
+
+<h3 id="2-适配移动端的第一步就是：增加viewport-属性"><a href="#2-适配移动端的第一步就是：增加viewport-属性" class="headerlink" title="2.适配移动端的第一步就是：增加viewport 属性"></a>2.适配移动端的第一步就是：增加viewport 属性</h3><h3 id="3-重要元素以及属性"><a href="#3-重要元素以及属性" class="headerlink" title="3.重要元素以及属性"></a>3.重要元素以及属性</h3><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/FZ$MRIH%5BWZ%7DC7ASUS9N%5D7PY-1609927523443.png" class title="img">
+
+<h3 id="4-如何理解HTML-【结构——文档——区域和大纲】"><a href="#4-如何理解HTML-【结构——文档——区域和大纲】" class="headerlink" title="4.如何理解HTML 【结构——文档——区域和大纲】"></a>4.如何理解HTML 【结构——文档——区域和大纲】</h3><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212104516071-1609927523443.png" class title="image-20201212104516071">
+
+<p><strong>增加的语义化标签：就是为了生成大纲</strong>：检测的网站<a target="_blank" rel="noopener" href="http://h5o.github.io/">http://h5o.github.io/</a></p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212104932437-1609927523443.png" class title="image-20201212104932437">
+
+<p>主要语义化标签：<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212120940158-1609927523443.png" class title="image-20201212120940158"></p>
+<h3 id="5-html的版本"><a href="#5-html的版本" class="headerlink" title="5.html的版本"></a>5.html的版本</h3><p>验证规范：<a target="_blank" rel="noopener" href="http://validator.w3.org/">http://validator.w3.org/</a></p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212105517169-1609927523443.png" class title="image-20201212105517169">
+
+<h3 id="6-CSS选择器"><a href="#6-CSS选择器" class="headerlink" title="6.CSS选择器"></a>6.CSS选择器</h3><h4 id="1-基本规则-【分号是分隔符，不是结束符】"><a href="#1-基本规则-【分号是分隔符，不是结束符】" class="headerlink" title="1.基本规则 【分号是分隔符，不是结束符】"></a>1.基本规则 【分号是分隔符，不是结束符】</h4><pre><code>选择器&#123;
+    属性:值;
+    属性:值
+&#125;</code></pre>
+<h4 id="2-选择器的解析规则-从右向左-【减少匹配次数，提高性能】"><a href="#2-选择器的解析规则-从右向左-【减少匹配次数，提高性能】" class="headerlink" title="2.选择器的解析规则 从右向左 【减少匹配次数，提高性能】"></a>2.选择器的解析规则 从右向左 【减少匹配次数，提高性能】</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212155943822-1609927523443.png" class title="image-20201212155943822">
+
+<h4 id="3-选择器的分类"><a href="#3-选择器的分类" class="headerlink" title="3.选择器的分类"></a>3.选择器的分类</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212160043751-1609927523443.png" class title="image-20201212160043751">
+
+<h4 id="4-选择器的权重"><a href="#4-选择器的权重" class="headerlink" title="4.选择器的权重"></a>4.选择器的权重</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212160211436-1609927523443.png" class title="image-20201212160211436">
+
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212160255021-1609927523443.png" class title="image-20201212160255021">
+
+<p>不进位的意思是：11个类选择器的结果是110 ，而一个ID选择器的结果是100，110&gt;100,但是因为是不进位的，所以还是ID选择器的样式被应用。</p>
+<h4 id="5-其他权重"><a href="#5-其他权重" class="headerlink" title="5.其他权重"></a>5.其他权重</h4><ul>
+<li>!important 的优先级最高</li>
+<li>行内元素属性优先级高</li>
+<li>相同权重，后写的会覆盖前面的，后面的生效</li>
+</ul>
+<h3 id="7-非布局样式"><a href="#7-非布局样式" class="headerlink" title="7.非布局样式"></a>7.非布局样式</h3><h4 id="1-font-family"><a href="#1-font-family" class="headerlink" title="1.font-family"></a>1.font-family</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212161743982-1609927523443.png" class title="image-20201212161743982">
+
+<p>字体族不要用引号包裹：和fallback机制</p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212162116220-1609927523443.png" class title="image-20201212162116220">
+
+<h5 id="自定义字体：如果是远程字体-注意跨域问题"><a href="#自定义字体：如果是远程字体-注意跨域问题" class="headerlink" title="自定义字体：如果是远程字体 注意跨域问题"></a><strong>自定义字体</strong>：如果是远程字体 注意跨域问题</h5><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212162311290-1609927523443.png" class title="image-20201212162311290">
+
+
+
+<h4 id="2-行高line-height-和-横向对齐方式-vertical-align："><a href="#2-行高line-height-和-横向对齐方式-vertical-align：" class="headerlink" title="2.行高line-height 和 横向对齐方式 vertical-align："></a>2.行高line-height 和 横向对齐方式 vertical-align：</h4><p><strong>如果父元素没有设置高度，行高会默认撑起父元素的高度，高度大于文字font-size高度时候文字会居中</strong></p>
+<p>文字大小不一样的默认以基线【base-line】对齐，可以通过 vertical-align来调整对齐方式</p>
+<p>vertical-align：如果设置像素，则是以基线为基础开始移动的</p>
+<p><strong>面试题：为啥图片下方会有空隙</strong>：因为图片默认也是inline 元素，会遵循行高的规则，默认的对齐方式是基线，而不是底线，所以会有空隙</p>
+<p>如何去除：</p>
+<ol>
+<li>横向对齐方式改为bottom：</li>
+<li>变为 block 元素</li>
+</ol>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212163836687-1609927523443.png" class title="image-20201212163836687">
+
+<h4 id="3-背景的知识"><a href="#3-背景的知识" class="headerlink" title="3.背景的知识"></a>3.背景的知识</h4><h5 id="1-背景色"><a href="#1-背景色" class="headerlink" title="1.背景色"></a>1.背景色</h5><pre><code class="css">        .c1&#123;
+            height:90px;
+            /* background:rgba(255,0,0, .3); */
+            /* background:url(./test.png); */
+        &#125;</code></pre>
+<h5 id="2-渐变色背景"><a href="#2-渐变色背景" class="headerlink" title="2.渐变色背景"></a>2.渐变色背景</h5><pre><code class="css">       .c2&#123;
+            height:90px;
+            /* background: -webkit-linear-gradient(left, red, green); */
+            /* background: linear-gradient(to right, red, green); */
+            /* background: linear-gradient(180deg, red, green); */
+            /* background: linear-gradient(135deg, red 0, green 10%, yellow 50%, blue 100%); */
+            background: linear-gradient(135deg, transparent 0, transparent 49.5%, green 49.5%, green 50.5%, transparent 50.5%, transparent 100%),
+                linear-gradient(45deg, transparent 0, transparent 49.5%, red 49.5%, red 50.5%, transparent 50.5%, transparent 100%);
+            background-size: 30px 30px;
+        &#125;</code></pre>
+<p>效果图：</p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212165023207-1609927523443.png" class title="image-20201212165023207">
+
+<h5 id="3-多背景的叠加"><a href="#3-多背景的叠加" class="headerlink" title="3.多背景的叠加"></a>3.多背景的叠加</h5><p>背景色和背景图同时设置</p>
+<pre><code class="css">      .c1 &#123;
+        height: 900px;
+        background: red
+          url(./test_bg.png);
+        background-repeat: no-repeat;
+        /* 位置控制 相对于容器的 */
+        /* background-position: center top; */
+        /* background-position: 20px 30px; */
+        /* 大小控制 */
+        /* background-size:100px 50px; */
+      &#125;</code></pre>
+<h5 id="4-背景图片和属性【雪碧图】"><a href="#4-背景图片和属性【雪碧图】" class="headerlink" title="4.背景图片和属性【雪碧图】"></a>4.背景图片和属性【雪碧图】</h5><p>雪碧图的实现</p>
+<pre><code class="css">      .c2 &#123;
+        width: 20px;
+        height: 20px;
+        background: url(./test_bg.png) no-repeat;
+        background-position: -17px -5px;
+        background-size: 261px 113px;
+      &#125;</code></pre>
+<h5 id="5-base64和性能优化"><a href="#5-base64和性能优化" class="headerlink" title="5.base64和性能优化"></a>5.base64和性能优化</h5><p>优点：减少了HTTP连接数</p>
+<p>缺点：</p>
+<ul>
+<li>体积增大了三分之一</li>
+<li>会导致css文件变得很大</li>
+<li>浏览器会先对其进行解码</li>
+</ul>
+<p>应用场景：小图标之类的，使用base64 </p>
+<h5 id="6-多分辨率的匹配-：高分辨率的图片来改变大小适配"><a href="#6-多分辨率的匹配-：高分辨率的图片来改变大小适配" class="headerlink" title="6.多分辨率的匹配 ：高分辨率的图片来改变大小适配"></a>6.多分辨率的匹配 ：高分辨率的图片来改变大小适配</h5><h4 id="4-边框属性"><a href="#4-边框属性" class="headerlink" title="4.边框属性"></a>4.边框属性</h4><h5 id="1-线形-大小-颜色"><a href="#1-线形-大小-颜色" class="headerlink" title="1.线形 大小 颜色"></a>1.线形 大小 颜色</h5><pre><code class="css">.c1&#123;
+            width:400px;
+            height: 200px;
+            /* border: 1px solid red; */
+            /* border:5px solid red; */
+            /* border:5px dotted red; */
+            border:5px dashed red;
+        &#125;</code></pre>
+<h5 id="2-边框背景图"><a href="#2-边框背景图" class="headerlink" title="2.边框背景图"></a>2.边框背景图</h5><p>原图<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212170351546-1609927523444.png" class title="image-20201212170351546"></p>
+<p>使用：</p>
+<pre><code class="css">      .c2 &#123;
+        width: 400px;
+        height: 200px;
+        /* border-width: 30px; */
+        /* 必须是实线 才能使用 边框图片 */
+        border: 30px solid transparent;
+        /* 30：四个角的宽度 round 指定边框中间内容的重复方式 */
+        border-image: url(./border.png) 30 round;
+      &#125;</code></pre>
+<img src="/E:/react-material-demo/src/H5CSS3/image-20201212170622226.png" alt="image-20201212170622226" style="zoom:50%;">
+
+
+
+<h5 id="3-三角形的实现：边框的实现是因为-边框的衔接部分是斜切的"><a href="#3-三角形的实现：边框的实现是因为-边框的衔接部分是斜切的" class="headerlink" title="3.三角形的实现：边框的实现是因为 边框的衔接部分是斜切的"></a>3.三角形的实现：边框的实现是因为 边框的衔接部分是斜切的</h5><pre><code class="css">     .c3 &#123;
+        width: 400px;
+        height: 200px;
+        border-bottom: 30px solid red;
+        border-right: 30px solid blue;
+        border-left: 30px solid transparent;
+        /* border-right: 30px solid transparent; */
+      &#125;</code></pre>
+<img src="/E:/react-material-demo/src/H5CSS3/image-20201212170841746.png" alt="image-20201212170841746" style="zoom:50%;">
+
+
+
+<h4 id="5-滚动scroll：内容比容器多的时候会滚动"><a href="#5-滚动scroll：内容比容器多的时候会滚动" class="headerlink" title="5.滚动scroll：内容比容器多的时候会滚动"></a>5.滚动scroll：内容比容器多的时候会滚动</h4><p>蓝色为容器背景</p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212171027280-1609927523444.png" class title="image-20201212171027280">
+
+<h4 id="6-文字换行"><a href="#6-文字换行" class="headerlink" title="6.文字换行"></a>6.文字换行</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212171513082-1609927523444.png" class title="image-20201212171513082">
+
+<pre><code class="css">&lt;div class=&quot;c1&quot;&gt;
+        This is a long and Supercalifragilisticexpialidocious sentence. 一二三四五六，七八九零一二，这是一句巨长巨长又没有空间可以换行的句子哦。
+    &lt;/div&gt;
+
+         .c1 &#123;
+        border: 1px solid;
+        width: 8em;
+        /* 超长单词 是否折行 尽量保持完整行 */
+        overflow-wrap: normal;
+        /* 是以一句话为单位 还是以一个词为基本单位 进行折行  */
+        word-break: normal;
+        /* 控制是否换行 */
+        white-space: normal;
+      &#125;
+</code></pre>
+<h4 id="7-装饰性的属性"><a href="#7-装饰性的属性" class="headerlink" title="7.装饰性的属性"></a>7.装饰性的属性</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212172030210-1609927523444.png" class title="image-20201212172030210">
+
+<h4 id="8-css-hack"><a href="#8-css-hack" class="headerlink" title="8.css hack"></a>8.css hack</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212172332928-1609927523444.png" class title="image-20201212172332928">
+
+<ul>
+<li>Hack 不合法 但是生效的写法</li>
+<li>目的是区分不同的浏览器</li>
+<li>缺点：难理解 难维护 易失效</li>
+<li>替换方案：特性检测 判断不同的浏览器 针对性的增加不同的class</li>
+</ul>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212172612547-1609927523444.png" class title="image-20201212172612547">
+
+
+
+<h4 id="9-案例"><a href="#9-案例" class="headerlink" title="9.案例"></a>9.案例</h4><p>利用伪类实现选中效果 组合选择器的使用：<a target="_blank" rel="noopener" href="https://www.runoob.com/css/css-combinators.html">https://www.runoob.com/css/css-combinators.html</a></p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212173050401-1609927523444.png" class title="image-20201212173050401">
+
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212173333292-1609927523444.png" class title="image-20201212173333292">
+
+<p><a target="_blank" rel="noopener" href="https://ryanseddon.com/demo/css_tree/">https://ryanseddon.com/demo/css_tree/</a></p>
+<h2 id="1-CSS3-【层叠式样式表】"><a href="#1-CSS3-【层叠式样式表】" class="headerlink" title="1.CSS3 【层叠式样式表】"></a>1.CSS3 【层叠式样式表】</h2><p>层叠式 是为了叠加样式</p>
+<img src="/E:/react-material-demo/src/H5CSS3/image-20201212155251381.png" alt="image-20201212155251381" style="zoom:50%;">
+
+<p>叠加后的结果：</p>
+<img src="/E:/react-material-demo/src/H5CSS3/image-20201212155312342.png" alt="image-20201212155312342" style="zoom:67%;">
+
+<h3 id="1-长度单位"><a href="#1-长度单位" class="headerlink" title="1.长度单位"></a>1.长度单位</h3><p><strong>概念</strong>：长度单位的两种主要类型是绝对单位和相对单位。绝对单位与长度的物理单位有关。例如，<code>in</code>和<code>mm</code>分别指英寸，毫米。绝对长度单位近似于屏幕上的实际测量值，但是根据屏幕的分辨率会有一些差异。</p>
+<p>相对单位，例如<code>em</code>或<code>rem</code>，是相对于另一个长度值的。例如，<code>em</code>基于元素字体的大小。如果您使用它来设置<code>font-size</code>属性本身，则它是相对于父项的属性<code>font-size</code>。</p>
+<h3 id="2-CSS继承以及优先级"><a href="#2-CSS继承以及优先级" class="headerlink" title="2.CSS继承以及优先级"></a>2.CSS继承以及优先级</h3><p><strong>1.子元素默认继承body属性，</strong></p>
+<pre><code class="html">&lt;style&gt;
+  body &#123;
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  &#125;
+  .pink-text &#123;
+    color: pink;
+  &#125;
+  /* style中样式的声明顺序最重要，后面的会覆盖前面的 */
+  .blue-text&#123;
+    color:blue;
+  &#125;
+&lt;/style&gt;
+&lt;h1 class=&quot;blue-text pink-text&quot;&gt;Hello World!&lt;/h1&gt;
+</code></pre>
+<p><strong>2.ID选择器的权重大于 类选择器</strong></p>
+<pre><code class="html">&lt;style&gt;
+  body &#123;
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  &#125;
+  .pink-text &#123;
+    color: pink;
+  &#125;
+  .blue-text &#123;
+    color: blue;
+  &#125;
+  #orange-text&#123;
+    color:orange;
+  &#125;
+&lt;/style&gt;
+&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot;&gt;Hello World!&lt;/h1&gt;
+</code></pre>
+<p><strong>3.内联样式大于ID大于类</strong></p>
+<pre><code class="html">&lt;style&gt;
+  body &#123;
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  &#125;
+  #orange-text &#123;
+    color: orange;
+  &#125;
+  .pink-text &#123;
+    color: pink;
+  &#125;
+  .blue-text &#123;
+    color: blue;
+  &#125;
+&lt;/style&gt;
+&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot; style=&quot;color:white;&quot;&gt;Hello World!&lt;/h1&gt;
+</code></pre>
+<p><strong>4.important 最大</strong></p>
+<pre><code class="html">&lt;style&gt;
+  body &#123;
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  &#125;
+  #orange-text &#123;
+    color: orange;
+  &#125;
+  .pink-text &#123;
+    color: pink !important;
+  &#125;
+  .blue-text &#123;
+    color: blue;
+  &#125;
+&lt;/style&gt;
+&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot; style=&quot;color: white&quot;&gt;Hello World!&lt;/h1&gt;
+</code></pre>
+<h3 id="3-颜色表示方法："><a href="#3-颜色表示方法：" class="headerlink" title="3.颜色表示方法："></a>3.颜色表示方法：</h3><ol>
+<li>英文</li>
+<li>16进制</li>
+<li>RGB</li>
+</ol>
+<h3 id="4-CSS变量"><a href="#4-CSS变量" class="headerlink" title="4.CSS变量"></a>4.CSS变量</h3><h4 id="1-变量的定义"><a href="#1-变量的定义" class="headerlink" title="1.变量的定义"></a>1.变量的定义</h4><pre><code class="css">.penguin &#123;
+
+    /* Only change code below this line */
+    --penguin-skin: gray;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+    /* Only change code above this line */
+
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
+    width: 300px;
+    height: 300px;
+  &#125;</code></pre>
+<h4 id="2-变量的使用和默认值-GRAY"><a href="#2-变量的使用和默认值-GRAY" class="headerlink" title="2.变量的使用和默认值 GRAY"></a>2.变量的使用和默认值 GRAY</h4><pre><code class="css"> .penguin-top &#123;
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-skin, gray);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+  &#125;</code></pre>
+<h4 id="3-变量定义在-root中"><a href="#3-变量定义在-root中" class="headerlink" title="3.变量定义在:root中"></a>3.变量定义在:root中</h4><p>原因：通过在:root中创建变量，他们将全局可用，并且在样式表中的任何其他访问器访问，后面的元素可以默认继承该变量。也可以创建新的样式类更改该样式变量。</p>
+<h4 id="4-变量的适用场景：简化媒体查询"><a href="#4-变量的适用场景：简化媒体查询" class="headerlink" title="4.变量的适用场景：简化媒体查询"></a>4.变量的适用场景：简化媒体查询</h4><pre><code class="css">:root &#123;
+    --penguin-size: 300px;
+    --penguin-skin: gray;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+  &#125;
+  /* 在宽度小于350px的时候使用下面的变量 */
+  @media (max-width: 350px) &#123;
+    :root &#123;
+      /* Only change code below this line */
+      --penguin-size:200px;
+      --penguin-skin:black;
+      /* Only change code above this line */
+    &#125;
+  &#125;</code></pre>
+<h2 id="2-视觉设计"><a href="#2-视觉设计" class="headerlink" title="2.视觉设计"></a>2.视觉设计</h2><h3 id="1-text-align："><a href="#1-text-align：" class="headerlink" title="1.text-align："></a>1.text-align：</h3><ul>
+<li>justify:最后一行以外的所有文本行与行框的左边缘右边缘相交</li>
+<li>left:【默认】左对齐</li>
+<li>right:右对齐</li>
+<li>center:居中</li>
+</ul>
+<h3 id="2-小标签"><a href="#2-小标签" class="headerlink" title="2.小标签"></a>2.小标签</h3><ul>
+<li>倾斜：em</li>
+<li>加粗强调语气：strong</li>
+<li>下划线：u</li>
+<li>删除线：s</li>
+<li>分割线：hr</li>
+</ul>
+<h3 id="3-font-size-字体大小"><a href="#3-font-size-字体大小" class="headerlink" title="3.font-size:字体大小"></a>3.font-size:字体大小</h3><h3 id="4-box-shadow：边框阴影"><a href="#4-box-shadow：边框阴影" class="headerlink" title="4.box-shadow：边框阴影"></a>4.box-shadow：边框阴影</h3><p>参数：</p>
+<ul>
+<li>offset-x:水平轴的偏移量</li>
+<li>offset-y:垂直轴的偏移量</li>
+<li>blur-radius：模糊半径</li>
+<li>spread-radius:扩散半径</li>
+<li>color:颜色</li>
+</ul>
+<pre><code class="css">    /* 水平轴偏移110px
+      垂直轴偏移10px
+      模糊半径：3px
+      颜色：rgba(0,0,0,0.19)
+可用逗号分隔设置多个
+     */
+    box-shadow: 110px 10px 3px rgba(0,0,0,0.19), 0 60px 30px rgba(0,0,0,0.23);</code></pre>
+<h3 id="5-opacity：透明度，范围为0-1"><a href="#5-opacity：透明度，范围为0-1" class="headerlink" title="5.opacity：透明度，范围为0-1"></a>5.opacity：透明度，范围为0-1</h3><h3 id="6-text-transform：样式转换大小写"><a href="#6-text-transform：样式转换大小写" class="headerlink" title="6.text-transform：样式转换大小写"></a>6.text-transform：样式转换大小写</h3><ul>
+<li>lowercase:全小写</li>
+<li>uppercase：全大写</li>
+<li>capitalize：首字母大写</li>
+<li>initial：使用默认值</li>
+<li>inherit：继承自父元素的属性</li>
+<li>none:默认值，使用原始文本</li>
+</ul>
+<h3 id="7-font-weight-设置字体的粗细"><a href="#7-font-weight-设置字体的粗细" class="headerlink" title="7.font-weight:设置字体的粗细"></a>7.font-weight:设置字体的粗细</h3><h3 id="8-line-height：行高，垂直的间距"><a href="#8-line-height：行高，垂直的间距" class="headerlink" title="8.line-height：行高，垂直的间距"></a>8.line-height：行高，垂直的间距</h3><h3 id="9-伪类【一个冒号的行为】"><a href="#9-伪类【一个冒号的行为】" class="headerlink" title="9.伪类【一个冒号的行为】"></a>9.伪类【一个冒号的行为】</h3><h4 id="1-概念：可添加到选择器中的关键字，以便选择元素的特定状态"><a href="#1-概念：可添加到选择器中的关键字，以便选择元素的特定状态" class="headerlink" title="1.概念：可添加到选择器中的关键字，以便选择元素的特定状态"></a>1.概念：可添加到选择器中的关键字，以便选择元素的特定状态</h4><h4 id="2-hover：鼠标悬停该元素时候的状态"><a href="#2-hover：鼠标悬停该元素时候的状态" class="headerlink" title="2.  :hover：鼠标悬停该元素时候的状态"></a>2.  :hover：鼠标悬停该元素时候的状态</h4><h4 id="9-1-伪元素【两个冒号的元素】"><a href="#9-1-伪元素【两个冒号的元素】" class="headerlink" title="9.1.伪元素【两个冒号的元素】"></a>9.1.伪元素【两个冒号的元素】</h4><h5 id="1-伪元素-用于在选定元素前后-添加内容，其中content-代表要添加的内容为必填项"><a href="#1-伪元素-用于在选定元素前后-添加内容，其中content-代表要添加的内容为必填项" class="headerlink" title="1.伪元素 用于在选定元素前后 添加内容，其中content 代表要添加的内容为必填项"></a>1.伪元素 用于在选定元素前后 添加内容，其中content 代表要添加的内容为必填项</h5><pre><code class="css">&lt;style&gt;
+  .heart &#123;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  &#125;
+  .heart::after &#123;
+    background-color: pink;
+    content: &quot;&quot;;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  &#125;
+  .heart::before &#123;
+    content: &quot;&quot;;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  &#125;
+&lt;/style&gt;
+&lt;div class=&quot;heart&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="10-定位方式"><a href="#10-定位方式" class="headerlink" title="10.定位方式"></a>10.定位方式</h3><h4 id="1-盒模型-W3C-和-IE盒模型："><a href="#1-盒模型-W3C-和-IE盒模型：" class="headerlink" title="1.盒模型 W3C 和 IE盒模型："></a>1.盒模型 W3C 和 IE盒模型：</h4><p><strong>CSS中将每一个元素都当作一个盒子</strong></p>
+<h4 id="2-按照默认样式元素分类"><a href="#2-按照默认样式元素分类" class="headerlink" title="2.按照默认样式元素分类"></a>2.按照默认样式元素分类</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ghost-monkey/p/9727290.html">https://www.cnblogs.com/ghost-monkey/p/9727290.html</a></p>
+<h5 id="a-块元素block【一层楼】"><a href="#a-块元素block【一层楼】" class="headerlink" title="a.块元素block【一层楼】"></a><strong>a.块元素block【一层楼】</strong></h5><p><strong>默认的块元素：</strong></p>
+<pre><code class="html">div, p, ul,li,header,footer,section,article 等</code></pre>
+<h5 id="b-行内元素inline【楼的小房间】"><a href="#b-行内元素inline【楼的小房间】" class="headerlink" title="b.行内元素inline【楼的小房间】"></a><strong>b.行内元素inline</strong>【楼的小房间】</h5><p><strong>默认的行内元素</strong>：可能没有规则的框框</p>
+<pre><code class="html">a,span,img 等 加宽度没有效果</code></pre>
+<p>文档流是LRVH (从左到右，上到下的显示)，对于块级元素是会（横向方向）填满它的包含元素（父级元素的），而行内元素则不是，它的所有子元素会在一行显示，（如果所有子元素的宽度超过了其父容器的宽度，则会自动换到下一行）</p>
+<h5 id="c-行内块元素inline-block-：select"><a href="#c-行内块元素inline-block-：select" class="headerlink" title="c.行内块元素inline-block ：select"></a>c.行内块元素inline-block ：select</h5><p>3.按照内容分类</p>
+<p><a target="_blank" rel="noopener" href="http://www.w3.org/TR/html5/dom.html#content-models">http://www.w3.org/TR/html5/dom.html#content-models</a></p>
+<p><a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content">https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhangjinglin.cn/blog/d37dbcd34db6df9e7adfbe3ae2d8ad95.html">https://www.zhangjinglin.cn/blog/d37dbcd34db6df9e7adfbe3ae2d8ad95.html</a></p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212123328586-1609927523444.png" class title="image-20201212123328586">
+
+<h5 id="4-HTML的元素嵌套关系"><a href="#4-HTML的元素嵌套关系" class="headerlink" title="4.HTML的元素嵌套关系"></a>4.HTML的元素嵌套关系</h5><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212124352050-1609927523444.png" class title="image-20201212124352050">
+
+<p><strong>a元素可以包含块级元素</strong>：因为a是透明元素，可以去掉，再看嵌套规则</p>
+<p><a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element</a></p>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212124638075-1609927523444.png" class title="image-20201212124638075">
+
+<p>通过content-model:来确定可以嵌套的元素</p>
+<h4 id="3-position【定位】【重点】"><a href="#3-position【定位】【重点】" class="headerlink" title="3.position【定位】【重点】"></a>3.position【定位】【重点】</h4><p><strong>relative:相对自身定位</strong></p>
+<p>当元素的位置设置为相对位置时，它允许您指定CSS在页面正常流中相对于当前位置的移动方式。它与左或右、上或下的CSS偏移属性配对。它们表示将项目从其正常位置移开的像素、百分比或ems数。</p>
+<p>将元素的位置更改为“相对”不会将其从正常流中移除-它周围的其他元素仍会表现为该项处于其默认位置。</p>
+<p>可以使用 上下左右属性来控制距离自身之前多少像素</p>
+<p><strong>absolute：相对于父级进行绝对定位</strong></p>
+<p>它将元素相对于其父容器锁定到位。与相对位置不同，<strong>这会从文档的正常流中删除元素，因此周围的项会忽略它</strong>。CSS偏移属性（顶部或底部、左侧或右侧）用于调整位置。</p>
+<p>绝对定位的一个细微差别是，它将相对其最近定位的祖先锁定。如果忘记向父项添加位置规则（这通常是使用position:relative；），浏览器将继续查找链并最终默认为body标记。</p>
+<p><strong>fixed:固定定位</strong></p>
+<p>是一种绝对定位，可以锁定相对于浏览器窗口的元素。与绝对定位类似，它与CSS offset属性一起使用，并从文档的正常流中删除元素。</p>
+<p>固定位置和绝对位置之间的一个关键区别是具有固定位置的元素在用户滚动时不会移动。</p>
+<p><strong>float:浮动定位</strong></p>
+<p>浮动元素从文档的正常流中移除，并被推到包含父元素的左侧或右侧。它通常与width属性一起使用，以指定浮动元素需要多少水平空间。</p>
+<p><strong>z-index:更改层级显示关系</strong></p>
+<p>当元素被定位为重叠时（即使用position:absolute | relative | fixed | sticky），HTML标记中<strong>后面的元素将默认显示在前面元素的顶部</strong>。但是，z-index属性可以指定元素堆叠的顺序。它必须是一个整数（即整数而不是十进制数），元素的z-index属性值越高，它在堆栈中的位置就越高</p>
+<h4 id="4-居中"><a href="#4-居中" class="headerlink" title="4.居中"></a>4.居中</h4><h5 id="1-margin：auto时候水平居中"><a href="#1-margin：auto时候水平居中" class="headerlink" title="1.margin：auto时候水平居中"></a>1.margin：auto时候水平居中</h5><h4 id="5-渐变色的添加-【amcharts4】"><a href="#5-渐变色的添加-【amcharts4】" class="headerlink" title="5.渐变色的添加 【amcharts4】"></a>5.渐变色的添加 【amcharts4】</h4><h5 id="1-单个-渐变色的创建"><a href="#1-单个-渐变色的创建" class="headerlink" title="1.单个 渐变色的创建"></a>1.单个 渐变色的创建</h5><pre><code class="html">&lt;style&gt;
+  div &#123;
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+    /* 参数一 指定颜色转换开始方向：其中90deg表示水平渐变（从左到右），而45deg的角度类似于反斜杠 
+    后面的参数是渐变色的多少
+    */
+    background:linear-gradient(35deg,#cff,#fcc);
+  &#125;
+
+&lt;/style&gt;
+
+&lt;div&gt;&lt;/div&gt;
+</code></pre>
+<h5 id="2-重复渐变色的创建"><a href="#2-重复渐变色的创建" class="headerlink" title="2.重复渐变色的创建"></a>2.重复渐变色的创建</h5><pre><code class="html">&lt;style&gt;
+
+  div&#123;
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    /* 
+    渐变从0像素处的黄色开始，在距起始点40像素处渐渐与第二种蓝色混合。由于下一个颜色停止也是在40像素处，所以渐变会立即变为第三个颜色绿色，而绿色本身与第四个颜色值红色混合，因为这是距离渐变开始点80个像素的地方。
+     */
+    background: repeating-linear-gradient(
+      90deg,
+      yellow 0px,
+      blue 40px,
+      green 40px,
+      red 80px
+    );
+  &#125;
+
+&lt;/style&gt;
+
+&lt;div&gt;&lt;/div&gt;
+</code></pre>
+<h4 id="6-background"><a href="#6-background" class="headerlink" title="6.background:"></a>6.background:</h4><h5 id="1-使用背景图片"><a href="#1-使用背景图片" class="headerlink" title="1.使用背景图片"></a>1.使用背景图片</h5><pre><code class="html">background:url(&quot;https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png&quot;)
+  &#125;</code></pre>
+<h5 id="2-transparent-变透明"><a href="#2-transparent-变透明" class="headerlink" title="2.transparent 变透明"></a>2.transparent 变透明</h5><h4 id="7-transform-【变换也可以用在伪元素上】"><a href="#7-transform-【变换也可以用在伪元素上】" class="headerlink" title="7.transform 【变换也可以用在伪元素上】"></a>7.transform 【变换也可以用在伪元素上】</h4><h5 id="1-放大缩小-scale"><a href="#1-放大缩小-scale" class="headerlink" title="1.放大缩小 scale"></a>1.放大缩小 scale</h5><pre><code class="css">/* 放大比例 2 */
+  transform:scale(2);</code></pre>
+<h5 id="2-倾斜角度：skewX-skewY"><a href="#2-倾斜角度：skewX-skewY" class="headerlink" title="2.倾斜角度：skewX skewY"></a>2.倾斜角度：skewX skewY</h5><pre><code class="css">   /* x轴倾斜角度 */
+  transform:skewX(-32deg);
+transform: skewY(-10deg);</code></pre>
+<h4 id="8-动画效果-【可以用在伪元素上】"><a href="#8-动画效果-【可以用在伪元素上】" class="headerlink" title="8.动画效果 【可以用在伪元素上】"></a>8.动画效果 【可以用在伪元素上】</h4><h5 id="1-使用方法"><a href="#1-使用方法" class="headerlink" title="1.使用方法"></a>1.使用方法</h5><ol>
+<li>animation name设置动画的名称，</li>
+<li>@keyframes稍后使用该名称来告诉CSS哪些规则与哪些动画相匹配</li>
+<li>animation-duration 来设置动画时长</li>
+</ol>
+<h5 id="2-keyframes详解"><a href="#2-keyframes详解" class="headerlink" title="2.@keyframes详解"></a>2.@keyframes详解</h5><p>@keyframes可以精确的指定动画在持续时间内发生的事情，通过动画期间为特定的 <strong>帧</strong>来提供css属性实现的，动画时间百分比范围为 0-100%，0%代表开头，100%代表结尾。</p>
+<h5 id="3-动画填充模式（animation-fill-mode-）：动画填充模式指定动画完成后应用于元素的样式。"><a href="#3-动画填充模式（animation-fill-mode-）：动画填充模式指定动画完成后应用于元素的样式。" class="headerlink" title="3.动画填充模式（animation-fill-mode ）：动画填充模式指定动画完成后应用于元素的样式。"></a>3.动画填充模式（animation-fill-mode ）：动画填充模式指定动画完成后应用于元素的样式。</h5><ul>
+<li>forwards:保持原有动画结尾效果</li>
+</ul>
+<pre><code class="css">animation-fill-mode: forwards;</code></pre>
+<h5 id="4-控制元素的移动-【控制相对定位或者绝对定位】"><a href="#4-控制元素的移动-【控制相对定位或者绝对定位】" class="headerlink" title="4.控制元素的移动 【控制相对定位或者绝对定位】"></a>4.控制元素的移动 【控制相对定位或者绝对定位】</h5><pre><code class="css">&lt;style&gt;
+  div &#123;
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+  &#125;
+
+  #rect &#123;
+    animation-name: rainbow;
+    animation-duration: 4s;
+  &#125;
+
+  @keyframes rainbow &#123;
+    0% &#123;
+      background-color: blue;
+      top: 0px;
+        left:0px;
+    &#125;
+    50% &#123;
+      background-color: green;
+      top: 50px;
+      left:25px;
+    &#125;
+    100% &#123;
+      background-color: yellow;
+      top: 0px;
+      left:-25px;
+
+    &#125;
+  &#125;
+&lt;/style&gt;
+
+&lt;div id=&quot;rect&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h5 id="5-控制动画的次数（animation-iteration-count）"><a href="#5-控制动画的次数（animation-iteration-count）" class="headerlink" title="5.控制动画的次数（animation-iteration-count）"></a>5.控制动画的次数（animation-iteration-count）</h5><ul>
+<li>设置数字 为次数</li>
+<li>infinite ：无限次</li>
+</ul>
+<h5 id="6-动画的效果（animation-timing-function）"><a href="#6-动画的效果（animation-timing-function）" class="headerlink" title="6.动画的效果（animation-timing-function）"></a>6.动画的效果（animation-timing-function）</h5><p>如果动画是一辆汽车在给定时间（动画持续时间）内从点a移动到点B，则动画计时功能将显示汽车在行驶过程中如何加速和减速。</p>
+<ul>
+<li>ease 【默认】：慢开始，中间加速，后面减速</li>
+<li>ease-out:开始时候快速然后减速</li>
+<li>ease-in：开始速度慢，在结束时候加速</li>
+<li>linear：线性整个过程匀速前进</li>
+</ul>
+<h2 id="3-【重点】应用的可访问性挑战"><a href="#3-【重点】应用的可访问性挑战" class="headerlink" title="3.【重点】应用的可访问性挑战"></a>3.【重点】应用的可访问性挑战</h2><h3 id="1-img-标签的alt-属性：有值或者留空"><a href="#1-img-标签的alt-属性：有值或者留空" class="headerlink" title="1.img 标签的alt 属性：有值或者留空"></a>1.img 标签的alt 属性：有值或者留空</h3><p><strong>有值：</strong>有助于在图像无法加载或用户无法看到的情况下使用。搜索引擎也使用它来了解图像包含的内容</p>
+<p><strong>留空：</strong>图像已经用文本内容解释或未在页面中无意义的情况下，可为空。</p>
+<p>**PS:**对于带有标题的图像，仍要包含alt文本方便搜索引擎进行分类</p>
+<h3 id="2-语义化标签-article-section-div-main-nav-header-footer-audio-video"><a href="#2-语义化标签-article-section-div-main-nav-header-footer-audio-video" class="headerlink" title="2.语义化标签 article section div  main nav header footer audio video"></a>2.语义化标签 article section div  main nav header footer audio video</h3><p>如果一本书是文章【article】，那么每一章就是一节【section】。当内容组之间没有关系时，使用div。</p>
+<ul>
+<li>nav 导航栏</li>
+<li>header 网站头部</li>
+<li>footer 主要用于包含版权信息或指向通常位于页面底部的相关文档的链接</li>
+</ul>
+<p>快速记忆：一本书 article section 一个人 header nav main footer 听歌audio看视频video</p>
+<p>audio</p>
+<pre><code class="html">&lt;audio id=&quot;meowClip&quot; controls&gt;
+  &lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+  &lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;
+&lt;/audio&gt;</code></pre>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201212121922351-1609927523444.png" class title="image-20201212121922351">
+
+<h3 id="3-语义化标签之图表可视化部分figure-figcaption【重点】"><a href="#3-语义化标签之图表可视化部分figure-figcaption【重点】" class="headerlink" title="3.语义化标签之图表可视化部分figure figcaption【重点】"></a>3.语义化标签之图表可视化部分figure figcaption【重点】</h3><p>HTML5引入了figure元素以及相关的figcaption。这些项一起使用时，会将视觉表示（如图像、图表或图表）与其标题一起包装。通过对相关内容进行语义分组，并提供一个文本替代方案来解释该图，这将使可访问性得到双重提升。</p>
+<pre><code class="html">&lt;figure&gt;
+  &lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;
+  &lt;br&gt;
+  &lt;figcaption&gt;
+    Master Camper Cat demonstrates proper form of a roundhouse kick.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+<h3 id="4-提高表单字段的可访问性label-fieldset-legend-【重点表单提交】"><a href="#4-提高表单字段的可访问性label-fieldset-legend-【重点表单提交】" class="headerlink" title="4.提高表单字段的可访问性label fieldset  legend 【重点表单提交】"></a>4.提高表单字段的可访问性label fieldset  legend 【重点表单提交】</h3><p>label标记上的for属性将该标签与表单控件<strong>id</strong>显式关联，增强表单可读性。</p>
+<p>fieldset:包围整个单选框组，使用legend 来描述这个单选框组是做什么的</p>
+<pre><code class="html">&lt;form&gt;
+  &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;demo&quot;&gt;
+&lt;/form&gt;</code></pre>
+<pre><code class="html">&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Choose one of these three items:&lt;/legend&gt;
+    &lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;
+    &lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;
+    &lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;
+    &lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;
+    &lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;
+    &lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="5-表单类型-input-type-”date”-日期选择器"><a href="#5-表单类型-input-type-”date”-日期选择器" class="headerlink" title="5.表单类型 input type=”date” 日期选择器"></a>5.表单类型 input type=”date” 日期选择器</h3><h3 id="6-时间的标准化描述-time-标签和-其datetime-属性"><a href="#6-时间的标准化描述-time-标签和-其datetime-属性" class="headerlink" title="6.时间的标准化描述 time 标签和 其datetime 属性"></a>6.时间的标准化描述 time 标签和 其datetime 属性</h3><pre><code class="html">&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code></pre>
+<h3 id="7-键盘快捷键-accesskey"><a href="#7-键盘快捷键-accesskey" class="headerlink" title="7.键盘快捷键 accesskey"></a>7.键盘快捷键 accesskey</h3><p>HTML提供accesskey属性来指定一个快捷键来激活或集中元素。这可以使仅使用键盘的用户更有效地导航。</p>
+<pre><code class="html">&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code></pre>
+<h3 id="8-键盘焦点-tabindex"><a href="#8-键盘焦点-tabindex" class="headerlink" title="8.键盘焦点 tabindex"></a>8.键盘焦点 tabindex</h3><p>当标签设置tabindex 属性时候，tanindex 的取值范围 正数负数和零</p>
+<ul>
+<li><p>负数时候【通常为-1】：表示可以聚焦的，但是无法通过键盘tab键切换访问，聚焦时还可以使用css伪类focus</p>
+</li>
+<li><pre><code class="html">p:focus &#123;
+  background-color: yellow;
+  color:blue;
+&#125;
+
+&lt;p tabindex=&quot;0&quot;&gt;Instructions: Fill in ALL your information then click &lt;b&gt;Submit&lt;/b&gt;&lt;/p&gt;</code></pre>
+</li>
+<li><p>设置tabindex=“1”将首先将键盘焦点放在该元素上。然后它循环指定的tabindex值序列（2、3等），然后转到default和tabindex=“0”项。</p>
+</li>
+</ul>
+<p>自定义tabindex 会改变默认tab切换顺序</p>
+<h3 id="9-总结表单新增内容"><a href="#9-总结表单新增内容" class="headerlink" title="9.总结表单新增内容"></a>9.总结表单新增内容</h3><ul>
+<li>类型新增：日期，时间，搜索</li>
+<li>功能新增：表单验证 max min required pattern 等 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42249896/article/details/84945624">https://blog.csdn.net/qq_42249896/article/details/84945624</a></li>
+<li>Placeholder 和自动聚焦[autofocus]</li>
+</ul>
+<h2 id="4-响应式web布局"><a href="#4-响应式web布局" class="headerlink" title="4.响应式web布局"></a>4.响应式web布局</h2><h3 id="1-媒体查询-media"><a href="#1-媒体查询-media" class="headerlink" title="1.媒体查询 @media"></a>1.媒体查询 @media</h3><pre><code>设备最大宽度 小于等于100时候应用样式
+@media (max-width: 100px) &#123; /* CSS Rules */ &#125;
+
+设备高度 大于等于350时候应用样式
+@media (min-height: 350px) &#123; /* CSS Rules */ &#125;
+</code></pre>
+<h3 id="2-响应式图像宽度"><a href="#2-响应式图像宽度" class="headerlink" title="2.响应式图像宽度"></a>2.响应式图像宽度</h3><ul>
+<li>max-width:100% 保证图像不会比容器更宽</li>
+<li>height:auto  保持其原始宽高比</li>
+</ul>
+<pre><code class="css">img &#123;
+    max-width:100%;
+    height:auto;
+&#125;</code></pre>
+<h3 id="3-图像的最佳宽度和高度应该为真实宽高的一半"><a href="#3-图像的最佳宽度和高度应该为真实宽高的一半" class="headerlink" title="3.图像的最佳宽度和高度应该为真实宽高的一半"></a>3.图像的最佳宽度和高度应该为真实宽高的一半</h3><ul>
+<li><p>使图像正确显示在高分辨率显示器上的最简单方法是将其宽度和高度值定义为原始文件的一半。</p>
+</li>
+<li><pre><code class="html">&lt;style&gt;
+    img &#123;
+        height:100px;
+        width:100px;
+    &#125;
+&lt;/style&gt;
+
+&lt;img src=&quot;https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg&quot; alt=&quot;freeCodeCamp sticker that says &#39;Because CamperBot Cares&#39;&quot;&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="4-根据界面进行响应式排版-vw-vh-vmax-vmin"><a href="#4-根据界面进行响应式排版-vw-vh-vmax-vmin" class="headerlink" title="4.根据界面进行响应式排版 vw vh vmax vmin"></a>4.根据界面进行响应式排版 vw vh vmax vmin</h3><ul>
+<li>vw（视口宽度）：10vw是视口宽度的10%。</li>
+<li>vh（视口高度）：3vh为视口高度的3%。</li>
+<li>vmin（视口最小值）：70vmin是视口较小尺寸（高度或宽度）的70%。</li>
+<li>vmax（视口最大值）：100vmax是视口较大尺寸（高度或宽度）的100%。</li>
+</ul>
+<h3 id="5-flex布局学习-https-coding-imweb-io-demo-flex"><a href="#5-flex布局学习-https-coding-imweb-io-demo-flex" class="headerlink" title="5.flex布局学习 https://coding.imweb.io/demo/flex/"></a>5.flex布局学习 <a target="_blank" rel="noopener" href="https://coding.imweb.io/demo/flex/">https://coding.imweb.io/demo/flex/</a></h3><h4 id="1-将容器变成flex布局：display-flex"><a href="#1-将容器变成flex布局：display-flex" class="headerlink" title="1.将容器变成flex布局：display:flex;"></a>1.将容器变成flex布局：display:flex;</h4><h4 id="2-flex-direction-控制布局的排列方式"><a href="#2-flex-direction-控制布局的排列方式" class="headerlink" title="2.flex-direction:控制布局的排列方式"></a>2.flex-direction:控制布局的排列方式</h4><ul>
+<li>row:横向排列</li>
+<li>column：竖向排列</li>
+<li>row-reverse：横向反向排列</li>
+<li>column-reverse：竖向反向排列</li>
+</ul>
+<h4 id="3-justify-content：主轴的对齐和分隔flex子项的方式"><a href="#3-justify-content：主轴的对齐和分隔flex子项的方式" class="headerlink" title="3.justify-content：主轴的对齐和分隔flex子项的方式"></a>3.justify-content：主轴的对齐和分隔flex子项的方式</h4><ul>
+<li>flex-start：顶部对齐</li>
+<li>flex-end:    底部对齐</li>
+<li>space-between：第一个子项靠在容器的左侧，最后一个靠在容器的右侧，剩余的空间均匀的分布在子项中</li>
+<li>space-around：和space-between 的相似 只不过第一个和最后一个会剩余半个间隔空间</li>
+<li>space-evenly：</li>
+</ul>
+<h4 id="4-align-items：交叉轴的对齐方式-https-www-runoob-com-cssref-css3-pr-align-items-html"><a href="#4-align-items：交叉轴的对齐方式-https-www-runoob-com-cssref-css3-pr-align-items-html" class="headerlink" title="4.align-items：交叉轴的对齐方式 https://www.runoob.com/cssref/css3-pr-align-items.html"></a>4.align-items：交叉轴的对齐方式 <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css3-pr-align-items.html">https://www.runoob.com/cssref/css3-pr-align-items.html</a></h4><table>
+<thead>
+<tr>
+<th>center</th>
+<th>元素位于容器的中心。弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。</th>
+<th><a target="_blank" rel="noopener" href="https://www.runoob.com/try/playit.php?f=playcss_align-items&preval=center">测试 »</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>元素位于容器的开头。弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。</td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/try/playit.php?f=playcss_align-items&preval=flex-start">测试 »</a></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>元素位于容器的结尾。弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。</td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/try/playit.php?f=playcss_align-items&preval=flex-end">测试 »</a></td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>元素位于容器的基线上。如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="5-flex-wrap：子项的拆分为多行，默认是一行"><a href="#5-flex-wrap：子项的拆分为多行，默认是一行" class="headerlink" title="5.flex-wrap：子项的拆分为多行，默认是一行"></a>5.flex-wrap：子项的拆分为多行，默认是一行</h4><h4 id="【以下全为flex子项的属性】"><a href="#【以下全为flex子项的属性】" class="headerlink" title="【以下全为flex子项的属性】"></a>【以下全为flex子项的属性】</h4><h4 id="6-flex-shrink-子项在容器收缩时候的放缩比例-【flex子项的属性】"><a href="#6-flex-shrink-子项在容器收缩时候的放缩比例-【flex子项的属性】" class="headerlink" title="6.flex-shrink:子项在容器收缩时候的放缩比例 【flex子项的属性】"></a>6.flex-shrink:子项在容器收缩时候的放缩比例 【flex子项的属性】</h4><p>此属性接受一个数值，当数字越大，收缩的越大。例如：一个子项的该属性为1，另外一个项目的该属性为3，则该属性为3 的比该属性为1 的小的多。</p>
+<h4 id="7-flex-grow：子项在容器方法时候的膨胀比例【flex子项的属性】"><a href="#7-flex-grow：子项在容器方法时候的膨胀比例【flex子项的属性】" class="headerlink" title="7.flex-grow：子项在容器方法时候的膨胀比例【flex子项的属性】"></a>7.flex-grow：子项在容器方法时候的膨胀比例【flex子项的属性】</h4><p>此属性接受一个数值，当数字越大，膨胀的越大。例如：一个子项的该属性为1，另外一个项目的该属性为3，则该属性为3 的比该属性为1 的膨胀【大】的多。</p>
+<h4 id="8-flex-basis-子项在使用flex-shrinl-和flex-grow-进行调整以前的初始大小【子项的默认宽度属性】"><a href="#8-flex-basis-子项在使用flex-shrinl-和flex-grow-进行调整以前的初始大小【子项的默认宽度属性】" class="headerlink" title="8.flex-basis: 子项在使用flex-shrinl 和flex-grow 进行调整以前的初始大小【子项的默认宽度属性】"></a>8.flex-basis: 子项在使用flex-shrinl 和flex-grow 进行调整以前的初始大小【子项的默认宽度属性】</h4><h4 id="9-flex子项属性的简写：flex-0-1-auto-增大-伸缩-默认宽度"><a href="#9-flex子项属性的简写：flex-0-1-auto-增大-伸缩-默认宽度" class="headerlink" title="9.flex子项属性的简写：flex: 0 1 auto; 增大 伸缩 默认宽度"></a>9.flex子项属性的简写：flex: 0 1 auto; 增大 伸缩 默认宽度</h4><h4 id="10-order-：更改子项在容器中的排列顺序，order越小越靠前"><a href="#10-order-：更改子项在容器中的排列顺序，order越小越靠前" class="headerlink" title="10.order ：更改子项在容器中的排列顺序，order越小越靠前"></a>10.order ：更改子项在容器中的排列顺序，order越小越靠前</h4><h3 id="6-栅格化布局Grid"><a href="#6-栅格化布局Grid" class="headerlink" title="6.栅格化布局Grid"></a>6.栅格化布局Grid</h3><h4 id="1-栅格化布局Grid-display-grid"><a href="#1-栅格化布局Grid-display-grid" class="headerlink" title="1.栅格化布局Grid : display:grid;"></a>1.栅格化布局Grid : display:grid;</h4><h4 id="2-栅格的数量-和宽度属性-grid-template-columns"><a href="#2-栅格的数量-和宽度属性-grid-template-columns" class="headerlink" title="2.栅格的数量 和宽度属性 grid-template-columns"></a>2.栅格的数量 和宽度属性 grid-template-columns</h4><pre><code class="css">    /* 三行的栅格 每个宽度为100px */
+    grid-template-columns:100px 100px 100px;
+        /* 网格模板列被设置为创建两列；第一列宽度为100px，第二列最小宽度为50px，最大宽度为200px */
+    grid-template-columns: 100px minmax(50px, 200px);</code></pre>
+<h4 id="3-手动设置行数-和行高：grid-template-rows"><a href="#3-手动设置行数-和行高：grid-template-rows" class="headerlink" title="3.手动设置行数 和行高：grid-template-rows"></a>3.手动设置行数 和行高：grid-template-rows</h4><pre><code class="css">    /* 栅格的高度： */
+    grid-template-rows: 50px 50px;</code></pre>
+<p>使用repeat 函数  来快速定义行数</p>
+<p><strong>格式：</strong> repeat(数量,宽度)</p>
+<pre><code class="css">    /* 快速创建100行20像素的格子 */
+grid-template-rows: repeat(100, 50px);
+
+/* 1fr 50px 重复两次 最后一个像素是20px */
+grid-template-columns: repeat(2, 1fr 50px) 20px;</code></pre>
+<p><strong>repeat的auto-fill 【自动填满】属性：</strong>根据容器的大小自动插入尽可能多的行或列，结合使用minmax，可以创建灵活的布局 ，<strong>当容器的大小超过所有项目的组合大小时，子项的宽度取最【小】值</strong></p>
+<pre><code class="css">    /* 
+    自动填充 行，行的宽度最小为60px，最大为1fr
+    当容器的一行宽度为 60px&lt;width&lt;120px 时候
+    当前行只能有一个子项
+    当大于120px  120px&lt;=width&lt;180px时候 满足最小为60px
+    当前行有两个子项 第三个的最小宽度满足不了
+     */
+
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));</code></pre>
+<p><strong>repeat的auto-fit【自动适合】属性：</strong> <strong>当容器的大小超过所有项目的组合大小时，子项的宽度取最【大】值</strong></p>
+<pre><code class="css">grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));</code></pre>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201203104456385-1609927523444.png" class title="image-20201203104456385">
+
+<h4 id="4-Grid的宽度的设置"><a href="#4-Grid的宽度的设置" class="headerlink" title="4.Grid的宽度的设置"></a>4.Grid的宽度的设置</h4><ul>
+<li>fr:剩余空间的平均分隔</li>
+<li>auto:行或者列自动设置为内容的宽度和高度</li>
+<li>%：将列或行调整为其容器的百分比宽度</li>
+</ul>
+<pre><code class="css">/* 创建5列，第一列和内容一样宽，第二列是50px 第三列是容器的10% 最后的两列是：将剩余空间分为3个部分，第4列分配两个，第5列分配一个 */
+grid-template-columns: auto 50px 10% 2fr 1fr;</code></pre>
+<h4 id="5-创建横轴的子项之间的间隙-grid-column-gap"><a href="#5-创建横轴的子项之间的间隙-grid-column-gap" class="headerlink" title="5.创建横轴的子项之间的间隙 grid-column-gap"></a>5.创建横轴的子项之间的间隙 grid-column-gap</h4><pre><code class="css">grid-column-gap:20px;</code></pre>
+<h4 id="6-纵轴之间的间隙：grid-row-gap"><a href="#6-纵轴之间的间隙：grid-row-gap" class="headerlink" title="6.纵轴之间的间隙：grid-row-gap"></a>6.纵轴之间的间隙：grid-row-gap</h4><pre><code class="css">grid-row-gap:5px;</code></pre>
+<h4 id="7-子项间隙的简写：grid-gap：10px-20px"><a href="#7-子项间隙的简写：grid-gap：10px-20px" class="headerlink" title="7.子项间隙的简写：grid-gap：10px 20px"></a>7.子项间隙的简写：grid-gap：10px 20px</h4><pre><code class="css">   /* 行之间是10px 列之间是20px */
+    grid-gap:10px 20px;</code></pre>
+<h4 id="8-合并子项：grid-column-和grid-row"><a href="#8-合并子项：grid-column-和grid-row" class="headerlink" title="8.合并子项：grid-column 和grid-row"></a>8.合并子项：grid-column 和grid-row</h4><img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201202172911769-1609927523444.png" class title="image-20201202172911769">
+
+<pre><code class="css">    /* 表示从序号2 开始合并好序号4 */
+    grid-column:2/4;</code></pre>
+<p>动态创建一个区域：</p>
+<pre><code class="css"> .item5 &#123;
+    background: PaleGreen;
+    /* Only change code below this line */
+    /* 网格区域：水平线起点/垂直线起点/水平线终点/垂直线终点； */
+    grid-area:1/1/2/4;
+
+    /* Only change code above this line */
+  &#125;</code></pre>
+<img src="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/image-20201202175323030-1609927523444.png" class title="image-20201202175323030">
+
+<h4 id="9-横轴子项的对齐方式：justify-self，全部子项：justify-items"><a href="#9-横轴子项的对齐方式：justify-self，全部子项：justify-items" class="headerlink" title="9.横轴子项的对齐方式：justify-self，全部子项：justify-items"></a>9.横轴子项的对齐方式：justify-self，全部子项：justify-items</h4><ul>
+<li>stretch：【默认值】整个宽度</li>
+<li>start:靠左</li>
+<li>center:居中</li>
+<li>end:靠右</li>
+</ul>
+<h4 id="10-竖轴子项的对齐方式：align-self，全部子项：align-items"><a href="#10-竖轴子项的对齐方式：align-self，全部子项：align-items" class="headerlink" title="10.竖轴子项的对齐方式：align-self，全部子项：align-items"></a>10.竖轴子项的对齐方式：align-self，全部子项：align-items</h4><h4 id="11-分区命名【区域模板】：容器属性-grid-template-areas"><a href="#11-分区命名【区域模板】：容器属性-grid-template-areas" class="headerlink" title="11.分区命名【区域模板】：容器属性 grid-template-areas"></a>11.分区命名【区域模板】：容器属性 grid-template-areas</h4><ul>
+<li>使用 **(.)**来代表空单元格</li>
+</ul>
+<pre><code class="css">    grid-template-areas:
+      &quot;header header header&quot;
+      &quot;advert content .&quot;
+      &quot;footer footer footer&quot;;</code></pre>
+<h4 id="12-为分区命名的子项配置样式"><a href="#12-为分区命名的子项配置样式" class="headerlink" title="12.为分区命名的子项配置样式:"></a>12.为分区命名的子项配置样式:</h4><pre><code class="css">  .item5 &#123;
+    background: PaleGreen;
+    /* 指定更改哪个命名的footer样式区域 */
+    grid-area:footer;
+  &#125;</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
