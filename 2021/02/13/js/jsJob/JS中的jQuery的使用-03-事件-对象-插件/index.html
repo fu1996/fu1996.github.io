@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS中的jQuery的使用-03-事件-对象-插件 | 付俊奎的个人博客</title>
+  <meta name="keywords" content=" js , js基础回顾 ">
+  <meta name="description" content="JS中的jQuery的使用-03-事件-对象-插件 | 付俊奎的个人博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3-hexo使用说明">
+<meta property="og:url" content="https://lhwz666.gitee.io/about/index.html">
+<meta property="og:site_name" content="付俊奎的个人博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-23T07:13:47.000Z">
+<meta property="article:modified_time" content="2022-02-07T06:41:46.690Z">
+<meta property="article:author" content="付俊奎">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="3-hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>付俊奎</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(118)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->正则">
+                                        
+                                        正则
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->git">
+                                        
+                                        git
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->todo">
+                                        
+                                        todo
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="大前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        大前端
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="大前端<--->react">
+                                        
+                                        react
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        后端
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="后端<--->数据库">
+                                        
+                                        数据库
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->django">
+                                        
+                                        django
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->docker">
+                                        
+                                        docker
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->k8s">
+                                        
+                                        k8s
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->linux">
+                                        
+                                        linux
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->python">
+                                        
+                                        python
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="css">
+                        
+                        css
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="h5">
+                        
+                        h5
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="js">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        js
+                        <small>(66)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="js<--->数据结构和算法">
+                                        
+                                        数据结构和算法
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->babel">
+                                        
+                                        babel
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js基础回顾">
+                                        
+                                        js基础回顾
+                                        
+                                            <small>(16
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js前端高手进阶">
+                                        
+                                        js前端高手进阶
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->webpack">
+                                        
+                                        webpack
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->work">
+                                        
+                                        work
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="ts">
+                        
+                        ts
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="118">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>变量声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>前端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据分析</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据结构和算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据可视化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>疑问</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>引用类型</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>自动化办公</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>amchart4</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>babel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css布局</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DevOps</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>django</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>drf</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ES6</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fiddler</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>h5</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>H5定位</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS基础</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js基础回顾</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js前端高手进阶</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>k8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>let var const</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mdn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>normalizr</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>odoo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react 生命周期</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>todo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ubuntu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>work</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 todo "
+           href="/2020/12/27/todo/index/"
+           data-tag="todo"
+           data-author="" >
+            <span class="post-title" title="Todo">Todo</span>
+            <span class="post-date" title="2020-12-27 15:42:00">2020/12/27</span>
+        </a>
+        
+        <a id="top" class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/index/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构主页">数据结构主页</span>
+            <span class="post-date" title="2020-12-27 15:56:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2022/04/09/react/redux/01-%E6%B7%B1%E5%85%A5redux/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-深入redux">01-深入redux</span>
+            <span class="post-date" title="2022-04-09 22:55:28">2022/04/09</span>
+        </a>
+        
+        <a  class="All js webpack "
+           href="/2021/08/26/js/webpack/webpack%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86/"
+           data-tag="js,webpack"
+           data-author="" >
+            <span class="post-title" title="webpack第一课：打包原理">webpack第一课：打包原理</span>
+            <span class="post-date" title="2021-08-26 22:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="All js babel "
+           href="/2021/08/21/js/babel/babel%E5%AD%A6%E4%B9%A0/"
+           data-tag="js,babel"
+           data-author="" >
+            <span class="post-title" title="babel学习">babel学习</span>
+            <span class="post-date" title="2021-08-21 22:17:14">2021/08/21</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/07/15/js/work/%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E4%B8%80%E4%B8%AA%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="如何调试一个第三方库">如何调试一个第三方库</span>
+            <span class="post-date" title="2021-07-15 17:05:24">2021/07/15</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/07/js/work/js%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js中的设计模式">js中的设计模式</span>
+            <span class="post-date" title="2021-04-07 19:37:22">2021/04/07</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/04/07/git/git%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git的日常使用">git的日常使用</span>
+            <span class="post-date" title="2021-04-07 14:44:47">2021/04/07</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/02/js/work/%E4%B8%8D%E5%A4%9F%E7%BB%86%E8%8A%82%E5%AF%BC%E8%87%B4%E7%9A%84BUG/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="不够细节导致的BUG">不够细节导致的BUG</span>
+            <span class="post-date" title="2021-04-02 14:06:21">2021/04/02</span>
+        </a>
+        
+        <a  class="All 后端 k8s "
+           href="/2021/03/30/k8s/minikube%E8%BF%9B%E8%A1%8Ck8s%E5%8D%95%E8%8A%82%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA/"
+           data-tag="k8s,DevOps"
+           data-author="" >
+            <span class="post-title" title="minikube进行k8s单节点的搭建">minikube进行k8s单节点的搭建</span>
+            <span class="post-date" title="2021-03-30 11:35:04">2021/03/30</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/03/29/docker/docker%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker常用的命令">docker常用的命令</span>
+            <span class="post-date" title="2021-03-29 21:45:14">2021/03/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/17/react/work/redux-sage%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%8A%A8/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="redux-sage的数据的流动">redux-sage的数据的流动</span>
+            <span class="post-date" title="2021-03-17 11:16:48">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E7%9A%84%E5%AE%98%E6%96%B9API/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr的官方API">normalizr的官方API</span>
+            <span class="post-date" title="2021-03-17 09:50:59">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE%E5%88%A9%E5%99%A8/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr格式化数据利器">normalizr格式化数据利器</span>
+            <span class="post-date" title="2021-03-17 09:50:42">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/15/js/work/%E4%BD%BF%E7%94%A8Memoization%E4%BC%98%E5%8C%96/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="使用Memoization空间换时间">使用Memoization空间换时间</span>
+            <span class="post-date" title="2021-03-15 20:09:27">2021/03/15</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/14/react/work/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="项目中常用的第三方库">项目中常用的第三方库</span>
+            <span class="post-date" title="2021-03-14 09:28:21">2021/03/14</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/09/react/ssr/01-react%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-react服务端渲染">01-react服务端渲染</span>
+            <span class="post-date" title="2021-03-09 09:24:40">2021/03/09</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E6%B7%B1%E5%85%A5%E6%95%B0%E7%BB%84%E7%9A%84%E5%90%84%E4%B8%AAAPI/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="深入数组的各个API">深入数组的各个API</span>
+            <span class="post-date" title="2021-02-27 15:32:48">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E5%89%8D%E7%AB%AF%E8%A6%81%E7%94%A8%E7%9A%84%E7%BC%93%E5%AD%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="前端要用的缓存">前端要用的缓存</span>
+            <span class="post-date" title="2021-02-27 11:17:17">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/26/js/work/js%E7%9A%84new%E5%8E%9F%E7%90%86%E5%92%8Capply-call-bind/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的new原理和apply-call-bind">js的new原理和apply-call-bind</span>
+            <span class="post-date" title="2021-02-26 17:19:33">2021/02/26</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/02/24/css/css%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%93%E9%A2%98/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的选择器专题">css的选择器专题</span>
+            <span class="post-date" title="2021-02-24 22:09:11">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的状态码专题">js的状态码专题</span>
+            <span class="post-date" title="2021-02-24 21:47:52">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E8%B7%A8%E5%9F%9F%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的跨域专题">js的跨域专题</span>
+            <span class="post-date" title="2021-02-24 21:29:01">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84Promise%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的Promise专题">js的Promise专题</span>
+            <span class="post-date" title="2021-02-24 21:21:31">2021/02/24</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/24/js/jsMDN/01-%E8%AF%AD%E6%B3%95%E5%92%8C%E7%B1%BB%E5%9E%8B/"
+           data-tag="js,mdn"
+           data-author="" >
+            <span class="post-title" title="01-语法和类型">01-语法和类型</span>
+            <span class="post-date" title="2021-02-24 17:22:46">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/23/js/work/js%E7%9A%84%E6%98%93%E6%B7%B7%E7%82%B9/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的易混点">js的易混点</span>
+            <span class="post-date" title="2021-02-23 21:03:57">2021/02/23</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/17/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-05-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%95%8C%E9%9D%A2%E7%9A%84%E8%BF%87%E7%A8%8B/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-05-浏览器渲染界面的过程">前端高手进阶-05-浏览器渲染界面的过程</span>
+            <span class="post-date" title="2021-02-17 21:19:52">2021/02/17</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/02/17/python/python%E7%9A%84Odoo12%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/"
+           data-tag="python,odoo"
+           data-author="" >
+            <span class="post-title" title="python的Odoo12的模块开发">python的Odoo12的模块开发</span>
+            <span class="post-date" title="2021-02-17 11:48:38">2021/02/17</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/16/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-04-%E6%8E%8C%E6%8F%A1CSS%E7%B2%BE%E9%AB%93%E2%80%94%E2%80%94%E5%B8%83%E5%B1%80/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-04-掌握CSS精髓——布局">前端高手进阶-04-掌握CSS精髓——布局</span>
+            <span class="post-date" title="2021-02-16 15:20:10">2021/02/16</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-03-DOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%B7%B1%E5%85%A5/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-03-DOM事件的深入">前端高手进阶-03-DOM事件的深入</span>
+            <span class="post-date" title="2021-02-15 17:09:51">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-02-%E9%AB%98%E6%95%88%E6%93%8D%E4%BD%9CDOM%E5%85%83%E7%B4%A0/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-02-高效操作DOM元素">前端高手进阶-02-高效操作DOM元素</span>
+            <span class="post-date" title="2021-02-15 15:54:14">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/14/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-01-%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%86%9F%E6%82%89HTML%E6%A0%87%E7%AD%BE%E5%90%97%EF%BC%9F/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-01-你真的熟悉HTML标签吗？">前端高手进阶-01-你真的熟悉HTML标签吗？</span>
+            <span class="post-date" title="2021-02-14 19:00:00">2021/02/14</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-05-ES6%E4%BD%BF%E7%94%A8/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-05-ES6使用">JS进阶-05-ES6使用</span>
+            <span class="post-date" title="2021-02-13 15:07:55">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-04-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-04-正则表达式">JS进阶-04-正则表达式</span>
+            <span class="post-date" title="2021-02-13 15:06:56">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-03-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8-this%E6%8C%87%E5%90%91-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-%E9%97%AD%E5%8C%85/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包">JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包</span>
+            <span class="post-date" title="2021-02-13 15:05:27">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-02-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E5%8E%9F%E5%9E%8B-%E7%BB%A7%E6%89%BF-ES5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-02-构造函数和原型-继承-ES5新增方法">JS进阶-02-构造函数和原型-继承-ES5新增方法</span>
+            <span class="post-date" title="2021-02-13 15:04:18">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-01-面向对象">JS进阶-01-面向对象</span>
+            <span class="post-date" title="2021-02-13 15:03:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-03-事件-对象-插件">JS中的jQuery的使用-03-事件-对象-插件</span>
+            <span class="post-date" title="2021-02-13 15:00:39">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-02-%E6%93%8D%E4%BD%9C%5B%E5%B1%9E%E6%80%A7-%E6%96%87%E6%9C%AC-%E5%85%83%E7%B4%A0-%E5%B0%BA%E5%AF%B8-%E4%BD%8D%E7%BD%AE%5D/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]">JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]</span>
+            <span class="post-date" title="2021-02-13 14:59:10">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-01-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%A0%B7%E5%BC%8F-%E6%95%88%E6%9E%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-01-基本使用-选择器-样式-效果">JS中的jQuery的使用-01-基本使用-选择器-样式-效果</span>
+            <span class="post-date" title="2021-02-13 14:57:38">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-07-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-07-移动端开发">JS中的WEB-APIS-07-移动端开发</span>
+            <span class="post-date" title="2021-02-13 14:44:57">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-06-%E5%B0%81%E8%A3%85%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0-%E5%B8%B8%E8%A7%81%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88-%E8%A7%A6%E5%B1%8F%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件">JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件</span>
+            <span class="post-date" title="2021-02-13 14:42:13">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-05-%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8Foffset-%E5%85%83%E7%B4%A0%E5%8F%AF%E8%A7%86%E5%8C%BAclient-%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数">JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数</span>
+            <span class="post-date" title="2021-02-13 14:32:09">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-04-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6-BOM-JS%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制">JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制</span>
+            <span class="post-date" title="2021-02-13 14:30:15">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-03-DOM%E6%80%BB%E7%BB%93-%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件">JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件</span>
+            <span class="post-date" title="2021-02-13 14:27:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-02-%E6%8E%92%E4%BB%96%E6%93%8D%E4%BD%9C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%92%8C%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-02-排他操作-自定义属性和节点操作">JS中的WEB-APIS-02-排他操作-自定义属性和节点操作</span>
+            <span class="post-date" title="2021-02-13 14:23:21">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-01/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-01">JS中的WEB-APIS-01</span>
+            <span class="post-date" title="2021-02-13 14:18:08">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的对象">JS中的对象</span>
+            <span class="post-date" title="2021-02-13 11:39:40">2021/02/13</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8020-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98%5B%E5%90%AB%E7%AD%94%E6%A1%88%5D/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础20-JS-面试真题[含答案]">JS基础20-JS-面试真题[含答案]</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8019-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础19-JS-面试真题">JS基础19-JS-面试真题</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8018-JS-%E5%85%A8%E8%AF%BE%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础18-JS-全课总结">JS基础18-JS-全课总结</span>
+            <span class="post-date" title="2021-02-08 19:41:55">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8017-JS-%E5%B0%8F%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础17-JS-小总结">JS基础17-JS-小总结</span>
+            <span class="post-date" title="2021-02-08 19:04:58">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8016-JS-%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础16-JS-安全问题">JS基础16-JS-安全问题</span>
+            <span class="post-date" title="2021-02-08 18:51:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8015-JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%98%B2%E6%8A%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础15-JS-性能优化之防抖">JS基础15-JS-性能优化之防抖</span>
+            <span class="post-date" title="2021-02-08 17:45:40">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8014-JS-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础14-JS-运行环境和性能优化">JS基础14-JS-运行环境和性能优化</span>
+            <span class="post-date" title="2021-02-08 16:35:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8013-JS-webpack-babel/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础13-JS-webpack-babel">JS基础13-JS-webpack-babel</span>
+            <span class="post-date" title="2021-02-06 20:18:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8012-JS-Web_API%E4%B9%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础12-JS-Web_API之开发环境">JS基础12-JS-Web_API之开发环境</span>
+            <span class="post-date" title="2021-02-06 20:00:59">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8011-JS-Web_API%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础11-JS-Web_API之数据存储">JS基础11-JS-Web_API之数据存储</span>
+            <span class="post-date" title="2021-02-06 15:09:33">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8010-JS-Web_API%E4%B9%8B%E8%B7%A8%E5%9F%9F/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础10-JS-Web_API之跨域">JS基础10-JS-Web_API之跨域</span>
+            <span class="post-date" title="2021-02-06 14:10:06">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8009-JS-Web_API%E4%B9%8BAjax/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础09-JS-Web_API之Ajax">JS基础09-JS-Web_API之Ajax</span>
+            <span class="post-date" title="2021-02-06 13:07:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8008-JS-Web_API%E4%B9%8B%E4%BA%8B%E4%BB%B6/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础08-JS-Web_API之事件">JS基础08-JS-Web_API之事件</span>
+            <span class="post-date" title="2021-02-06 00:14:09">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8007-JS-Web_API%E4%B9%8BBOM/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础07-JS-Web_API之BOM">JS基础07-JS-Web_API之BOM</span>
+            <span class="post-date" title="2021-02-06 00:05:10">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/05/js/jsBase/JS%E5%9F%BA%E7%A1%8006-JS-Web_API/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础06-JS-Web_API-DOM">JS基础06-JS-Web_API-DOM</span>
+            <span class="post-date" title="2021-02-05 23:18:51">2021/02/05</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8005-%E5%89%8D4%E7%AB%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础05-前4章内容回顾">JS基础05-前4章内容回顾</span>
+            <span class="post-date" title="2021-01-31 21:53:32">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8004-%E5%BC%82%E6%AD%A5%E5%92%8C%E5%8D%95%E7%BA%BF%E7%A8%8B/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础04-异步和单线程">JS基础04-异步和单线程</span>
+            <span class="post-date" title="2021-01-31 17:37:27">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8003-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E9%97%AD%E5%8C%85/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础03-作用域和闭包">JS基础03-作用域和闭包</span>
+            <span class="post-date" title="2021-01-31 15:36:57">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8002-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础02-原型和原型链">JS基础02-原型和原型链</span>
+            <span class="post-date" title="2021-01-31 12:12:52">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/30/js/jsBase/JS%E5%9F%BA%E7%A1%8001-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础01-变量类型和计算汇总">JS基础01-变量类型和计算汇总</span>
+            <span class="post-date" title="2021-01-30 23:34:27">2021/01/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/27/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C%E7%BB%A7%E6%89%BF%E5%B0%8Fdemo/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts中的类和继承的小demo">ts中的类和继承的小demo</span>
+            <span class="post-date" title="2021-01-27 23:52:58">2021/01/27</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/26/amcharts4/amcharts4%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E7%AC%AC%E4%B8%80%E7%AB%A0/"
+           data-tag="ts,amchart4,数据可视化"
+           data-author="" >
+            <span class="post-title" title="amcharts4源码解读第一章">amcharts4源码解读第一章</span>
+            <span class="post-date" title="2021-01-26 11:47:12">2021/01/26</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2021/01/18/linux/%E6%96%B0%E8%A3%85ubuntu20%E5%90%8E%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="新装ubuntu20后的配置">新装ubuntu20后的配置</span>
+            <span class="post-date" title="2021-01-18 23:22:54">2021/01/18</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的工程化">css的工程化</span>
+            <span class="post-date" title="2021-01-17 15:26:05">2021/01/17</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css预处理器">css预处理器</span>
+            <span class="post-date" title="2021-01-17 14:23:52">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 数据库 "
+           href="/2021/01/17/mysql/mysql%E5%85%81%E8%AE%B8%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql允许远程访问">mysql允许远程访问</span>
+            <span class="post-date" title="2021-01-17 00:17:22">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8mysql/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用mysql">docker使用mysql</span>
+            <span class="post-date" title="2021-01-16 21:24:27">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8jenkins/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用jenkins">docker使用jenkins</span>
+            <span class="post-date" title="2021-01-16 21:18:22">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2021/01/16/drf/djangoRestFul%E7%AC%AC%E4%B8%80%E8%AF%BE/"
+           data-tag="django,vue,drf"
+           data-author="" >
+            <span class="post-title" title="djangoRestFul第一课">djangoRestFul第一课</span>
+            <span class="post-date" title="2021-01-16 21:16:21">2021/01/16</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/16/css/css%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B1%80/"
+           data-tag="css,css布局,面试"
+           data-author="" >
+            <span class="post-title" title="css中的布局【超重要】">css中的布局【超重要】</span>
+            <span class="post-date" title="2021-01-16 13:36:03">2021/01/16</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/Fiddler%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E7%94%A8%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/"
+           data-tag="python,work,fiddler,H5定位"
+           data-author="" >
+            <span class="post-title" title="Fiddler抓包分析谷歌浏览器调用地理位置错误原因">Fiddler抓包分析谷歌浏览器调用地理位置错误原因</span>
+            <span class="post-date" title="2021-01-14 23:16:53">2021/01/14</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"
+           data-tag="work,H5定位"
+           data-author="" >
+            <span class="post-title" title="地理位置相关问题">地理位置相关问题</span>
+            <span class="post-date" title="2021-01-14 15:40:22">2021/01/14</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/01/12/git/%E5%B8%B8%E7%94%A8%E7%9A%84git%E5%91%BD%E4%BB%A4/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="常用的git命令">常用的git命令</span>
+            <span class="post-date" title="2021-01-12 20:07:13">2021/01/12</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="10- ts中的高级类型">10- ts中的高级类型</span>
+            <span class="post-date" title="2021-01-10 18:56:39">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84mixin%E5%B1%9E%E6%80%A7%E7%9A%84%E6%B7%B7%E5%92%8C/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="09-ts中的mixin属性的混和">09-ts中的mixin属性的混和</span>
+            <span class="post-date" title="2021-01-10 18:46:49">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/06/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E6%80%A7/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="08-ts中的类型推论和类型兼容性">08-ts中的类型推论和类型兼容性</span>
+            <span class="post-date" title="2021-01-06 21:03:32">2021/01/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/06/js/jsBase/FCC%E7%9A%84ES6%E7%AC%94%E8%AE%B0/"
+           data-tag="js,ES6"
+           data-author="" >
+            <span class="post-title" title="FCC的ES6笔记">FCC的ES6笔记</span>
+            <span class="post-date" title="2021-01-06 20:59:22">2021/01/06</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/01/02/python/python%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"
+           data-tag="django,python,linux,ubuntu"
+           data-author="" >
+            <span class="post-title" title="python安装虚拟环境">python安装虚拟环境</span>
+            <span class="post-date" title="2021-01-02 11:24:26">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/02/ts/ts%E4%B8%AD%E7%9A%84%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="07-ts中的枚举类型">07-ts中的枚举类型</span>
+            <span class="post-date" title="2021-01-02 08:38:22">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/01/ts/ts%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="06-ts中的函数">06-ts中的函数</span>
+            <span class="post-date" title="2021-01-01 13:12:53">2021/01/01</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/31/ts/ts%E4%B8%AD%E7%9A%84%E6%B3%9B%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="05-ts中的泛型">05-ts中的泛型</span>
+            <span class="post-date" title="2020-12-31 09:57:23">2020/12/31</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/30/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="04-ts中的类">04-ts中的类</span>
+            <span class="post-date" title="2020-12-30 14:12:19">2020/12/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3/"
+           data-tag="ts,类,对象"
+           data-author="" >
+            <span class="post-title" title="03-ts中的接口">03-ts中的接口</span>
+            <span class="post-date" title="2020-12-29 14:08:53">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E6%88%96js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"
+           data-tag="ts,变量声明,let var const"
+           data-author="" >
+            <span class="post-title" title="02-ts或js中的变量声明">02-ts或js中的变量声明</span>
+            <span class="post-date" title="2020-12-29 14:06:14">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="01-ts基础类型">01-ts基础类型</span>
+            <span class="post-date" title="2020-12-29 11:35:21">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%AE%98%E6%96%B9%E5%85%A5%E9%97%A8/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts官方入门">ts官方入门</span>
+            <span class="post-date" title="2020-12-29 10:52:39">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/index/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts主页">ts主页</span>
+            <span class="post-date" title="2020-12-29 10:51:59">2020/12/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/28/react/react%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"
+           data-tag="react,react 生命周期,引用类型"
+           data-author="" >
+            <span class="post-title" title="react中使用引用类型的注意事项">react中使用引用类型的注意事项</span>
+            <span class="post-date" title="2020-12-28 15:58:32">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="python,正则"
+           data-author="" >
+            <span class="post-title" title="常见的正则表达式">常见的正则表达式</span>
+            <span class="post-date" title="2020-12-28 11:06:24">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%8D%81%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A%E6%AD%A3%E5%88%99/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="十分钟学会正则">十分钟学会正则</span>
+            <span class="post-date" title="2020-12-28 10:53:09">2020/12/28</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/jsBase/index/"
+           data-tag="js,JS基础"
+           data-author="" >
+            <span class="post-title" title="JS的基础使用">JS的基础使用</span>
+            <span class="post-date" title="2020-12-27 18:11:49">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%89%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第三章">数据结构和算法 第三章</span>
+            <span class="post-date" title="2020-12-27 16:34:06">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第二章">数据结构和算法 第二章</span>
+            <span class="post-date" title="2020-12-27 16:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第一章">数据结构和算法 第一章</span>
+            <span class="post-date" title="2020-12-27 15:58:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo和Typora中添加图片">hexo和Typora中添加图片</span>
+            <span class="post-date" title="2020-12-27 12:59:29">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式基本使用">正则表达式基本使用</span>
+            <span class="post-date" title="2020-12-27 12:36:30">2020/12/27</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="FCC中总结的css">FCC中总结的css</span>
+            <span class="post-date" title="2020-12-27 11:04:18">2020/12/27</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/index/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="js">js</span>
+            <span class="post-date" title="2020-12-27 11:04:02">2020/12/27</span>
+        </a>
+        
+        <a  class="All h5 "
+           href="/2020/12/27/h5/index/"
+           data-tag="h5"
+           data-author="" >
+            <span class="post-title" title="h5">h5</span>
+            <span class="post-date" title="2020-12-27 11:03:43">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2020/12/27/django/index/"
+           data-tag="django,python"
+           data-author="" >
+            <span class="post-title" title="django">django</span>
+            <span class="post-date" title="2020-12-27 11:00:08">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/index/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo的基本使用">hexo的基本使用</span>
+            <span class="post-date" title="2020-12-27 10:51:52">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/index/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="re">re</span>
+            <span class="post-date" title="2020-12-27 10:49:23">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/27/react/demo/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="react">react</span>
+            <span class="post-date" title="2020-12-27 10:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2019/10/23/python/python%E7%9A%84xlwt%E6%93%8D%E4%BD%9CExcel%E6%96%87%E6%A1%A3/"
+           data-tag="python,自动化办公,数据分析"
+           data-author="" >
+            <span class="post-title" title="python的xlwt操作Excel文档">python的xlwt操作Excel文档</span>
+            <span class="post-date" title="2019-10-23 11:33:58">2019/10/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/23/linux/%E6%96%87%E4%BB%B6%E3%80%81%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="文件、磁盘管理">文件、磁盘管理</span>
+            <span class="post-date" title="2018-12-23 22:15:18">2018/12/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/22/linux/ssh%E5%92%8Cscp%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ssh和scp远程连接和远程拷贝">ssh和scp远程连接和远程拷贝</span>
+            <span class="post-date" title="2018-12-22 23:13:18">2018/12/22</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/21/linux/ubuntu%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ubuntu软件安装卸载">ubuntu软件安装卸载</span>
+            <span class="post-date" title="2018-12-21 23:08:47">2018/12/21</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/20/linux/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="系统管理">系统管理</span>
+            <span class="post-date" title="2018-12-20 23:02:17">2018/12/20</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/index/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="用户和权限管理">用户和权限管理</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-js/jsJob/JS中的jQuery的使用-03-事件-对象-插件" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">JS中的jQuery的使用-03-事件-对象-插件</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="js">js</a> > 
+            
+            <a  data-rel="js&lt;---&gt;js基础回顾">js基础回顾</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">js</a>
+            
+            <a class="color2">js基础回顾</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-02-09 10:37:18'>2021-02-13 15:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6"><span class="toc-text">事件-对象-插件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-jQuery-%E4%BA%8B%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="toc-text">1.1. jQuery 事件注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-jQuery-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">1.2. jQuery 事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86-on-%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6"><span class="toc-text">1.2.1 事件处理 on() 绑定事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%8F%91%E5%B8%83%E5%BE%AE%E5%8D%9A%E6%A1%88%E4%BE%8B"><span class="toc-text">1.2.2. 案例：发布微博案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86-off-%E8%A7%A3%E7%BB%91%E4%BA%8B%E4%BB%B6"><span class="toc-text">1.2.3. 事件处理 off() 解绑事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86-trigger-%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6"><span class="toc-text">1.2.4. 事件处理 trigger() 自动触发事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-jQuery-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.3. jQuery 事件对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-jQuery-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.4.  jQuery 拷贝对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-jQuery-%E5%A4%9A%E5%BA%93%E5%85%B1%E5%AD%98"><span class="toc-text">1.5.  jQuery 多库共存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-jQuery-%E6%8F%92%E4%BB%B6"><span class="toc-text">1.6.  jQuery 插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-%E7%80%91%E5%B8%83%E6%B5%81%E6%8F%92%E4%BB%B6%EF%BC%88%E9%87%8D%E7%82%B9%E8%AE%B2%E8%A7%A3%EF%BC%89"><span class="toc-text">1.4.1.  瀑布流插件（重点讲解）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="toc-text">1.4.2. 图片懒加载插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-3-%E5%85%A8%E5%B1%8F%E6%BB%9A%E5%8A%A8%E6%8F%92%E4%BB%B6"><span class="toc-text">1.4.3. 全屏滚动插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-4-bootstrap%E7%BB%84%E4%BB%B6"><span class="toc-text">1.4.4. bootstrap组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-5-bootstrap%E6%8F%92%E4%BB%B6%EF%BC%88JS%EF%BC%89"><span class="toc-text">1.4.5. bootstrap插件（JS）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-6-bootstrap%E6%A1%88%E4%BE%8B-%E9%98%BF%E9%87%8C%E7%99%BE%E7%A7%80"><span class="toc-text">1.4.6. bootstrap案例-阿里百秀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B-toDoList%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%EF%BC%88%E4%BB%A3%E7%A0%81%E7%95%A5%EF%BC%89"><span class="toc-text">1.7. 综合案例: toDoList案例分析（代码略）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%A1%88%E4%BE%8B%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.7.1 案例：案例介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-2-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E5%88%86%E6%9E%90"><span class="toc-text">1.7.2 案例：toDoList 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-3-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E6%8A%8A%E6%96%B0%E6%95%B0%E6%8D%AE%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E9%87%8C%E9%9D%A2"><span class="toc-text">1.7.3 案例：toDoList 按下回车把新数据添加到本地存储里面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-4-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E5%8A%A0%E8%BD%BD%E5%88%B0%E9%A1%B5%E9%9D%A2"><span class="toc-text">1.7.4 案例：toDoList 本地存储数据渲染加载到页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-5-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-text">1.7.5 案例：toDoList 删除操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-6-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E6%AD%A3%E5%9C%A8%E8%BF%9B%E8%A1%8C%E5%92%8C%E5%B7%B2%E5%AE%8C%E6%88%90%E9%80%89%E9%A1%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">1.7.6 案例：toDoList  正在进行和已完成选项操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-7-%E6%A1%88%E4%BE%8B%EF%BC%9AtoDoList-%E7%BB%9F%E8%AE%A1%E6%AD%A3%E5%9C%A8%E8%BF%9B%E8%A1%8C%E4%B8%AA%E6%95%B0%E5%92%8C%E5%B7%B2%E7%BB%8F%E5%AE%8C%E6%88%90%E4%B8%AA%E6%95%B0"><span class="toc-text">1.7.7 案例：toDoList 统计正在进行个数和已经完成个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="toc-text">1.8. 今日总结</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件-对象-插件"><a href="#事件-对象-插件" class="headerlink" title="事件-对象-插件"></a>事件-对象-插件</h1><blockquote>
+<p>学习目标：</p>
+<p>能够说出4种常见的注册事件<br>能够说出 on 绑定事件的优势<br>能够说出 jQuery 事件委派的优点以及方式<br>能够说出绑定事件与解绑事件<br>能够说出 jQuery 对象的拷贝方法<br>能够说出 jQuery 多库共存的2种方法<br>能够使用 jQuery 插件</p>
+</blockquote>
+<h2 id="1-1-jQuery-事件注册"><a href="#1-1-jQuery-事件注册" class="headerlink" title="1.1. jQuery 事件注册"></a>1.1. jQuery 事件注册</h2><p>​    jQuery 为我们提供了方便的事件注册机制，是开发人员抑郁操作优缺点如下：</p>
+<ul>
+<li>优点: 操作简单，且不用担心事件覆盖等问题。</li>
+<li>缺点: 普通的事件注册不能做事件委托，且无法实现事件解绑，需要借助其他方法。</li>
+</ul>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/register.png" class title="register">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $(function() &#123;
+            // 1. 单个事件注册
+            $(&quot;div&quot;).click(function() &#123;
+                $(this).css(&quot;background&quot;, &quot;purple&quot;);
+            &#125;);
+            $(&quot;div&quot;).mouseenter(function() &#123;
+                $(this).css(&quot;background&quot;, &quot;skyblue&quot;);
+            &#125;);
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<h2 id="1-2-jQuery-事件处理"><a href="#1-2-jQuery-事件处理" class="headerlink" title="1.2. jQuery 事件处理"></a>1.2. jQuery 事件处理</h2><p>​    因为普通注册事件方法的不足，jQuery又开发了多个处理方法，重点讲解如下：</p>
+<ul>
+<li>on(): 用于事件绑定，目前最好用的事件绑定方法</li>
+<li>off(): 事件解绑</li>
+<li>trigger() / triggerHandler(): 事件触发</li>
+</ul>
+<h3 id="1-2-1-事件处理-on-绑定事件"><a href="#1-2-1-事件处理-on-绑定事件" class="headerlink" title="1.2.1 事件处理 on() 绑定事件"></a>1.2.1 事件处理 on() 绑定事件</h3><p>​    因为普通注册事件方法的不足，jQuery又创建了多个新的事件绑定方法bind() / live() / delegate() / on()等，其中最好用的是: on()</p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/on1.png" class title="on1">
+
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/on2.png" class title="on2">
+
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/on3.png" class title="on3">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;&lt;/ol&gt;
+
+    &lt;script&gt;
+        $(function() &#123;
+            // (1) on可以绑定1个或者多个事件处理程序
+            // $(&quot;div&quot;).on(&#123;
+            //     mouseenter: function() &#123;
+            //         $(this).css(&quot;background&quot;, &quot;skyblue&quot;);
+            //     &#125;,
+            //     click: function() &#123;
+            //         $(this).css(&quot;background&quot;, &quot;purple&quot;);
+            //     &#125;
+            // &#125;);
+            $(&quot;div&quot;).on(&quot;mouseenter mouseleave&quot;, function() &#123;
+                $(this).toggleClass(&quot;current&quot;);
+            &#125;);
+
+            // (2) on可以实现事件委托（委派）
+            // click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
+            // $(&quot;ul li&quot;).click();
+            $(&quot;ul&quot;).on(&quot;click&quot;, &quot;li&quot;, function() &#123;
+                alert(11);
+            &#125;);
+
+            // (3) on可以给未来动态创建的元素绑定事件
+            $(&quot;ol&quot;).on(&quot;click&quot;, &quot;li&quot;, function() &#123;
+                alert(11);
+            &#125;)
+            var li = $(&quot;&lt;li&gt;我是后来创建的&lt;/li&gt;&quot;);
+            $(&quot;ol&quot;).append(li);
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="1-2-2-案例：发布微博案例"><a href="#1-2-2-案例：发布微博案例" class="headerlink" title="1.2.2. 案例：发布微博案例"></a>1.2.2. 案例：发布微博案例</h3><blockquote>
+<p>1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中。<br>2.点击的删除按钮，可以删除当前的微博留言。</p>
+</blockquote>
+<p>​    代码实现略。(详情参考源代码)</p>
+<h3 id="1-2-3-事件处理-off-解绑事件"><a href="#1-2-3-事件处理-off-解绑事件" class="headerlink" title="1.2.3. 事件处理 off() 解绑事件"></a>1.2.3. 事件处理 off() 解绑事件</h3><p>​    当某个事件上面的逻辑，在特定需求下不需要的时候，可以把该事件上的逻辑移除，这个过程我们称为事件解绑。jQuery 为我们提供 了多种事件解绑方法：die() / undelegate() / off() 等，甚至还有只触发一次的事件绑定方法 one()，在这里我们重点讲解一下 off() ;</p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/off.png" class title="off">
+
+
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+        &lt;li&gt;我们都是好孩子&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;我是一个P标签&lt;/p&gt;
+    &lt;script&gt;
+        $(function() &#123;
+              // 事件绑定
+            $(&quot;div&quot;).on(&#123;
+                click: function() &#123;
+                    console.log(&quot;我点击了&quot;);
+                &#125;,
+                mouseover: function() &#123;
+                    console.log(&#39;我鼠标经过了&#39;);
+                &#125;
+            &#125;);
+            $(&quot;ul&quot;).on(&quot;click&quot;, &quot;li&quot;, function() &#123;
+                alert(11);
+            &#125;);
+
+            // 1. 事件解绑 off 
+            // $(&quot;div&quot;).off();  // 这个是解除了div身上的所有事件
+            $(&quot;div&quot;).off(&quot;click&quot;); // 这个是解除了div身上的点击事件
+            $(&quot;ul&quot;).off(&quot;click&quot;, &quot;li&quot;);
+
+            // 2. one() 但是它只能触发事件一次
+            $(&quot;p&quot;).one(&quot;click&quot;, function() &#123;
+                alert(11);
+            &#125;)
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<h3 id="1-2-4-事件处理-trigger-自动触发事件"><a href="#1-2-4-事件处理-trigger-自动触发事件" class="headerlink" title="1.2.4. 事件处理 trigger() 自动触发事件"></a>1.2.4. 事件处理 trigger() 自动触发事件</h3><p>​    有些时候，在某些特定的条件下，我们希望某些事件能够自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。由此 jQuery 为我们提供了两个自动触发事件 trigger() 和 triggerHandler() ; </p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/t1.png" class title="t1">
+
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/t2.png" class title="t2">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;input type=&quot;text&quot;&gt;
+
+    &lt;script&gt;
+    $(function() &#123;
+      // 绑定事件
+      $(&quot;div&quot;).on(&quot;click&quot;, function() &#123;
+        alert(11);
+      &#125;);
+
+      // 自动触发事件
+      // 1. 元素.事件()
+      // $(&quot;div&quot;).click();会触发元素的默认行为
+
+      // 2. 元素.trigger(&quot;事件&quot;)
+      // $(&quot;div&quot;).trigger(&quot;click&quot;);会触发元素的默认行为
+      $(&quot;input&quot;).trigger(&quot;focus&quot;);
+
+      // 3. 元素.triggerHandler(&quot;事件&quot;) 就是不会触发元素的默认行为
+      $(&quot;input&quot;).on(&quot;focus&quot;, function() &#123;
+        $(this).val(&quot;你好吗&quot;);
+      &#125;);
+      // 一个会获取焦点，一个不会
+      $(&quot;div&quot;).triggerHandler(&quot;click&quot;);
+      // $(&quot;input&quot;).triggerHandler(&quot;focus&quot;);
+    &#125;);
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<h2 id="1-3-jQuery-事件对象"><a href="#1-3-jQuery-事件对象" class="headerlink" title="1.3. jQuery 事件对象"></a>1.3. jQuery 事件对象</h2><p>​    jQuery 对DOM中的事件对象 event 进行了封装，兼容性更好，获取更方便，使用变化不大。事件被触发，就会有事件对象的产生。</p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/event.png" class title="event">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        $(function() &#123;
+            $(document).on(&quot;click&quot;, function() &#123;
+                console.log(&quot;点击了document&quot;);
+            &#125;)
+            $(&quot;div&quot;).on(&quot;click&quot;, function(event) &#123;
+                // console.log(event);
+                console.log(&quot;点击了div&quot;);
+                event.stopPropagation();
+            &#125;)
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>注意：jQuery中的 event 对象使用，可以借鉴 API 和 DOM 中的 event 。</p>
+<h2 id="1-4-jQuery-拷贝对象"><a href="#1-4-jQuery-拷贝对象" class="headerlink" title="1.4.  jQuery 拷贝对象"></a>1.4.  jQuery 拷贝对象</h2><p>​    jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。</p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/extend.png" class title="extend">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript"> &lt;script&gt;
+        $(function() &#123;
+               // 1.合并数据
+            var targetObj = &#123;&#125;;
+            var obj = &#123;
+                id: 1,
+                name: &quot;andy&quot;
+            &#125;;
+            // $.extend(target, obj);
+            $.extend(targetObj, obj);
+            console.log(targetObj);
+
+               // 2. 会覆盖 targetObj 里面原来的数据
+            var targetObj = &#123;
+                id: 0
+            &#125;;
+            var obj = &#123;
+                id: 1,
+                name: &quot;andy&quot;
+            &#125;;
+            // $.extend(target, obj);
+            $.extend(targetObj, obj);
+            console.log(targetObj); 
+        &#125;)
+    &lt;/script&gt;</code></pre>
+<h2 id="1-5-jQuery-多库共存"><a href="#1-5-jQuery-多库共存" class="headerlink" title="1.5.  jQuery 多库共存"></a>1.5.  jQuery 多库共存</h2><p>​    实际开发中，很多项目连续开发十多年，jQuery版本不断更新，最初的 jQuery 版本无法满足需求，这时就需要保证在旧有版本正常运行的情况下，新的功能使用新的jQuery版本实现，这种情况被称为，jQuery 多库共存。</p>
+<p><strong>语法</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/noconfig.png" class title="noconfig">
+
+<p><strong>演示代码</strong></p>
+<pre><code class="javascript">&lt;script&gt;
+    $(function() &#123;
+          // 让jquery 释放对$ 控制权 让用自己决定
+          var suibian = jQuery.noConflict();
+          console.log(suibian(&quot;span&quot;));
+    &#125;)
+&lt;/script&gt;</code></pre>
+<h2 id="1-6-jQuery-插件"><a href="#1-6-jQuery-插件" class="headerlink" title="1.6.  jQuery 插件"></a>1.6.  jQuery 插件</h2><p>​    jQuery 功能比较有限，想要更复杂的特效效果，可以借助于 jQuery 插件完成。 这些插件也是依赖于jQuery来完成的，所以必须要先引入</p>
+<p>jQuery文件，因此也称为 jQuery 插件。</p>
+<p>​    jQuery 插件常用的网站：</p>
+<ol>
+<li><p>jQuery 插件库  <a target="_blank" rel="noopener" href="http://www.jq22.com/">http://www.jq22.com/</a>     </p>
+</li>
+<li><p>jQuery 之家   <a target="_blank" rel="noopener" href="http://www.htmleaf.com/">http://www.htmleaf.com/</a> </p>
+<p>jQuery 插件使用步骤：</p>
+</li>
+<li><p>引入相关文件。（jQuery 文件 和 插件文件）    </p>
+</li>
+<li><p>复制相关html、css、js (调用插件)。</p>
+</li>
+</ol>
+<h3 id="1-4-1-瀑布流插件（重点讲解）"><a href="#1-4-1-瀑布流插件（重点讲解）" class="headerlink" title="1.4.1.  瀑布流插件（重点讲解）"></a>1.4.1.  瀑布流插件（重点讲解）</h3><p>​    我们学习的第一个插件是jQuery之家的开源插件，瀑布流。我们将重点详细讲解，从找到插件所在网页，然后点击下载代码，到插件的使用等，后面的插件使用可参考瀑布流插件的使用。</p>
+<p><strong>下载位置</strong></p>
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/water.png" class title="water">
+
+<img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/download.png" class>
+
+<p><strong>代码演示</strong></p>
+<p>​    插件的使用三点：   1. 引入css.           2.引入JS            3.引入html。 （有的简单插件只需引入html和js，甚至有的只需引入js）</p>
+<ul>
+<li>1.引入css.</li>
+</ul>
+<pre><code class="javascript">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/default.css&quot;&gt;
+
+&lt;!-- 下面的样式代码为页面布局，可以引入，也可以自己写，自己设计页面样式，一般为直接引入，方便 --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+  #gallery-wrapper &#123;
+    position: relative;
+    max-width: 75%;
+    width: 75%;
+    margin: 50px auto;
+  &#125;
+
+  img.thumb &#123;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  &#125;
+
+  .white-panel &#123;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+  &#125;
+
+  .white-panel h1 &#123;
+    font-size: 1em;
+  &#125;
+
+  .white-panel h1 a &#123;
+    color: #A92733;
+  &#125;
+
+  .white-panel:hover &#123;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin-top: -5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  &#125;
+&lt;/style&gt;</code></pre>
+<ul>
+<li>2.引入js.</li>
+</ul>
+<pre><code class="javascript">&lt;!-- 前两个必须引入 --&gt;
+&lt;script src=&quot;js/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/pinterest_grid.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 下面的为启动瀑布流代码，参数可调节属性，具体功能可参考readme.html --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function() &#123;
+      $(&quot;#gallery-wrapper&quot;).pinterest_grid(&#123;
+          no_columns: 5,
+          padding_x: 15,
+          padding_y: 10,
+          margin_bottom: 50,
+          single_column_breakpoint: 700
+      &#125;);
+    &#125;);
+&lt;/script&gt;</code></pre>
+<ul>
+<li>3.引入html.</li>
+</ul>
+<pre><code class="javascript">    &lt;!-- html结构一般为事先写好，很难修改结构，但可以修改内容及图片的多少（article标签） --&gt;
+    &lt;section id=&quot;gallery-wrapper&quot;&gt;
+        &lt;article class=&quot;white-panel&quot;&gt;
+            &lt;img src=&quot;images/P_000.jpg&quot; class=&quot;thumb&quot;&gt;
+            &lt;h1&gt;&lt;a href=&quot;#&quot;&gt;我是轮播图片1&lt;/a&gt;&lt;/h1&gt;
+            &lt;p&gt;里面很精彩哦&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;white-panel&quot;&gt;
+            &lt;img src=&quot;images/P_005.jpg&quot; class=&quot;thumb&quot;&gt;
+            &lt;h1&gt;&lt;a href=&quot;#&quot;&gt;我是轮播图片1&lt;/a&gt;&lt;/h1&gt;
+            &lt;p&gt;里面很精彩哦&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;white-panel&quot;&gt;
+            &lt;img src=&quot;images/P_006.jpg&quot; class=&quot;thumb&quot;&gt;
+            &lt;h1&gt;&lt;a href=&quot;#&quot;&gt;我是轮播图片1&lt;/a&gt;&lt;/h1&gt;
+            &lt;p&gt;里面很精彩哦&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;white-panel&quot;&gt;
+            &lt;img src=&quot;images/P_007.jpg&quot; class=&quot;thumb&quot;&gt;
+            &lt;h1&gt;&lt;a href=&quot;#&quot;&gt;我是轮播图片1&lt;/a&gt;&lt;/h1&gt;
+            &lt;p&gt;里面很精彩哦&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;</code></pre>
+<p>总结：jQuery插件就是引入别人写好的：html 、css、js  （有时也可以只引入一部分，读懂后也可以修改部分内容）</p>
+<h3 id="1-4-2-图片懒加载插件"><a href="#1-4-2-图片懒加载插件" class="headerlink" title="1.4.2. 图片懒加载插件"></a>1.4.2. 图片懒加载插件</h3><p>​    图片的懒加载就是：当页面滑动到有图片的位置，图片才进行加载，用以提升页面打开的速度及用户体验。（下载略）</p>
+<p><strong>代码演示</strong></p>
+<p>​    懒加载只需引入html 和 js操作 即可，此插件不涉及css。</p>
+<ul>
+<li>1.引入js</li>
+</ul>
+<pre><code class="javascript">&lt;script src=&quot;js/EasyLazyload.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+       lazyLoadInit(&#123;
+           showTime: 1100,
+           onLoadBackEnd: function(i, e) &#123;
+             console.log(&quot;onLoadBackEnd:&quot; + i);
+           &#125;,
+           onLoadBackStart: function(i, e) &#123;
+             console.log(&quot;onLoadBackStart:&quot; + i);
+           &#125;
+     &#125;);
+&lt;/script&gt;</code></pre>
+<ul>
+<li>2.引入html</li>
+</ul>
+<pre><code class="javascript"> &lt;img data-lazy-src=&quot;upload/floor-1-3.png&quot; alt=&quot;&quot;&gt;</code></pre>
+<h3 id="1-4-3-全屏滚动插件"><a href="#1-4-3-全屏滚动插件" class="headerlink" title="1.4.3. 全屏滚动插件"></a>1.4.3. 全屏滚动插件</h3><p>​    全屏滚动插件比较大，所以，一般大型插件都会有帮助文档，或者网站。全屏滚动插件介绍比较详细的网站为：</p>
+<p><a target="_blank" rel="noopener" href="http://www.dowebok.com/demo/2014/77/">http://www.dowebok.com/demo/2014/77/</a></p>
+<p><strong>代码演示</strong></p>
+<p>​    全屏滚动因为有多重形式，所以不一样的风格html和css也不一样，但是 js 变化不大。所以下面只演示js的引入，html和css引入根据自己实际</p>
+<p>项目需要使用哪种风格引入对应的HTML和CSS。</p>
+<pre><code class="javascript">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/fullpage.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+      $(function() &#123;
+          $(&#39;#dowebok&#39;).fullpage(&#123;
+            sectionsColor: [&#39;pink&#39;, &#39;#4BBFC3&#39;, &#39;#7BAABE&#39;, &#39;#f90&#39;],
+            navigation: true
+          &#125;);
+    &#125;);
+&lt;/script&gt;</code></pre>
+<p>注意：实际开发，一般复制文件，然后在文件中进行修改和添加功能。</p>
+<h3 id="1-4-4-bootstrap组件"><a href="#1-4-4-bootstrap组件" class="headerlink" title="1.4.4. bootstrap组件"></a>1.4.4. bootstrap组件</h3><p>​    Bootstrap是 Twitter 公司设计的基于HTML、CSS、JavaScript开发的简洁、直观、强悍的前端开发框架，他依靠jQuery实现，且支持响应式</p>
+<p>布局，使得 Web 开发更加方便快捷。</p>
+<p>​    <strong>凡是在软件开发中用到了软件的复用，被复用的部分都可以称为组件，凡是在应用程序中已经预留接口的组件就是插件</strong>。Bootstrap组件使</p>
+<p>用非常方便:  1.引入bootstrap相关css和js        2.去官网复制html</p>
+<p><strong>代码演示</strong></p>
+<ol>
+<li>引入bootstrap相关css和js</li>
+</ol>
+<pre><code class="javascript">&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;bootstrap/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<ol start="2">
+<li>去官网复制html的功能模块</li>
+</ol>
+<pre><code class="javascript">    &lt;div class=&quot;container&quot;&gt;
+        &lt;!-- Single button --&gt;
+        &lt;div class=&quot;btn-group&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+              Action &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                &lt;li role=&quot;separator&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+         &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<h3 id="1-4-5-bootstrap插件（JS）"><a href="#1-4-5-bootstrap插件（JS）" class="headerlink" title="1.4.5. bootstrap插件（JS）"></a>1.4.5. bootstrap插件（JS）</h3><p>​    bootstrap中的js插件其实也是组件的一部分，只不过是需要js调用功能的组件，所以一般bootstrap的js插件一般会伴随着js代码（有的也可以</p>
+<p>省略js，用属性实现）。</p>
+<p>​    步骤： 1.引入bootstrap相关css和js        2.去官网复制html        3.复制js代码，启动js插件。</p>
+<p><strong>代码演示</strong></p>
+<ol>
+<li>引入bootstrap相关css和js</li>
+</ol>
+<pre><code class="javascript">&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;bootstrap/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<ol start="2">
+<li>去官网复制html的功能模块</li>
+</ol>
+<pre><code class="javascript">&lt;!-- 模态框 --&gt;
+&lt;!-- Large modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;.bs-example-modal-lg&quot;&gt;Large modal&lt;/button&gt;
+&lt;div class=&quot;modal fade bs-example-modal-lg&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myLargeModalLabel&quot;&gt;
+    &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            里面就是模态框
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<ol start="3">
+<li>复制js代码，启动js插件。</li>
+</ol>
+<pre><code class="javascript">&lt;script&gt;
+    // 当我们点击了自己定义的按钮，就弹出模态框
+    $(&quot;.myBtn&quot;).on(&quot;click&quot;, function() &#123;
+        // alert(11);
+        $(&#39;#btn&#39;).modal()
+    &#125;)
+&lt;/script&gt;
+</code></pre>
+<h3 id="1-4-6-bootstrap案例-阿里百秀"><a href="#1-4-6-bootstrap案例-阿里百秀" class="headerlink" title="1.4.6. bootstrap案例-阿里百秀"></a>1.4.6. bootstrap案例-阿里百秀</h3><blockquote>
+<p>1.通过调用组件实现导航栏<br>2.通过调用插件实现登录<br>3.通过调用插件标签页实现 tab 栏</p>
+</blockquote>
+<p>​    代码实现略。(详情参考源代码)</p>
+<h2 id="1-7-综合案例-toDoList案例分析（代码略）"><a href="#1-7-综合案例-toDoList案例分析（代码略）" class="headerlink" title="1.7. 综合案例: toDoList案例分析（代码略）"></a>1.7. 综合案例: toDoList案例分析（代码略）</h2><h3 id="1-7-1-案例：案例介绍"><a href="#1-7-1-案例：案例介绍" class="headerlink" title="1.7.1 案例：案例介绍"></a>1.7.1 案例：案例介绍</h3><pre><code class="javascript">// 1. 文本框里面输入内容，按下回车，就可以生成待办事项。
+// 2. 点击待办事项复选框，就可以把当前数据添加到已完成事项里面。
+// 3. 点击已完成事项复选框，就可以把当前数据添加到待办事项里面。
+// 4. 但是本页面内容刷新页面不会丢失。</code></pre>
+<h3 id="1-7-2-案例：toDoList-分析"><a href="#1-7-2-案例：toDoList-分析" class="headerlink" title="1.7.2 案例：toDoList 分析"></a>1.7.2 案例：toDoList 分析</h3><pre><code class="javascript">// 1. 刷新页面不会丢失数据，因此需要用到本地存储 localStorage
+// 2. 核心思路： 不管按下回车，还是点击复选框，都是把本地存储的数据加载到页面中，这样保证刷新关闭页面不会丢失数据
+// 3. 存储的数据格式：var todolist =  [&#123; title : ‘xxx’, done: false&#125;]
+// 4. 注意点1： 本地存储 localStorage 里面只能存储字符串格式 ，因此需要把对象转换为字符串 JSON.stringify(data)。
+// 5. 注意点2： 获取本地存储数据，需要把里面的字符串转换为对象格式JSON.parse() 我们才能使用里面的数据。</code></pre>
+<h3 id="1-7-3-案例：toDoList-按下回车把新数据添加到本地存储里面"><a href="#1-7-3-案例：toDoList-按下回车把新数据添加到本地存储里面" class="headerlink" title="1.7.3 案例：toDoList 按下回车把新数据添加到本地存储里面"></a>1.7.3 案例：toDoList 按下回车把新数据添加到本地存储里面</h3><pre><code class="javascript">// 1.切记： 页面中的数据，都要从本地存储里面获取，这样刷新页面不会丢失数据，所以先要把数据保存到本地存储里面。
+// 2.利用事件对象.keyCode判断用户按下回车键（13）。
+// 3.声明一个数组，保存数据。
+// 4.先要读取本地存储原来的数据（声明函数 getData()），放到这个数组里面。
+// 5.之后把最新从表单获取过来的数据，追加到数组里面。
+// 6.最后把数组存储给本地存储 (声明函数 savaDate())</code></pre>
+<h3 id="1-7-4-案例：toDoList-本地存储数据渲染加载到页面"><a href="#1-7-4-案例：toDoList-本地存储数据渲染加载到页面" class="headerlink" title="1.7.4 案例：toDoList 本地存储数据渲染加载到页面"></a>1.7.4 案例：toDoList 本地存储数据渲染加载到页面</h3><pre><code class="javascript">// 1.因为后面也会经常渲染加载操作，所以声明一个函数 load，方便后面调用
+// 2.先要读取本地存储数据。（数据不要忘记转换为对象格式）
+// 3.之后遍历这个数据（$.each()），有几条数据，就生成几个小li 添加到 ol 里面。
+// 4.每次渲染之前，先把原先里面 ol 的内容清空，然后渲染加载最新的数据。</code></pre>
+<h3 id="1-7-5-案例：toDoList-删除操作"><a href="#1-7-5-案例：toDoList-删除操作" class="headerlink" title="1.7.5 案例：toDoList 删除操作"></a>1.7.5 案例：toDoList 删除操作</h3><pre><code class="javascript">// 1.点击里面的a链接，不是删除的li，而是删除本地存储对应的数据。
+// 2.核心原理：先获取本地存储数据，删除对应的数据，保存给本地存储，重新渲染列表li
+// 3.我们可以给链接自定义属性记录当前的索引号
+// 4.根据这个索引号删除相关的数据----数组的splice(i, 1)方法
+// 5.存储修改后的数据，然后存储给本地存储
+// 6.重新渲染加载数据列表
+// 7.因为a是动态创建的，我们使用on方法绑定事件</code></pre>
+<h3 id="1-7-6-案例：toDoList-正在进行和已完成选项操作"><a href="#1-7-6-案例：toDoList-正在进行和已完成选项操作" class="headerlink" title="1.7.6 案例：toDoList  正在进行和已完成选项操作"></a>1.7.6 案例：toDoList  正在进行和已完成选项操作</h3><pre><code class="javascript">// 1.当我们点击了小的复选框，修改本地存储数据，再重新渲染数据列表。
+// 2.点击之后，获取本地存储数据。
+// 3.修改对应数据属性 done 为当前复选框的checked状态。
+// 4.之后保存数据到本地存储
+// 5.重新渲染加载数据列表
+// 6.load 加载函数里面，新增一个条件,如果当前数据的done为true 就是已经完成的，就把列表渲染加载到 ul 里面
+// 7.如果当前数据的done 为false， 则是待办事项，就把列表渲染加载到 ol 里面</code></pre>
+<h3 id="1-7-7-案例：toDoList-统计正在进行个数和已经完成个数"><a href="#1-7-7-案例：toDoList-统计正在进行个数和已经完成个数" class="headerlink" title="1.7.7 案例：toDoList 统计正在进行个数和已经完成个数"></a>1.7.7 案例：toDoList 统计正在进行个数和已经完成个数</h3><pre><code class="javascript">// 1.在我们load 函数里面操作
+// 2.声明2个变量 ：todoCount 待办个数  doneCount 已完成个数   
+// 3.当进行遍历本地存储数据的时候， 如果 数据done为 false， 则 todoCount++, 否则 doneCount++
+// 4.最后修改相应的元素 text() </code></pre>
+<h2 id="1-8-今日总结"><a href="#1-8-今日总结" class="headerlink" title="1.8. 今日总结"></a>1.8. 今日总结</h2><img src="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/%E6%80%BB%E7%BB%93.png" class title="总结">
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

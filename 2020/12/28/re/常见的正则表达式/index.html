@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>常见的正则表达式 | 付俊奎的个人博客</title>
+  <meta name="keywords" content=" python , 正则 ">
+  <meta name="description" content="常见的正则表达式 | 付俊奎的个人博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3-hexo使用说明">
+<meta property="og:url" content="https://lhwz666.gitee.io/about/index.html">
+<meta property="og:site_name" content="付俊奎的个人博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-23T07:13:47.000Z">
+<meta property="article:modified_time" content="2022-02-07T06:41:46.690Z">
+<meta property="article:author" content="付俊奎">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="3-hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>付俊奎</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(118)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->正则">
+                                        
+                                        正则
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->git">
+                                        
+                                        git
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->todo">
+                                        
+                                        todo
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="大前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        大前端
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="大前端<--->react">
+                                        
+                                        react
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        后端
+                        <small>(17)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="后端<--->数据库">
+                                        
+                                        数据库
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->django">
+                                        
+                                        django
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->docker">
+                                        
+                                        docker
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->k8s">
+                                        
+                                        k8s
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->linux">
+                                        
+                                        linux
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="后端<--->python">
+                                        
+                                        python
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="css">
+                        
+                        css
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="h5">
+                        
+                        h5
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="js">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        js
+                        <small>(66)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="js<--->数据结构和算法">
+                                        
+                                        数据结构和算法
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->babel">
+                                        
+                                        babel
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js基础回顾">
+                                        
+                                        js基础回顾
+                                        
+                                            <small>(16
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->js前端高手进阶">
+                                        
+                                        js前端高手进阶
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->webpack">
+                                        
+                                        webpack
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="js<--->work">
+                                        
+                                        work
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="ts">
+                        
+                        ts
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="118">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>变量声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>前端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据分析</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据结构和算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据可视化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>疑问</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>引用类型</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>自动化办公</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>amchart4</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>babel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css布局</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DevOps</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>django</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>drf</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ES6</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fiddler</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>h5</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>H5定位</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS基础</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js基础回顾</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js前端高手进阶</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>k8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>let var const</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mdn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>normalizr</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>odoo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>react 生命周期</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>todo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ubuntu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>work</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 todo "
+           href="/2020/12/27/todo/index/"
+           data-tag="todo"
+           data-author="" >
+            <span class="post-title" title="Todo">Todo</span>
+            <span class="post-date" title="2020-12-27 15:42:00">2020/12/27</span>
+        </a>
+        
+        <a id="top" class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/index/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构主页">数据结构主页</span>
+            <span class="post-date" title="2020-12-27 15:56:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2022/04/09/react/redux/01-%E6%B7%B1%E5%85%A5redux/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-深入redux">01-深入redux</span>
+            <span class="post-date" title="2022-04-09 22:55:28">2022/04/09</span>
+        </a>
+        
+        <a  class="All js webpack "
+           href="/2021/08/26/js/webpack/webpack%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86/"
+           data-tag="js,webpack"
+           data-author="" >
+            <span class="post-title" title="webpack第一课：打包原理">webpack第一课：打包原理</span>
+            <span class="post-date" title="2021-08-26 22:50:00">2021/08/26</span>
+        </a>
+        
+        <a  class="All js babel "
+           href="/2021/08/21/js/babel/babel%E5%AD%A6%E4%B9%A0/"
+           data-tag="js,babel"
+           data-author="" >
+            <span class="post-title" title="babel学习">babel学习</span>
+            <span class="post-date" title="2021-08-21 22:17:14">2021/08/21</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/07/15/js/work/%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E4%B8%80%E4%B8%AA%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="如何调试一个第三方库">如何调试一个第三方库</span>
+            <span class="post-date" title="2021-07-15 17:05:24">2021/07/15</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/07/js/work/js%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js中的设计模式">js中的设计模式</span>
+            <span class="post-date" title="2021-04-07 19:37:22">2021/04/07</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/04/07/git/git%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git的日常使用">git的日常使用</span>
+            <span class="post-date" title="2021-04-07 14:44:47">2021/04/07</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/04/02/js/work/%E4%B8%8D%E5%A4%9F%E7%BB%86%E8%8A%82%E5%AF%BC%E8%87%B4%E7%9A%84BUG/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="不够细节导致的BUG">不够细节导致的BUG</span>
+            <span class="post-date" title="2021-04-02 14:06:21">2021/04/02</span>
+        </a>
+        
+        <a  class="All 后端 k8s "
+           href="/2021/03/30/k8s/minikube%E8%BF%9B%E8%A1%8Ck8s%E5%8D%95%E8%8A%82%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA/"
+           data-tag="k8s,DevOps"
+           data-author="" >
+            <span class="post-title" title="minikube进行k8s单节点的搭建">minikube进行k8s单节点的搭建</span>
+            <span class="post-date" title="2021-03-30 11:35:04">2021/03/30</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/03/29/docker/docker%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker常用的命令">docker常用的命令</span>
+            <span class="post-date" title="2021-03-29 21:45:14">2021/03/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/17/react/work/redux-sage%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%8A%A8/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="redux-sage的数据的流动">redux-sage的数据的流动</span>
+            <span class="post-date" title="2021-03-17 11:16:48">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E7%9A%84%E5%AE%98%E6%96%B9API/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr的官方API">normalizr的官方API</span>
+            <span class="post-date" title="2021-03-17 09:50:59">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/17/js/work/normalizr%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE%E5%88%A9%E5%99%A8/"
+           data-tag="js,work,normalizr"
+           data-author="" >
+            <span class="post-title" title="normalizr格式化数据利器">normalizr格式化数据利器</span>
+            <span class="post-date" title="2021-03-17 09:50:42">2021/03/17</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/03/15/js/work/%E4%BD%BF%E7%94%A8Memoization%E4%BC%98%E5%8C%96/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="使用Memoization空间换时间">使用Memoization空间换时间</span>
+            <span class="post-date" title="2021-03-15 20:09:27">2021/03/15</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/14/react/work/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="项目中常用的第三方库">项目中常用的第三方库</span>
+            <span class="post-date" title="2021-03-14 09:28:21">2021/03/14</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2021/03/09/react/ssr/01-react%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="01-react服务端渲染">01-react服务端渲染</span>
+            <span class="post-date" title="2021-03-09 09:24:40">2021/03/09</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E6%B7%B1%E5%85%A5%E6%95%B0%E7%BB%84%E7%9A%84%E5%90%84%E4%B8%AAAPI/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="深入数组的各个API">深入数组的各个API</span>
+            <span class="post-date" title="2021-02-27 15:32:48">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/27/js/work/%E5%89%8D%E7%AB%AF%E8%A6%81%E7%94%A8%E7%9A%84%E7%BC%93%E5%AD%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="前端要用的缓存">前端要用的缓存</span>
+            <span class="post-date" title="2021-02-27 11:17:17">2021/02/27</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/26/js/work/js%E7%9A%84new%E5%8E%9F%E7%90%86%E5%92%8Capply-call-bind/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的new原理和apply-call-bind">js的new原理和apply-call-bind</span>
+            <span class="post-date" title="2021-02-26 17:19:33">2021/02/26</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/02/24/css/css%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%93%E9%A2%98/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的选择器专题">css的选择器专题</span>
+            <span class="post-date" title="2021-02-24 22:09:11">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的状态码专题">js的状态码专题</span>
+            <span class="post-date" title="2021-02-24 21:47:52">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84%E8%B7%A8%E5%9F%9F%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的跨域专题">js的跨域专题</span>
+            <span class="post-date" title="2021-02-24 21:29:01">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/24/js/work/js%E7%9A%84Promise%E4%B8%93%E9%A2%98/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的Promise专题">js的Promise专题</span>
+            <span class="post-date" title="2021-02-24 21:21:31">2021/02/24</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/24/js/jsMDN/01-%E8%AF%AD%E6%B3%95%E5%92%8C%E7%B1%BB%E5%9E%8B/"
+           data-tag="js,mdn"
+           data-author="" >
+            <span class="post-title" title="01-语法和类型">01-语法和类型</span>
+            <span class="post-date" title="2021-02-24 17:22:46">2021/02/24</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/02/23/js/work/js%E7%9A%84%E6%98%93%E6%B7%B7%E7%82%B9/"
+           data-tag="js,work,前端"
+           data-author="" >
+            <span class="post-title" title="js的易混点">js的易混点</span>
+            <span class="post-date" title="2021-02-23 21:03:57">2021/02/23</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/17/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-05-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%95%8C%E9%9D%A2%E7%9A%84%E8%BF%87%E7%A8%8B/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-05-浏览器渲染界面的过程">前端高手进阶-05-浏览器渲染界面的过程</span>
+            <span class="post-date" title="2021-02-17 21:19:52">2021/02/17</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/02/17/python/python%E7%9A%84Odoo12%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/"
+           data-tag="python,odoo"
+           data-author="" >
+            <span class="post-title" title="python的Odoo12的模块开发">python的Odoo12的模块开发</span>
+            <span class="post-date" title="2021-02-17 11:48:38">2021/02/17</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/16/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-04-%E6%8E%8C%E6%8F%A1CSS%E7%B2%BE%E9%AB%93%E2%80%94%E2%80%94%E5%B8%83%E5%B1%80/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-04-掌握CSS精髓——布局">前端高手进阶-04-掌握CSS精髓——布局</span>
+            <span class="post-date" title="2021-02-16 15:20:10">2021/02/16</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-03-DOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%B7%B1%E5%85%A5/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-03-DOM事件的深入">前端高手进阶-03-DOM事件的深入</span>
+            <span class="post-date" title="2021-02-15 17:09:51">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/15/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-02-%E9%AB%98%E6%95%88%E6%93%8D%E4%BD%9CDOM%E5%85%83%E7%B4%A0/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-02-高效操作DOM元素">前端高手进阶-02-高效操作DOM元素</span>
+            <span class="post-date" title="2021-02-15 15:54:14">2021/02/15</span>
+        </a>
+        
+        <a  class="All js js前端高手进阶 "
+           href="/2021/02/14/js/advancedFrontEndExperts/%E5%89%8D%E7%AB%AF%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6-01-%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%86%9F%E6%82%89HTML%E6%A0%87%E7%AD%BE%E5%90%97%EF%BC%9F/"
+           data-tag="js,js前端高手进阶"
+           data-author="" >
+            <span class="post-title" title="前端高手进阶-01-你真的熟悉HTML标签吗？">前端高手进阶-01-你真的熟悉HTML标签吗？</span>
+            <span class="post-date" title="2021-02-14 19:00:00">2021/02/14</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-05-ES6%E4%BD%BF%E7%94%A8/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-05-ES6使用">JS进阶-05-ES6使用</span>
+            <span class="post-date" title="2021-02-13 15:07:55">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-04-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-04-正则表达式">JS进阶-04-正则表达式</span>
+            <span class="post-date" title="2021-02-13 15:06:56">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-03-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8-this%E6%8C%87%E5%90%91-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0-%E9%97%AD%E5%8C%85/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包">JS进阶-03-函数定义和调用-this指向-严格模式-高阶函数-闭包</span>
+            <span class="post-date" title="2021-02-13 15:05:27">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-02-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E5%8E%9F%E5%9E%8B-%E7%BB%A7%E6%89%BF-ES5%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-02-构造函数和原型-继承-ES5新增方法">JS进阶-02-构造函数和原型-继承-ES5新增方法</span>
+            <span class="post-date" title="2021-02-13 15:04:18">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E8%BF%9B%E9%98%B6-01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS进阶-01-面向对象">JS进阶-01-面向对象</span>
+            <span class="post-date" title="2021-02-13 15:03:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-03-%E4%BA%8B%E4%BB%B6-%E5%AF%B9%E8%B1%A1-%E6%8F%92%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-03-事件-对象-插件">JS中的jQuery的使用-03-事件-对象-插件</span>
+            <span class="post-date" title="2021-02-13 15:00:39">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-02-%E6%93%8D%E4%BD%9C%5B%E5%B1%9E%E6%80%A7-%E6%96%87%E6%9C%AC-%E5%85%83%E7%B4%A0-%E5%B0%BA%E5%AF%B8-%E4%BD%8D%E7%BD%AE%5D/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]">JS中的jQuery的使用-02-操作[属性-文本-元素-尺寸-位置]</span>
+            <span class="post-date" title="2021-02-13 14:59:10">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84jQuery%E7%9A%84%E4%BD%BF%E7%94%A8-01-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E9%80%89%E6%8B%A9%E5%99%A8-%E6%A0%B7%E5%BC%8F-%E6%95%88%E6%9E%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的jQuery的使用-01-基本使用-选择器-样式-效果">JS中的jQuery的使用-01-基本使用-选择器-样式-效果</span>
+            <span class="post-date" title="2021-02-13 14:57:38">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-07-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-07-移动端开发">JS中的WEB-APIS-07-移动端开发</span>
+            <span class="post-date" title="2021-02-13 14:44:57">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-06-%E5%B0%81%E8%A3%85%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0-%E5%B8%B8%E8%A7%81%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88-%E8%A7%A6%E5%B1%8F%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件">JS中的WEB-APIS-06-封装动画函数-常见网页特效-触屏事件</span>
+            <span class="post-date" title="2021-02-13 14:42:13">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-05-%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8Foffset-%E5%85%83%E7%B4%A0%E5%8F%AF%E8%A7%86%E5%8C%BAclient-%E5%8A%A8%E7%94%BB%E5%87%BD%E6%95%B0/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数">JS中的WEB-APIS-05-元素偏移量offset-元素可视区client-动画函数</span>
+            <span class="post-date" title="2021-02-13 14:32:09">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-04-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6-BOM-JS%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制">JS中的WEB-APIS-04-键盘事件-BOM-JS的执行机制</span>
+            <span class="post-date" title="2021-02-13 14:30:15">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-03-DOM%E6%80%BB%E7%BB%93-%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件">JS中的WEB-APIS-03-DOM总结-事件高级-鼠标事件</span>
+            <span class="post-date" title="2021-02-13 14:27:11">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-02-%E6%8E%92%E4%BB%96%E6%93%8D%E4%BD%9C-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%92%8C%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-02-排他操作-自定义属性和节点操作">JS中的WEB-APIS-02-排他操作-自定义属性和节点操作</span>
+            <span class="post-date" title="2021-02-13 14:23:21">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84WEB-APIS-01/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的WEB-APIS-01">JS中的WEB-APIS-01</span>
+            <span class="post-date" title="2021-02-13 14:18:08">2021/02/13</span>
+        </a>
+        
+        <a  class="All js js基础回顾 "
+           href="/2021/02/13/js/jsJob/JS%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1/"
+           data-tag="js,js基础回顾"
+           data-author="" >
+            <span class="post-title" title="JS中的对象">JS中的对象</span>
+            <span class="post-date" title="2021-02-13 11:39:40">2021/02/13</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8020-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98%5B%E5%90%AB%E7%AD%94%E6%A1%88%5D/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础20-JS-面试真题[含答案]">JS基础20-JS-面试真题[含答案]</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/09/js/jsBase/JS%E5%9F%BA%E7%A1%8019-JS-%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础19-JS-面试真题">JS基础19-JS-面试真题</span>
+            <span class="post-date" title="2021-02-09 13:08:08">2021/02/09</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8018-JS-%E5%85%A8%E8%AF%BE%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础18-JS-全课总结">JS基础18-JS-全课总结</span>
+            <span class="post-date" title="2021-02-08 19:41:55">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8017-JS-%E5%B0%8F%E6%80%BB%E7%BB%93/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础17-JS-小总结">JS基础17-JS-小总结</span>
+            <span class="post-date" title="2021-02-08 19:04:58">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8016-JS-%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础16-JS-安全问题">JS基础16-JS-安全问题</span>
+            <span class="post-date" title="2021-02-08 18:51:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8015-JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%98%B2%E6%8A%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础15-JS-性能优化之防抖">JS基础15-JS-性能优化之防抖</span>
+            <span class="post-date" title="2021-02-08 17:45:40">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/08/js/jsBase/JS%E5%9F%BA%E7%A1%8014-JS-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础14-JS-运行环境和性能优化">JS基础14-JS-运行环境和性能优化</span>
+            <span class="post-date" title="2021-02-08 16:35:47">2021/02/08</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8013-JS-webpack-babel/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础13-JS-webpack-babel">JS基础13-JS-webpack-babel</span>
+            <span class="post-date" title="2021-02-06 20:18:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8012-JS-Web_API%E4%B9%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础12-JS-Web_API之开发环境">JS基础12-JS-Web_API之开发环境</span>
+            <span class="post-date" title="2021-02-06 20:00:59">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8011-JS-Web_API%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础11-JS-Web_API之数据存储">JS基础11-JS-Web_API之数据存储</span>
+            <span class="post-date" title="2021-02-06 15:09:33">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8010-JS-Web_API%E4%B9%8B%E8%B7%A8%E5%9F%9F/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础10-JS-Web_API之跨域">JS基础10-JS-Web_API之跨域</span>
+            <span class="post-date" title="2021-02-06 14:10:06">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8009-JS-Web_API%E4%B9%8BAjax/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础09-JS-Web_API之Ajax">JS基础09-JS-Web_API之Ajax</span>
+            <span class="post-date" title="2021-02-06 13:07:17">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8008-JS-Web_API%E4%B9%8B%E4%BA%8B%E4%BB%B6/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础08-JS-Web_API之事件">JS基础08-JS-Web_API之事件</span>
+            <span class="post-date" title="2021-02-06 00:14:09">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/06/js/jsBase/JS%E5%9F%BA%E7%A1%8007-JS-Web_API%E4%B9%8BBOM/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础07-JS-Web_API之BOM">JS基础07-JS-Web_API之BOM</span>
+            <span class="post-date" title="2021-02-06 00:05:10">2021/02/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/02/05/js/jsBase/JS%E5%9F%BA%E7%A1%8006-JS-Web_API/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础06-JS-Web_API-DOM">JS基础06-JS-Web_API-DOM</span>
+            <span class="post-date" title="2021-02-05 23:18:51">2021/02/05</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8005-%E5%89%8D4%E7%AB%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础05-前4章内容回顾">JS基础05-前4章内容回顾</span>
+            <span class="post-date" title="2021-01-31 21:53:32">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8004-%E5%BC%82%E6%AD%A5%E5%92%8C%E5%8D%95%E7%BA%BF%E7%A8%8B/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础04-异步和单线程">JS基础04-异步和单线程</span>
+            <span class="post-date" title="2021-01-31 17:37:27">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8003-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E9%97%AD%E5%8C%85/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础03-作用域和闭包">JS基础03-作用域和闭包</span>
+            <span class="post-date" title="2021-01-31 15:36:57">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/31/js/jsBase/JS%E5%9F%BA%E7%A1%8002-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础02-原型和原型链">JS基础02-原型和原型链</span>
+            <span class="post-date" title="2021-01-31 12:12:52">2021/01/31</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/30/js/jsBase/JS%E5%9F%BA%E7%A1%8001-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%A1%E7%AE%97/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="JS基础01-变量类型和计算汇总">JS基础01-变量类型和计算汇总</span>
+            <span class="post-date" title="2021-01-30 23:34:27">2021/01/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/27/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C%E7%BB%A7%E6%89%BF%E5%B0%8Fdemo/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts中的类和继承的小demo">ts中的类和继承的小demo</span>
+            <span class="post-date" title="2021-01-27 23:52:58">2021/01/27</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/26/amcharts4/amcharts4%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E7%AC%AC%E4%B8%80%E7%AB%A0/"
+           data-tag="ts,amchart4,数据可视化"
+           data-author="" >
+            <span class="post-title" title="amcharts4源码解读第一章">amcharts4源码解读第一章</span>
+            <span class="post-date" title="2021-01-26 11:47:12">2021/01/26</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2021/01/18/linux/%E6%96%B0%E8%A3%85ubuntu20%E5%90%8E%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="新装ubuntu20后的配置">新装ubuntu20后的配置</span>
+            <span class="post-date" title="2021-01-18 23:22:54">2021/01/18</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css的工程化">css的工程化</span>
+            <span class="post-date" title="2021-01-17 15:26:05">2021/01/17</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/17/css/css%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="css预处理器">css预处理器</span>
+            <span class="post-date" title="2021-01-17 14:23:52">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 数据库 "
+           href="/2021/01/17/mysql/mysql%E5%85%81%E8%AE%B8%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql允许远程访问">mysql允许远程访问</span>
+            <span class="post-date" title="2021-01-17 00:17:22">2021/01/17</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8mysql/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用mysql">docker使用mysql</span>
+            <span class="post-date" title="2021-01-16 21:24:27">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 docker "
+           href="/2021/01/16/docker/docker%E4%BD%BF%E7%94%A8jenkins/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker使用jenkins">docker使用jenkins</span>
+            <span class="post-date" title="2021-01-16 21:18:22">2021/01/16</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2021/01/16/drf/djangoRestFul%E7%AC%AC%E4%B8%80%E8%AF%BE/"
+           data-tag="django,vue,drf"
+           data-author="" >
+            <span class="post-title" title="djangoRestFul第一课">djangoRestFul第一课</span>
+            <span class="post-date" title="2021-01-16 21:16:21">2021/01/16</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2021/01/16/css/css%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B1%80/"
+           data-tag="css,css布局,面试"
+           data-author="" >
+            <span class="post-title" title="css中的布局【超重要】">css中的布局【超重要】</span>
+            <span class="post-date" title="2021-01-16 13:36:03">2021/01/16</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/Fiddler%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E7%94%A8%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/"
+           data-tag="python,work,fiddler,H5定位"
+           data-author="" >
+            <span class="post-title" title="Fiddler抓包分析谷歌浏览器调用地理位置错误原因">Fiddler抓包分析谷歌浏览器调用地理位置错误原因</span>
+            <span class="post-date" title="2021-01-14 23:16:53">2021/01/14</span>
+        </a>
+        
+        <a  class="All js work "
+           href="/2021/01/14/js/work/%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"
+           data-tag="work,H5定位"
+           data-author="" >
+            <span class="post-title" title="地理位置相关问题">地理位置相关问题</span>
+            <span class="post-date" title="2021-01-14 15:40:22">2021/01/14</span>
+        </a>
+        
+        <a  class="All 工具 git "
+           href="/2021/01/12/git/%E5%B8%B8%E7%94%A8%E7%9A%84git%E5%91%BD%E4%BB%A4/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="常用的git命令">常用的git命令</span>
+            <span class="post-date" title="2021-01-12 20:07:13">2021/01/12</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="10- ts中的高级类型">10- ts中的高级类型</span>
+            <span class="post-date" title="2021-01-10 18:56:39">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/10/ts/ts%E4%B8%AD%E7%9A%84mixin%E5%B1%9E%E6%80%A7%E7%9A%84%E6%B7%B7%E5%92%8C/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="09-ts中的mixin属性的混和">09-ts中的mixin属性的混和</span>
+            <span class="post-date" title="2021-01-10 18:46:49">2021/01/10</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/06/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E6%80%A7/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="08-ts中的类型推论和类型兼容性">08-ts中的类型推论和类型兼容性</span>
+            <span class="post-date" title="2021-01-06 21:03:32">2021/01/06</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2021/01/06/js/jsBase/FCC%E7%9A%84ES6%E7%AC%94%E8%AE%B0/"
+           data-tag="js,ES6"
+           data-author="" >
+            <span class="post-title" title="FCC的ES6笔记">FCC的ES6笔记</span>
+            <span class="post-date" title="2021-01-06 20:59:22">2021/01/06</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2021/01/02/python/python%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"
+           data-tag="django,python,linux,ubuntu"
+           data-author="" >
+            <span class="post-title" title="python安装虚拟环境">python安装虚拟环境</span>
+            <span class="post-date" title="2021-01-02 11:24:26">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/02/ts/ts%E4%B8%AD%E7%9A%84%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="07-ts中的枚举类型">07-ts中的枚举类型</span>
+            <span class="post-date" title="2021-01-02 08:38:22">2021/01/02</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2021/01/01/ts/ts%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="06-ts中的函数">06-ts中的函数</span>
+            <span class="post-date" title="2021-01-01 13:12:53">2021/01/01</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/31/ts/ts%E4%B8%AD%E7%9A%84%E6%B3%9B%E5%9E%8B/"
+           data-tag="ts,疑问"
+           data-author="" >
+            <span class="post-title" title="05-ts中的泛型">05-ts中的泛型</span>
+            <span class="post-date" title="2020-12-31 09:57:23">2020/12/31</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/30/ts/ts%E4%B8%AD%E7%9A%84%E7%B1%BB/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="04-ts中的类">04-ts中的类</span>
+            <span class="post-date" title="2020-12-30 14:12:19">2020/12/30</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3/"
+           data-tag="ts,类,对象"
+           data-author="" >
+            <span class="post-title" title="03-ts中的接口">03-ts中的接口</span>
+            <span class="post-date" title="2020-12-29 14:08:53">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E6%88%96js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"
+           data-tag="ts,变量声明,let var const"
+           data-author="" >
+            <span class="post-title" title="02-ts或js中的变量声明">02-ts或js中的变量声明</span>
+            <span class="post-date" title="2020-12-29 14:06:14">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="01-ts基础类型">01-ts基础类型</span>
+            <span class="post-date" title="2020-12-29 11:35:21">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/ts%E5%AE%98%E6%96%B9%E5%85%A5%E9%97%A8/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts官方入门">ts官方入门</span>
+            <span class="post-date" title="2020-12-29 10:52:39">2020/12/29</span>
+        </a>
+        
+        <a  class="All ts "
+           href="/2020/12/29/ts/index/"
+           data-tag="ts"
+           data-author="" >
+            <span class="post-title" title="ts主页">ts主页</span>
+            <span class="post-date" title="2020-12-29 10:51:59">2020/12/29</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/28/react/react%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"
+           data-tag="react,react 生命周期,引用类型"
+           data-author="" >
+            <span class="post-title" title="react中使用引用类型的注意事项">react中使用引用类型的注意事项</span>
+            <span class="post-date" title="2020-12-28 15:58:32">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="python,正则"
+           data-author="" >
+            <span class="post-title" title="常见的正则表达式">常见的正则表达式</span>
+            <span class="post-date" title="2020-12-28 11:06:24">2020/12/28</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/28/re/%E5%8D%81%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A%E6%AD%A3%E5%88%99/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="十分钟学会正则">十分钟学会正则</span>
+            <span class="post-date" title="2020-12-28 10:53:09">2020/12/28</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/jsBase/index/"
+           data-tag="js,JS基础"
+           data-author="" >
+            <span class="post-title" title="JS的基础使用">JS的基础使用</span>
+            <span class="post-date" title="2020-12-27 18:11:49">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%89%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第三章">数据结构和算法 第三章</span>
+            <span class="post-date" title="2020-12-27 16:34:06">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第二章">数据结构和算法 第二章</span>
+            <span class="post-date" title="2020-12-27 16:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All js 数据结构和算法 "
+           href="/2020/12/27/js/data/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"
+           data-tag="js,数据结构和算法"
+           data-author="" >
+            <span class="post-title" title="数据结构和算法 第一章">数据结构和算法 第一章</span>
+            <span class="post-date" title="2020-12-27 15:58:46">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo和Typora中添加图片">hexo和Typora中添加图片</span>
+            <span class="post-date" title="2020-12-27 12:59:29">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="正则表达式基本使用">正则表达式基本使用</span>
+            <span class="post-date" title="2020-12-27 12:36:30">2020/12/27</span>
+        </a>
+        
+        <a  class="All css "
+           href="/2020/12/27/css/FCC%E4%B8%AD%E6%80%BB%E7%BB%93%E7%9A%84css/"
+           data-tag="css"
+           data-author="" >
+            <span class="post-title" title="FCC中总结的css">FCC中总结的css</span>
+            <span class="post-date" title="2020-12-27 11:04:18">2020/12/27</span>
+        </a>
+        
+        <a  class="All js "
+           href="/2020/12/27/js/index/"
+           data-tag="js"
+           data-author="" >
+            <span class="post-title" title="js">js</span>
+            <span class="post-date" title="2020-12-27 11:04:02">2020/12/27</span>
+        </a>
+        
+        <a  class="All h5 "
+           href="/2020/12/27/h5/index/"
+           data-tag="h5"
+           data-author="" >
+            <span class="post-title" title="h5">h5</span>
+            <span class="post-date" title="2020-12-27 11:03:43">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 django "
+           href="/2020/12/27/django/index/"
+           data-tag="django,python"
+           data-author="" >
+            <span class="post-title" title="django">django</span>
+            <span class="post-date" title="2020-12-27 11:00:08">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 hexo "
+           href="/2020/12/27/hexo/index/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo的基本使用">hexo的基本使用</span>
+            <span class="post-date" title="2020-12-27 10:51:52">2020/12/27</span>
+        </a>
+        
+        <a  class="All 工具 正则 "
+           href="/2020/12/27/re/index/"
+           data-tag="正则"
+           data-author="" >
+            <span class="post-title" title="re">re</span>
+            <span class="post-date" title="2020-12-27 10:49:23">2020/12/27</span>
+        </a>
+        
+        <a  class="All 大前端 react "
+           href="/2020/12/27/react/demo/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="react">react</span>
+            <span class="post-date" title="2020-12-27 10:32:14">2020/12/27</span>
+        </a>
+        
+        <a  class="All 后端 python "
+           href="/2019/10/23/python/python%E7%9A%84xlwt%E6%93%8D%E4%BD%9CExcel%E6%96%87%E6%A1%A3/"
+           data-tag="python,自动化办公,数据分析"
+           data-author="" >
+            <span class="post-title" title="python的xlwt操作Excel文档">python的xlwt操作Excel文档</span>
+            <span class="post-date" title="2019-10-23 11:33:58">2019/10/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/23/linux/%E6%96%87%E4%BB%B6%E3%80%81%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="文件、磁盘管理">文件、磁盘管理</span>
+            <span class="post-date" title="2018-12-23 22:15:18">2018/12/23</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/22/linux/ssh%E5%92%8Cscp%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ssh和scp远程连接和远程拷贝">ssh和scp远程连接和远程拷贝</span>
+            <span class="post-date" title="2018-12-22 23:13:18">2018/12/22</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/21/linux/ubuntu%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="ubuntu软件安装卸载">ubuntu软件安装卸载</span>
+            <span class="post-date" title="2018-12-21 23:08:47">2018/12/21</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/20/linux/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="系统管理">系统管理</span>
+            <span class="post-date" title="2018-12-20 23:02:17">2018/12/20</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/index/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <a  class="All 后端 linux "
+           href="/2018/12/19/linux/%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"
+           data-tag="python,linux"
+           data-author="" >
+            <span class="post-title" title="用户和权限管理">用户和权限管理</span>
+            <span class="post-date" title="2018-12-19 22:18:05">2018/12/19</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-re/常见的正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">常见的正则表达式</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="工具">工具</a> > 
+            
+            <a  data-rel="工具&lt;---&gt;正则">正则</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">python</a>
+            
+            <a class="color3">正则</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-02-07 14:41:46'>2020-12-28 11:06</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是正则表达式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81%E6%AD%A3%E5%88%99%EF%BC%9F"><span class="toc-text">Python如何支持正则？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%82%AE%E7%AE%B1"><span class="toc-text">1.邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7"><span class="toc-text">2. 身份证号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9B%BD%E5%86%85%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81"><span class="toc-text">3. 国内手机号码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9B%BD%E5%86%85%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%AF%9D"><span class="toc-text">4. 国内固定电话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%9F%9F%E5%90%8D"><span class="toc-text">5. 域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-IP%E5%9C%B0%E5%9D%80"><span class="toc-text">6. IP地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%97%A5%E6%9C%9F"><span class="toc-text">7. 日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%9B%BD%E5%86%85%E9%82%AE%E6%94%BF%E7%BC%96%E7%A0%81"><span class="toc-text">8. 国内邮政编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%AF%86%E7%A0%81"><span class="toc-text">9. 密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6"><span class="toc-text">10. 中文字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%95%B0%E5%AD%97"><span class="toc-text">11. 数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">12. 字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%EF%BC%9A%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3"><span class="toc-text">附：正则表达式语法详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E6%9D%83"><span class="toc-text">优先权</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下文章来源公众号：AirPython，作者：AirPython</p>
+<h2 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h2><p>正则表达式（Regular Expression）通常被用来检索、替换那些符合某个模式(规则)的文本。</p>
+<p>此处的Regular即是规则、规律的意思，Regular Expression即“描述某种规则的表达式”之意。</p>
+<p>本文收集了一些常见的正则表达式用法，方便大家查询取用，并在最后附了详细的正则表达式语法手册。</p>
+<p>案例包括：<strong>「邮箱、身份证号、手机号码、固定电话、域名、IP地址、日期、邮编、密码、中文字符、数字、字符串」</strong></p>
+<h2 id="Python如何支持正则？"><a href="#Python如何支持正则？" class="headerlink" title="Python如何支持正则？"></a>Python如何支持正则？</h2><p>我用的是python来实现正则，并使用Jupyter Notebook编写代码。</p>
+<p>Python通过re模块支持正则表达式，re 模块使 Python 语言拥有全部的正则表达式功能。</p>
+<p>这里要注意两个函数的使用：</p>
+<p><code>re.compile</code>用于编译正则表达式，生成一个正则表达式（ Pattern ）对象;</p>
+<p><code>.findall</code>用于在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表。</p>
+<pre><code># 导入re模块
+import re</code></pre>
+<h2 id="1-邮箱"><a href="#1-邮箱" class="headerlink" title="1.邮箱"></a>1.邮箱</h2><p>包含大小写字母，下划线，阿拉伯数字，点号，中划线</p>
+<p>表达式：</p>
+<pre><code>[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)&quot;)
+
+strs = &#39;我的私人邮箱是zhuwjwh@outlook.com，公司邮箱是123456@qq.org，麻烦登记一下？&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;zhuwjwh@outlook.com&#39;, &#39;123456@qq.org&#39;]</code></pre>
+<h2 id="2-身份证号"><a href="#2-身份证号" class="headerlink" title="2. 身份证号"></a>2. 身份证号</h2><p>xxxxxx yyyy MM dd 375 0   十八位</p>
+<ul>
+<li>地区：[1-9]\d{5}</li>
+<li>年的前两位：(18|19|([23]\d))    1800-2399</li>
+<li>年的后两位：\d{2}</li>
+<li>月份：((0[1-9])|(10|11|12))</li>
+<li>天数：(([0-2][1-9])|10|20|30|31)      闰年不能禁止29+</li>
+<li>三位顺序码：\d{3}</li>
+<li>两位顺序码：\d{2}</li>
+<li>校验码：[0-9Xx]</li>
+</ul>
+<p>表达式：</p>
+<pre><code>[1-9]\d&#123;5&#125;(18|19|([23]\d))\d&#123;2&#125;((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d&#123;3&#125;[0-9Xx]</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;[1-9]\d&#123;5&#125;(?:18|19|(?:[23]\d))\d&#123;2&#125;(?:(?:0[1-9])|(?:10|11|12))(?:(?:[0-2][1-9])|10|20|30|31)\d&#123;3&#125;[0-9Xx]&quot;)
+
+strs = &#39;小明的身份证号码是342623198910235163，手机号是13987692110&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;342623198910235163&#39;]</code></pre>
+<h2 id="3-国内手机号码"><a href="#3-国内手机号码" class="headerlink" title="3. 国内手机号码"></a>3. 国内手机号码</h2><p>手机号都为11位，且以1开头，第二位一般为3、5、6、7、8、9 ，剩下八位任意数字<br>例如：13987692110、15610098778</p>
+<p>表达式：</p>
+<pre><code>1(3|4|5|6|7|8|9)\d&#123;9&#125;</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;1[356789]\d&#123;9&#125;&quot;)
+
+strs = &#39;小明的手机号是13987692110，你明天打给他&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;13987692110&#39;]</code></pre>
+<h2 id="4-国内固定电话"><a href="#4-国内固定电话" class="headerlink" title="4. 国内固定电话"></a>4. 国内固定电话</h2><p>区号3<del>4位，号码7</del>8位</p>
+<p>例如：0511-1234567、021-87654321</p>
+<p>表达式：</p>
+<pre><code>\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;&quot;)
+
+strs = &#39;0511-1234567是小明家的电话，他的办公室电话是021-87654321&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;0511-1234567&#39;, &#39;021-87654321&#39;]</code></pre>
+<h2 id="5-域名"><a href="#5-域名" class="headerlink" title="5. 域名"></a>5. 域名</h2><p>包含http:\或https:\</p>
+<p>表达式：</p>
+<pre><code>(?:(?:http:\/\/)|(?:https:\/\/))?(?:[\w](?:[\w\-]&#123;0,61&#125;[\w])?\.)+[a-zA-Z]&#123;2,6&#125;(?:\/)</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;(?:(?:http:\/\/)|(?:https:\/\/))?(?:[\w](?:[\w\-]&#123;0,61&#125;[\w])?\.)+[a-zA-Z]&#123;2,6&#125;(?:\/)&quot;)
+
+strs = &#39;Python官网的网址是https://www.python.org/&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;https://www.python.org/&#39;]</code></pre>
+<h2 id="6-IP地址"><a href="#6-IP地址" class="headerlink" title="6. IP地址"></a>6. IP地址</h2><p>IP地址的长度为32位(共有2^32个IP地址)，分为4段，每段8位，用十进制数字表示<br>每段数字范围为0～255，段与段之间用句点隔开　</p>
+<p>表达式：</p>
+<pre><code>((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.)&#123;3&#125;(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.)&#123;3&#125;(?:25[0-5]|2[0-4]\d|[01]?\d?\d))&quot;)
+
+strs = &#39;&#39;&#39;请输入合法IP地址，非法IP地址和其他字符将被过滤！
+增、删、改IP地址后，请保存、关闭记事本！
+192.168.8.84
+192.168.8.85
+192.168.8.86
+0.0.0.1
+256.1.1.1
+192.256.256.256
+192.255.255.255
+aa.bb.cc.dd&#39;&#39;&#39;
+
+result = pattern.findall(strs)
+
+print(result)
+[&#39;192.168.8.84&#39;, &#39;192.168.8.85&#39;, &#39;192.168.8.86&#39;, &#39;0.0.0.1&#39;, &#39;56.1.1.1&#39;, &#39;192.255.255.255&#39;]</code></pre>
+<h2 id="7-日期"><a href="#7-日期" class="headerlink" title="7. 日期"></a>7. 日期</h2><p>常见日期格式：yyyyMMdd、yyyy-MM-dd、yyyy/MM/dd、yyyy.MM.dd</p>
+<p>表达式：</p>
+<pre><code>\d&#123;4&#125;(?:-|\/|.)\d&#123;1,2&#125;(?:-|\/|.)\d&#123;1,2&#125;</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;\d&#123;4&#125;(?:-|\/|.)\d&#123;1,2&#125;(?:-|\/|.)\d&#123;1,2&#125;&quot;)
+
+strs = &#39;今天是2020/12/20，去年的今天是2019.12.20，明年的今天是2021-12-20&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;2020/12/20&#39;, &#39;2019.12.20&#39;, &#39;2021-12-20&#39;]</code></pre>
+<h2 id="8-国内邮政编码"><a href="#8-国内邮政编码" class="headerlink" title="8. 国内邮政编码"></a>8. 国内邮政编码</h2><p>我国的邮政编码采用四级六位数编码结构<br>前两位数字表示省（直辖市、自治区）<br>第三位数字表示邮区；第四位数字表示县（市）<br>最后两位数字表示投递局（所）</p>
+<p>表达式：</p>
+<pre><code>[1-9]\d&#123;5&#125;(?!\d)</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;[1-9]\d&#123;5&#125;(?!\d)&quot;)
+
+strs = &#39;上海静安区邮编是200040&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;200040&#39;]</code></pre>
+<h2 id="9-密码"><a href="#9-密码" class="headerlink" title="9. 密码"></a>9. 密码</h2><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)</p>
+<p>表达式：</p>
+<pre><code>[a-zA-Z]\w&#123;5,17&#125;</code></pre>
+<p>强密码(以字母开头，必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)</p>
+<p>表达式：</p>
+<pre><code>[a-zA-Z](?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;
+pattern = re.compile(r&quot;[a-zA-Z]\w&#123;5,17&#125;&quot;)
+
+strs = &#39;密码：q123456_abc&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;q123456_abc&#39;]
+pattern = re.compile(r&quot;[a-zA-Z](?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;&quot;)
+
+strs = &#39;强密码：q123456ABc，弱密码：q123456abc&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;q123456ABc，&#39;]</code></pre>
+<h2 id="10-中文字符"><a href="#10-中文字符" class="headerlink" title="10. 中文字符"></a>10. 中文字符</h2><p>表达式：</p>
+<pre><code>[\u4e00-\u9fa5]</code></pre>
+<p>案例：</p>
+<pre><code>pattern = re.compile(r&quot;[\u4e00-\u9fa5]&quot;)
+
+strs = &#39;apple：苹果&#39;
+result = pattern.findall(strs)
+
+print(result)
+[&#39;苹&#39;, &#39;果&#39;]</code></pre>
+<h2 id="11-数字"><a href="#11-数字" class="headerlink" title="11. 数字"></a>11. 数字</h2><ul>
+<li>验证数字：<code>^[0-9]*$</code></li>
+<li>验证n位的数字：<code>^\d&#123;n&#125;$</code></li>
+<li>验证至少n位数字：<code>^\d&#123;n,&#125;$</code></li>
+<li>验证m-n位的数字：<code>^\d&#123;m,n&#125;$</code></li>
+<li>验证零和非零开头的数字：<code>^(0|[1-9][0-9]*)$</code></li>
+<li>验证有两位小数的正实数：<code>^[0-9]+(.[0-9]&#123;2&#125;)?$</code></li>
+<li>验证有1-3位小数的正实数：<code>^[0-9]+(.[0-9]&#123;1,3&#125;)?$</code></li>
+<li>验证非零的正整数：<code>^\+?[1-9][0-9]*$</code></li>
+<li>验证非零的负整数：<code>^\-[1-9][0-9]*$</code></li>
+<li>验证非负整数（正整数 + 0） <code>^\d+$</code></li>
+<li>验证非正整数（负整数 + 0） <code>^((-\d+)|(0+))$</code></li>
+<li>整数：<code>^-?\d+$</code></li>
+<li>非负浮点数（正浮点数 + 0）：<code>^\d+(\.\d+)?$</code></li>
+<li>正浮点数 <code>^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</code></li>
+<li>非正浮点数（负浮点数 + 0） <code>^((-\d+(\.\d+)?)|(0+(\.0+)?))$</code></li>
+<li>负浮点数 <code>^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$</code></li>
+<li>浮点数 <code>^(-?\d+)(\.\d+)?$</code></li>
+</ul>
+<h2 id="12-字符串"><a href="#12-字符串" class="headerlink" title="12. 字符串"></a>12. 字符串</h2><ul>
+<li>英文和数字：<code>^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]&#123;4,40&#125;$</code></li>
+<li>长度为3-20的所有字符：<code>^.&#123;3,20&#125;$</code></li>
+<li>由26个英文字母组成的字符串：<code>^[A-Za-z]+$</code></li>
+<li>由26个大写英文字母组成的字符串：<code>^[A-Z]+$</code></li>
+<li>由26个小写英文字母组成的字符串：<code>^[a-z]+$</code></li>
+<li>由数字和26个英文字母组成的字符串：<code>^[A-Za-z0-9]+$</code></li>
+<li>由数字、26个英文字母或者下划线组成的字符串：<code>^\w+$ 或 ^\w&#123;3,20&#125;$</code></li>
+<li>中文、英文、数字包括下划线：<code>^[\u4E00-\u9FA5A-Za-z0-9_]+$</code></li>
+<li>中文、英文、数字但不包括下划线等符号：<code>^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;$</code></li>
+<li>可以输入含有^%&amp;’,;=?$\”等字符：<code>[^%&amp;&#39;,;=?$\x22]+</code></li>
+<li>禁止输入含有<del>的字符：`[^</del>\x22]+`</li>
+</ul>
+<h2 id="附：正则表达式语法详解"><a href="#附：正则表达式语法详解" class="headerlink" title="附：正则表达式语法详解"></a>附：正则表达式语法详解</h2><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>\</code></td>
+<td align="left">将下一个字符标记为一个特殊字符（File Format Escape，清单见本表）、或一个原义字符（Identity Escape，有^$()*+?.[{|共计12个)、或一个向后引用（backreferences）、或一个八进制转义符。例如，“<code>n</code>”匹配字符“<code>n</code>”。“<code>\n</code>”匹配一个换行符。序列“<code>\\</code>”匹配“<code>\</code>”而“<code>\(</code>”则匹配“<code>(</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>^</code></td>
+<td align="left">匹配输入字符串的开始位置</td>
+</tr>
+<tr>
+<td align="left"><code>$</code></td>
+<td align="left">匹配输入字符串的结束位置</td>
+</tr>
+<tr>
+<td align="left"><code>*</code></td>
+<td align="left">匹配前面的子表达式零次或多次。例如，zo<em>能匹配“<code>z</code>”、“<code>zo</code>”以及“<code>zoo</code>”。</em>等价于{0,}。</td>
+</tr>
+<tr>
+<td align="left"><code>+</code></td>
+<td align="left">匹配前面的子表达式一次或多次。例如，“<code>zo+</code>”能匹配“<code>zo</code>”以及“<code>zoo</code>”，但不能匹配“<code>z</code>”。+等价于{1,}。</td>
+</tr>
+<tr>
+<td align="left"><code>?</code></td>
+<td align="left">匹配前面的子表达式零次或一次。例如，“<code>do(es)?</code>”可以匹配“<code>does</code>”中的“<code>do</code>”和“<code>does</code>”。?等价于{0,1}。</td>
+</tr>
+<tr>
+<td align="left"><code>&#123;n&#125;</code></td>
+<td align="left">n是一个非负整数。匹配确定的n次。例如，“<code>o&#123;2&#125;</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但是能匹配“<code>food</code>”中的两个o。</td>
+</tr>
+<tr>
+<td align="left"><code>&#123;n,&#125;</code></td>
+<td align="left">n是一个非负整数。至少匹配n次。例如，“<code>o&#123;2,&#125;</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但能匹配“<code>foooood</code>”中的所有o。“<code>o&#123;1,&#125;</code>”等价于“<code>o+</code>”。“<code>o&#123;0,&#125;</code>”则等价于“<code>o*</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>&#123;n,m&#125;</code></td>
+<td align="left">m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“<code>o&#123;1,3&#125;</code>”将匹配“<code>fooooood</code>”中的前三个o。“<code>o&#123;0,1&#125;</code>”等价于“<code>o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td align="left"><code>?</code></td>
+<td align="left">非贪心量化（Non-greedy quantifiers）：当该字符紧跟在任何一个其他重复修饰符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是<strong>「非」</strong>贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“<code>oooo</code>”，“<code>o+?</code>”将匹配单个“<code>o</code>”，而“<code>o+</code>”将匹配所有“<code>o</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left">匹配除“<code>\r</code>”“<code>\n</code>”之外的任何单个字符。要匹配包括“<code>\r</code>”“<code>\n</code>”在内的任何字符，请使用像“<code>(.|\r|\n)</code>”的模式。</td>
+</tr>
+<tr>
+<td align="left"><code>(pattern)</code></td>
+<td align="left">匹配pattern并获取这一匹配的子字符串。该子字符串用于向后引用。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“<code>\(</code>”或“<code>\)</code>”。可带数量后缀。</td>
+</tr>
+<tr>
+<td align="left"><code>(?:pattern)</code></td>
+<td align="left">匹配pattern但不获取匹配的子字符串（shy groups），也就是说这是一个非获取匹配，不存储匹配的子字符串用于向后引用。这在使用或字符“<code>(|)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y|ies)</code>”就是一个比“<code>industry|industries</code>”更简略的表达式。</td>
+</tr>
+<tr>
+<td align="left"><code>(?=pattern)</code></td>
+<td align="left">正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code>Windows(?=95|98|NT|2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td align="left"><code>(?!pattern)</code></td>
+<td align="left">正向否定预查（negative assert），在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code>Windows(?!95|98|NT|2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+</tr>
+<tr>
+<td align="left"><code>(?&lt;=pattern)</code></td>
+<td align="left">反向（look behind）肯定预查，与正向肯定预查类似，只是方向相反。例如，“<code>(?&lt;=95|98|NT|2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>(?&lt;!pattern)</code></td>
+<td align="left">反向否定预查，与正向否定预查类似，只是方向相反。例如“<code>(?&lt;!95|98|NT|2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>x|y</code></td>
+<td align="left">没有包围在()里，其范围是整个正则表达式。例如，“<code>z|food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(?:z|f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>[xyz]</code></td>
+<td align="left">字符集合（character class）。匹配所包含的任意一个字符。例如，“<code>[abc]</code>”可以匹配“<code>plain</code>”中的“<code>a</code>”。特殊字符仅有反斜线\保持特殊含义，用于转义字符。其它特殊字符如星号、加号、各种括号等均作为普通字符。脱字符^如果出现在首位则表示负值字符集合；如果出现在字符串中间就仅作为普通字符。连字符 - 如果出现在字符串中间表示字符范围描述；如果如果出现在首位（或末尾）则仅作为普通字符。右方括号应转义出现，也可以作为首位字符出现。</td>
+</tr>
+<tr>
+<td align="left"><code>[^xyz]</code></td>
+<td align="left">排除型字符集合（negated character classes）。匹配未列出的任意字符。例如，“<code>[^abc]</code>”可以匹配“<code>plain</code>”中的“<code>plin</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>[a-z]</code></td>
+<td align="left">字符范围。匹配指定范围内的任意字符。例如，“<code>[a-z]</code>”可以匹配“<code>a</code>”到“<code>z</code>”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td align="left"><code>[^a-z]</code></td>
+<td align="left">排除型的字符范围。匹配任何不在指定范围内的任意字符。例如，“<code>[^a-z]</code>”可以匹配任何不在“<code>a</code>”到“<code>z</code>”范围内的任意字符。</td>
+</tr>
+<tr>
+<td align="left"><code>[:name:]</code></td>
+<td align="left">增加命名字符类（named character class）中的字符到表达式。只能用于<strong>「方括号表达式」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>[=elt=]</code></td>
+<td align="left">增加当前locale下排序（collate）等价于字符“elt”的元素。例如，[=a=]可能会增加ä、á、à、ă、ắ、ằ、ẵ、ẳ、â、ấ、ầ、ẫ、ẩ、ǎ、å、ǻ、ä、ǟ、ã、ȧ、ǡ、ą、ā、ả、ȁ、ȃ、ạ、ặ、ậ、ḁ、ⱥ、ᶏ、ɐ、ɑ 。只能用于方括号表达式。</td>
+</tr>
+<tr>
+<td align="left"><code>[.elt.]</code></td>
+<td align="left">增加排序元素elt到表达式中。这是因为某些排序元素由多个字符组成。例如，29个字母表的西班牙语， “CH”作为单个字母排在字母C之后，因此会产生如此排序“cinco, credo, chispa”。只能用于方括号表达式。</td>
+</tr>
+<tr>
+<td align="left"><code>\b</code></td>
+<td align="left">匹配一个单词边界，也就是指单词和空格间的位置。例如，“<code>er\b</code>”可以匹配“<code>never</code>”中的“<code>er</code>”，但不能匹配“<code>verb</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>\B</code></td>
+<td align="left">匹配非单词边界。“<code>er\B</code>”能匹配“<code>verb</code>”中的“<code>er</code>”，但不能匹配“<code>never</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>\cx</code></td>
+<td align="left">匹配由x指明的控制字符。x的值必须为<code>A-Z</code>或<code>a-z</code>之一。否则，将c视为一个原义的“<code>c</code>”字符。控制字符的值等于x的值最低5比特（即对3210进制的余数）。例如，\cM匹配一个Control-M或回车符。\ca等效于\u0001, \cb等效于\u0002, 等等…</td>
+</tr>
+<tr>
+<td align="left"><code>\d</code></td>
+<td align="left">匹配一个数字字符。等价于[0-9]。注意Unicode正则表达式会匹配全角数字字符。</td>
+</tr>
+<tr>
+<td align="left"><code>\D</code></td>
+<td align="left">匹配一个非数字字符。等价于[^0-9]。</td>
+</tr>
+<tr>
+<td align="left"><code>\f</code></td>
+<td align="left">匹配一个换页符。等价于\x0c和\cL。</td>
+</tr>
+<tr>
+<td align="left"><code>\n</code></td>
+<td align="left">匹配一个换行符。等价于\x0a和\cJ。</td>
+</tr>
+<tr>
+<td align="left"><code>\r</code></td>
+<td align="left">匹配一个回车符。等价于\x0d和\cM。</td>
+</tr>
+<tr>
+<td align="left"><code>\s</code></td>
+<td align="left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。注意Unicode正则表达式会匹配全角空格符。</td>
+</tr>
+<tr>
+<td align="left"><code>\S</code></td>
+<td align="left">匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td align="left"><code>\t</code></td>
+<td align="left">匹配一个制表符。等价于\x09和\cI。</td>
+</tr>
+<tr>
+<td align="left"><code>\v</code></td>
+<td align="left">匹配一个垂直制表符。等价于\x0b和\cK。</td>
+</tr>
+<tr>
+<td align="left"><code>\w</code></td>
+<td align="left">匹配包括下划线的任何单词字符。等价于“<code>[A-Za-z0-9_]</code>”。注意Unicode正则表达式会匹配中文字符。</td>
+</tr>
+<tr>
+<td align="left"><code>\W</code></td>
+<td align="left">匹配任何非单词字符。等价于“<code>[^A-Za-z0-9_]</code>”。</td>
+</tr>
+<tr>
+<td align="left"><code>\xnn</code></td>
+<td align="left">十六进制转义字符序列。匹配两个十六进制数字nn表示的字符。例如，“<code>\x41</code>”匹配“<code>A</code>”。“<code>\x041</code>”则等价于“<code>\x04&amp;1</code>”。正则表达式中可以使用ASCII编码。.</td>
+</tr>
+<tr>
+<td align="left"><code>\num</code></td>
+<td align="left">向后引用（back-reference）一个子字符串（substring），该子字符串与正则表达式的第num个用括号围起来的捕捉群（capture group）子表达式（subexpression）匹配。其中num是从1开始的十进制正整数，其上限可能是9、31、99，甚至无限。例如：“<code>(.)\1</code>”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td align="left"><code>\n</code></td>
+<td align="left">标识一个八进制转义值或一个向后引用。如果\n之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。</td>
+</tr>
+<tr>
+<td align="left"><code>\nm</code></td>
+<td align="left">3位八进制数字，标识一个八进制转义值或一个向后引用。如果\nm之前至少有nm个获得子表达式，则nm为向后引用。如果\nm之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则\nm将匹配八进制转义值nm。</td>
+</tr>
+<tr>
+<td align="left"><code>\nml</code></td>
+<td align="left">如果n为八进制数字（0-3），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。</td>
+</tr>
+<tr>
+<td align="left"><code>\un</code></td>
+<td align="left">Unicode转义字符序列。其中n是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配著作权符号（©）。</td>
+</tr>
+</tbody></table>
+<h2 id="优先权"><a href="#优先权" class="headerlink" title="优先权"></a>优先权</h2><table>
+<thead>
+<tr>
+<th align="left">优先权</th>
+<th align="left">符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">最高</td>
+<td align="left"><code>\</code></td>
+</tr>
+<tr>
+<td align="left">高</td>
+<td align="left"><code>()</code>、<code>(?:)</code>、<code>(?=)</code>、<code>[]</code></td>
+</tr>
+<tr>
+<td align="left">中</td>
+<td align="left"><code>*</code>、<code>+</code>、<code>?</code>、<code>&#123;n&#125;</code>、<code>&#123;n,&#125;</code>、<code>&#123;n,m&#125;</code></td>
+</tr>
+<tr>
+<td align="left">低</td>
+<td align="left"><code>^</code>、<code>$</code>、中介字符</td>
+</tr>
+<tr>
+<td align="left">次最低</td>
+<td align="left">串接，即相邻字符连接在一起</td>
+</tr>
+<tr>
+<td align="left">最低</td>
+<td align="left"><code>|</code></td>
+</tr>
+</tbody></table>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
