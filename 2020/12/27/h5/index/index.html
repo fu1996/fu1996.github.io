@@ -6,28 +6,26 @@
   <meta name="keywords" content=" h5 ">
   <meta name="description" content="h5 | 付俊奎的个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Babel 插件的编写(下)本文并未详细介绍所有的 babel path 节点的相关 api，详细的 关于 path 节点的相关文档 请见 官方推荐文档（中文 有点老旧） 或者 根据官方原版 英文文档 翻译的 中文文档（已经向 官方 提了PR 但是暂未合并），推荐的 是 先看 此文档，发现其中 部分 api 不熟悉 的时候 再去查 api 文档，印象深刻。 1. babel 插件的API规范 Ba">
+<meta name="description" content="手把手教你不到200行代码实现属于自己的超mini版编程语言题目是有点标题党的嫌疑，但是 看完这篇文章如果没有收获，你倒立洗头带着疑问去学习： 各种各样的编程语言层出不穷，进而会产生许多带有不同后缀的 文件（.js,.jsx,.ts,.py,.go,.php,.java），这些文件的内容对程序员来说是逻辑的表达，但是对计算机来说，也就是带着不同后缀的二进制文件，那他们是如何变成机器读得懂的语言呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="babel插件的编写（下）">
-<meta property="og:url" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/index.html">
+<meta property="og:title" content="手把手教你不到200行代码实现属于自己的超mini版编程语言">
+<meta property="og:url" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.html">
 <meta property="og:site_name" content="付俊奎的个人博客">
-<meta property="og:description" content="Babel 插件的编写(下)本文并未详细介绍所有的 babel path 节点的相关 api，详细的 关于 path 节点的相关文档 请见 官方推荐文档（中文 有点老旧） 或者 根据官方原版 英文文档 翻译的 中文文档（已经向 官方 提了PR 但是暂未合并），推荐的 是 先看 此文档，发现其中 部分 api 不熟悉 的时候 再去查 api 文档，印象深刻。 1. babel 插件的API规范 Ba">
+<meta property="og:description" content="手把手教你不到200行代码实现属于自己的超mini版编程语言题目是有点标题党的嫌疑，但是 看完这篇文章如果没有收获，你倒立洗头带着疑问去学习： 各种各样的编程语言层出不穷，进而会产生许多带有不同后缀的 文件（.js,.jsx,.ts,.py,.go,.php,.java），这些文件的内容对程序员来说是逻辑的表达，但是对计算机来说，也就是带着不同后缀的二进制文件，那他们是如何变成机器读得懂的语言呢？">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220713221218536.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220713224751387.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717171544700.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717171740780.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717172415069.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717173719918.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717175318229.png">
-<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220717180115965.png">
-<meta property="article:published_time" content="2022-07-13T13:59:55.000Z">
-<meta property="article:modified_time" content="2022-07-17T10:14:02.478Z">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723164238813.png">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723164611741.png">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723170628774.png">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723171102191.png">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723171314079.png">
+<meta property="og:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723174338452.png">
+<meta property="article:published_time" content="2022-07-23T08:25:20.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:11:45.212Z">
 <meta property="article:author" content="付俊奎">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="babel">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lhwz666.gitee.io/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/image-20220713221218536.png">
+<meta name="twitter:image" content="https://lhwz666.gitee.io/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/image-20220723164238813.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -131,7 +129,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(118)</small>
+                <small>(119)</small>
             
         </div>
     </li>
@@ -380,7 +378,7 @@
                         <i class="fold iconfont icon-right"></i>
                         
                         js
-                        <small>(68)</small>
+                        <small>(69)</small>
                         
                     </div>
                     
@@ -403,7 +401,7 @@
                                         
                                         babel
                                         
-                                            <small>(3
+                                            <small>(4
                                                 )</small>
                                         
                                     </div>
@@ -530,7 +528,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="118">
+<input type="hidden" id="yelog_site_posts_number" value="119">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -750,6 +748,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="All js babel "
+           href="/2022/07/23/js/babel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%B8%8D%E5%88%B0200%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B6%85mini%E7%89%88%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"
+           data-tag="js,babel"
+           data-author="" >
+            <span class="post-title" title="手把手教你不到200行代码实现属于自己的超mini版编程语言">手把手教你不到200行代码实现属于自己的超mini版编程语言</span>
+            <span class="post-date" title="2022-07-23 16:25:20">2022/07/23</span>
+        </a>
         
         <a  class="All js babel "
            href="/2022/07/13/js/babel/babel%E6%8F%92%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%88%E4%B8%8B%EF%BC%89/"
