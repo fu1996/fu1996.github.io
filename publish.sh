@@ -13,4 +13,5 @@ npm run build
 cd build
 git add .
 git commit -m $CURRENT_DATE
-git push origin HEAD:main
+git remote add blog https://github.com/fu1996/fu1996.github.io.git
+git push -f blog HEAD:main
