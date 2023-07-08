@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.redux": {
+    "message": "redux",
+    "description": "The label for category redux in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ssr": {
+    "message": "ssr",
+    "description": "The label for category ssr in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.work": {
+    "message": "work",
+    "description": "The label for category work in sidebar tutorialSidebar"
+  }
+}

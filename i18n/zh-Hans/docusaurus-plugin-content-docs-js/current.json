@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.js基础": {
+    "message": "js基础",
+    "description": "The label for category js基础 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.js进阶": {
+    "message": "js进阶",
+    "description": "The label for category js进阶 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.前端高手进阶": {
+    "message": "前端高手进阶",
+    "description": "The label for category 前端高手进阶 in sidebar tutorialSidebar"
+  }
+}

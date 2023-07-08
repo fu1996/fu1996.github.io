@@ -1,0 +1,274 @@
+---
+authors: junkui
+title: 07-ts中的枚举类型
+categories:
+  - ts
+tags:
+  - ts
+  - 疑问
+
+date: 2021-01-02 08:38:22
+---
+
+# 枚举
+
+使用枚举我们可以定义一些带名字的常量。 使用枚举可以清晰地表达意图或创建一组有区别的用例。 TypeScript 支持`数字`的和`基于字符串`的枚举。
+
+## 1.数字枚举
+
+```typescript
+// 带初始化的枚举
+enum Direction {
+  Up = 1, // 定义了起始值  则下面的 会递增1
+  Down,
+  Left,
+  Right,
+}
+console.log(Direction.Right); // 4
+
+// 不带初始化的枚举
+enum NoDirection {
+  Up, // 默认从0 开始 递增1
+  Down,
+  Left,
+  Right,
+}
+
+console.log(NoDirection.Up); // 0
+```
+
+## 2.字符串的枚举
+
+在一个字符串枚举里，每个成员都必须用字符串字面量，或另外一个字符串枚举成员进行初始化。
+
+```typescript
+enum DirectionString {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+```
+
+## 3.计算和常量值
+
+枚举成员值可以是`常量`或者`计算出来的`
+
+### 当作常量的时候
+
+- 是枚举的第一个成员且没有初始化
+- 如果枚举成员中，有一个项是数字类型的，则该成员后的枚举项在此 2 项基础上递增 1【见代码的 E3】
+
+```typescript
+// E.X is constant:
+enum E {
+  X,
+}
+console.log(E.X); // 0
+
+enum E1 {
+  X,
+  Y,
+  Z,
+}
+enum E2 {
+  A = 2,
+  B,
+  C,
+}
+enum E3 {
+  A,
+  B,
+  C = 5,
+  D, // C 为 5 但是A还是0开头 而不是3，只有C后的枚举 才会自增1
+}
+console.log(E1.Y); // 1
+console.log(E2.C); // 4
+console.log(E3.D); // 6
+```
+
+### 被计算出来的时候
+
+使用表达式初始化时候，是可以在编译阶段求值的。
+
+- 一个枚举表达式字面量（主要是字符串字面量或数字字面量）
+- 一个对之前定义的常量枚举成员的引用（可以是在不同的枚举类型中定义的）
+- 带括号的常量枚举表达式
+- 一元运算符 `+`, `-`, `~`其中之一应用在了常量枚举表达式
+- 常量枚举表达式做为二元运算符 `+`, `-`, `*`, `/`, `%`, `<<`, `>>`, `>>>`, `&`, `|`, `^`的操作对象。 若常数枚举表达式求值后为 `NaN`或 `Infinity`，则会在编译阶段报错。
+
+```typescript
+// 相当于就是取等号右边的结果了
+enum FileAccess {
+  // constant members
+  None,
+  Read = 1 << 1,
+  Write = 1 << 2,
+  ReadWrite = Read | Write,
+  // computed member
+  G = "123".length,
+}
+console.log(FileAccess.ReadWrite); // 6
+console.log(FileAccess.None); // 0
+```
+
+## 4.联合枚举和枚举成员的类型
+
+### 枚举成员变成类型
+
+```typescript
+enum ShapeKinx {
+  Circle,
+  Square,
+}
+
+interface Circle {
+  kind: ShapeKinx.Circle;
+  radius: number;
+}
+
+interface Square {
+  kind: ShapeKinx.Square;
+  radius: number;
+}
+// 变量C 是 Circle 类型的
+let c: Circle = {
+  // Circle 的 kind 属性是 ShapeKinx.Circle 此处是  ShapeKinx.Square 报错
+  kind: ShapeKinx.Square,
+  radius: 100,
+};
+```
+
+### 来自 TS 的推断
+
+```typescript
+enum E {
+  Foo,
+  Bar,
+}
+
+function f(x: E) {
+  // X 是枚举类型的 里面就两个类型 不是Foo那就必须是Bar了鸡贼的TS
+  if (x !== E.Foo || x !== E.Bar) {
+    // 此条件将始终返回 "true"，因为类型 "E.X" 和 "E.Bar" 没有重叠。
+    //             ~~~~~~~~~~~
+    // Error! Operator '!==' cannot be applied to types 'E.Foo' and 'E.Bar'.
+  }
+}
+```
+
+## 5.运行时的枚举
+
+TS 中
+
+```typescript
+enum E6 {
+  X,
+  Y,
+  Z,
+}
+
+function f(obj: { X: number }) {
+  return obj.X;
+}
+
+// Works, since 'E6' has a property named 'X' which is a number.
+f(E6);
+console.log(typeof E6); // object
+```
+
+编译为 JS
+
+```javascript
+var E6;
+(function (E6) {
+  E6[(E6["X"] = 0)] = "X";
+  E6[(E6["Y"] = 1)] = "Y";
+  E6[(E6["Z"] = 2)] = "Z";
+})(E6 || (E6 = {}));
+function f(obj) {
+  return obj.X;
+}
+// Works, since 'E6' has a property named 'X' which is a number.
+f(E6);
+console.log(typeof E6);
+```
+
+## 6.反向映射：值来返回键
+
+反向映射：键值结构中，可以通过值类访问键。
+
+```typescript
+enum Enum {
+  A,
+  B = "str",
+}
+let a = Enum.A; // Enum = {A:0,0:A}
+let nameOfA = Enum[a]; // "A"
+```
+
+编译为 JS
+
+```JavaScript
+var Enum;
+(function (Enum) {
+    Enum[Enum["A"] = 0] = "A";
+    Enum["B"] = "str";
+})(Enum || (Enum = {}));
+var a = Enum.A; // Enum = {A:0,0:A}
+var nameOfA = Enum[a]; // "A"
+```
+
+**不会为字符串生成反向映射，也生成不了啊**
+
+## 7.`const`枚举
+
+使用 const 声明的枚举会在编译阶段，就把 ts 中使用的枚举的值给提取出来。不把整个枚举对象编译进 js 中。
+
+ts 版本
+
+```typescript
+const enum Enum8 {
+  A = 1,
+  B = A * 2,
+}
+console.log(Enum8.B);
+
+const enum Directions {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+let directions = [
+  Directions.Up,
+  Directions.Down,
+  Directions.Left,
+  Directions.Right,
+];
+```
+
+JS 版本
+
+```JavaScript
+console.log(2 /* B */);
+var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+
+```
+
+## 8.外部枚举【疑问】
+
+外部枚举用来描述已经存在的枚举类型的形状。
+
+外部枚举和非外部枚举之间有一个重要的区别，在正常的枚举里，没有初始化方法的成员被当成常数成员。 对于非常数的外部枚举而言，没有初始化方法时被当做需要经过计算的。
+
+```typescript
+declare enum Enum9 {
+  A = 1,
+  B,
+  C = 2,
+}
+console.log(Enum9.B);
+console.log(Enum9.A);
+```

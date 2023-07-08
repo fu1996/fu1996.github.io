@@ -1,0 +1,82 @@
+{
+  "title": {
+    "message": "俊奎的博客",
+    "description": "The title in the navbar"
+  },
+  "item.label.关于我": {
+    "message": "关于我",
+    "description": "Navbar item with label 关于我"
+  },
+  "item.label.前端四大件": {
+    "message": "前端四大件",
+    "description": "Navbar item with label 前端四大件"
+  },
+  "item.label.框架": {
+    "message": "框架",
+    "description": "Navbar item with label 框架"
+  },
+  "item.label.工程化": {
+    "message": "工程化",
+    "description": "Navbar item with label 工程化"
+  },
+  "item.label.后端": {
+    "message": "后端",
+    "description": "Navbar item with label 后端"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.大学四年": {
+    "message": "大学四年",
+    "description": "Navbar item with label 大学四年"
+  },
+  "item.label.工作以来": {
+    "message": "工作以来",
+    "description": "Navbar item with label 工作以来"
+  },
+  "item.label.HTML和CSS": {
+    "message": "HTML和CSS",
+    "description": "Navbar item with label HTML和CSS"
+  },
+  "item.label.JavaScript": {
+    "message": "JavaScript",
+    "description": "Navbar item with label JavaScript"
+  },
+  "item.label.TypeScript": {
+    "message": "TypeScript",
+    "description": "Navbar item with label TypeScript"
+  },
+  "item.label.React": {
+    "message": "React",
+    "description": "Navbar item with label React"
+  },
+  "item.label.Webpack": {
+    "message": "Webpack",
+    "description": "Navbar item with label Webpack"
+  },
+  "item.label.Babel": {
+    "message": "Babel",
+    "description": "Navbar item with label Babel"
+  },
+  "item.label.Linux": {
+    "message": "Linux",
+    "description": "Navbar item with label Linux"
+  },
+  "item.label.Python": {
+    "message": "Python",
+    "description": "Navbar item with label Python"
+  },
+  "item.label.Mysql": {
+    "message": "Mysql",
+    "description": "Navbar item with label Mysql"
+  },
+  "item.label.Docker": {
+    "message": "Docker",
+    "description": "Navbar item with label Docker"
+  },
+  "item.label.K8s": {
+    "message": "K8s",
+    "description": "Navbar item with label K8s"
+  }
+}
