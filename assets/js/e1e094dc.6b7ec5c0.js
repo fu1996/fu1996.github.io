@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2248],{75242:e=>{e.exports=JSON.parse('[{"label":"\u6b63\u5219","permalink":"/re/tags/\u6b63\u5219","count":3},{"label":"python","permalink":"/re/tags/python","count":1}]')}}]);
