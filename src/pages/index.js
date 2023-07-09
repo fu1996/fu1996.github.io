@@ -111,8 +111,17 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
+          <Link className="button button--secondary button--lg" to="/me">
+            关于我 😊
+          </Link>
           <Link className="button button--secondary button--lg" to="/blog">
             博客 →
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="https://juejin.cn/user/2277843823238781"
+          >
+            掘金 💰
           </Link>
         </div>
       </div>

@@ -60,6 +60,12 @@
   --ifm-navbar-height: 80px;
   --ifm-link-decoration: none;
   --ifm-link-hover-decoration: none;
+  --search-local-modal-width: 480px;
+  --search-local-highlight-color: #5468ff;
+}
+
+html[data-theme="dark"] {
+  --search-local-highlight-color: #d23669;
 }
 
 .docusaurus-highlight-code-line {

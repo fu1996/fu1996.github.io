@@ -259,7 +259,7 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 个结果"
+    "message": "查看全部结果"
   },
   "theme.SearchPage.documentsFound.plurals": {
     "message": "找到 {count} 份文件",
@@ -400,5 +400,17 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "theme.SearchBar.noResultsText": {
+    "message": "没有找到任何文档"
+  },
+  "theme.SearchBar.seeAllOutsideContext": {
+    "message": "See results outside {context}"
+  },
+  "theme.SearchBar.searchInContext": {
+    "message": "See all results in {context}"
+  },
+  "theme.SearchPage.searchContext.everywhere": {
+    "message": "everywhere"
   }
 }

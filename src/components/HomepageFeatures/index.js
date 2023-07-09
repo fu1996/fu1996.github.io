@@ -12,7 +12,7 @@ const FeatureList = [
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/Messiahhh/blog"
+          href="https://github.com/fu1996/fu1996.github.io"
         >
           GitHub
         </a>
@@ -22,12 +22,12 @@ const FeatureList = [
   {
     title: "About Me",
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: <>now working at bytedance</>,
+    description: <>一名在大学从动物科学专业转码农的自学者</>,
   },
   {
     title: "Contact Me",
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: <>Wechat: a616348105</>,
+    description: <>Wechat: fjk1586237690</>,
   },
 ];
 

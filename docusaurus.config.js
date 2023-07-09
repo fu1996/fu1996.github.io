@@ -1,7 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+// @ts-ignore
 const lightCodeTheme = require("prism-react-renderer/themes/github");
+// @ts-ignore
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const ALL_DOS = [
@@ -27,7 +29,7 @@ const getDoc = (name = "") => [
     path: name,
     routeBasePath: name,
     sidebarPath: require.resolve("./sidebars.js"),
-    editUrl: "https://git.7wate.com/zhouzhongping/wiki/src/branch/master",
+    editUrl: "https://github.com/fu1996/fu1996.github.io/tree/main",
     showLastUpdateAuthor: true,
     showLastUpdateTime: true,
     breadcrumbs: false,
@@ -36,8 +38,8 @@ const getDoc = (name = "") => [
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "俊奎的博客",
-  tagline: "coding forever",
+  title: "俊奎",
+  tagline: "一名在大学从动物科学专业转码农的自学者",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -65,7 +67,18 @@ const config = {
     require.resolve("plugin-image-zoom"),
     ...ALL_DOS.map((name) => getDoc(name)),
   ],
-
+  themes: [
+    [
+      // @ts-ignore
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      // @ts-ignore
+      ({
+        hashed: true,
+        language: ["en", "zh"],
+      }),
+    ],
+  ],
   presets: [
     [
       "classic",
@@ -79,8 +92,8 @@ const config = {
           //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
-          blogSidebarCount: 7,
-          blogSidebarTitle: "近期文章",
+          blogSidebarTitle: "全部博文",
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -117,13 +130,13 @@ const config = {
         isCloseable: true,
       },
       navbar: {
-        title: "俊奎的博客",
+        title: "俊奎",
         hideOnScroll: true,
         items: [
           {
             docId: "me",
-            position: "right",
-            label: "关于我",
+            position: "left",
+            label: "我和博客 📝",
 
             items: [
               {
@@ -131,14 +144,14 @@ const config = {
                 href: "/me",
               },
               {
-                label: "工作以来",
+                label: "博客",
                 href: "/blog",
               },
             ],
           },
           {
             position: "right",
-            label: "前端四大件",
+            label: "前端知识库 💡",
             items: [
               {
                 label: "HTML和CSS",
@@ -152,26 +165,10 @@ const config = {
                 label: "TypeScript",
                 to: "/ts",
               },
-            ],
-          },
-          {
-            position: "right",
-            label: "框架",
-            items: [
               {
                 label: "React",
                 to: "/react",
               },
-              // {
-              //   label: "Vue",
-              //   to: "/programming-language",
-              // },
-            ],
-          },
-          {
-            position: "right",
-            label: "工程化",
-            items: [
               {
                 label: "Webpack",
                 to: "/webpack",
@@ -182,9 +179,33 @@ const config = {
               },
             ],
           },
+          // {
+          //   position: "right",
+          //   label: "框架",
+          //   items: [
+          //     // {
+          //     //   label: "Vue",
+          //     //   to: "/programming-language",
+          //     // },
+          //   ],
+          // },
+          // {
+          //   position: "right",
+          //   label: "工程化",
+          //   items: [
+          //     {
+          //       label: "Webpack",
+          //       to: "/webpack",
+          //     },
+          //     {
+          //       label: "Babel",
+          //       to: "/babel",
+          //     },
+          //   ],
+          // },
           {
             position: "right",
-            label: "后端",
+            label: "后端知识库 📖",
             items: [
               {
                 label: "Linux",

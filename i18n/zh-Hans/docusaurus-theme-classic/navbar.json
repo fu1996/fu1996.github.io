@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "俊奎的博客",
+    "message": "俊奎",
     "description": "The title in the navbar"
   },
   "item.label.关于我": {
@@ -78,5 +78,21 @@
   "item.label.K8s": {
     "message": "K8s",
     "description": "Navbar item with label K8s"
+  },
+  "item.label.我和博客 📝": {
+    "message": "我和博客 📝",
+    "description": "Navbar item with label 我和博客 📝"
+  },
+  "item.label.前端知识库 💡": {
+    "message": "前端知识库 💡",
+    "description": "Navbar item with label 前端知识库 💡"
+  },
+  "item.label.后端知识库 📖": {
+    "message": "后端知识库 📖",
+    "description": "Navbar item with label 后端知识库 📖"
+  },
+  "item.label.博客": {
+    "message": "博客",
+    "description": "Navbar item with label 博客"
   }
 }
