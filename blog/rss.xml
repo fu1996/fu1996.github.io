@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>俊奎的博客 Blog</title>
+        <title>俊奎 Blog</title>
         <link>https://fu1996.github.io/blog</link>
-        <description>俊奎的博客 Blog</description>
-        <lastBuildDate>Sun, 09 Jul 2023 03:19:34 GMT</lastBuildDate>
+        <description>俊奎 Blog</description>
+        <lastBuildDate>Sun, 23 Oct 2022 21:51:31 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
-        <item>
-            <title><![CDATA[index]]></title>
-            <link>https://fu1996.github.io/blog/index</link>
-            <guid>https://fu1996.github.io/blog/index</guid>
-            <pubDate>Sun, 09 Jul 2023 03:19:34 GMT</pubDate>
-            <description><![CDATA[汇总工作以来要用到一些知识]]></description>
-            <content:encoded><![CDATA[<p>汇总工作以来要用到一些知识</p>]]></content:encoded>
-        </item>
         <item>
             <title><![CDATA[如何一套前端代码满足多个客户的定制化需求]]></title>
             <link>https://fu1996.github.io/blog/如何一套代码满足多个客户的定制化需求</link>

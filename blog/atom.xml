@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fu1996.github.io/blog</id>
-    <title>俊奎的博客 Blog</title>
-    <updated>2023-07-09T03:19:34.000Z</updated>
+    <title>俊奎 Blog</title>
+    <updated>2022-10-23T21:51:31.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fu1996.github.io/blog"/>
-    <subtitle>俊奎的博客 Blog</subtitle>
+    <subtitle>俊奎 Blog</subtitle>
     <icon>https://fu1996.github.io/img/favicon.ico</icon>
-    <entry>
-        <title type="html"><![CDATA[index]]></title>
-        <id>https://fu1996.github.io/blog/index</id>
-        <link href="https://fu1996.github.io/blog/index"/>
-        <updated>2023-07-09T03:19:34.000Z</updated>
-        <summary type="html"><![CDATA[汇总工作以来要用到一些知识]]></summary>
-        <content type="html"><![CDATA[<p>汇总工作以来要用到一些知识</p>]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[如何一套前端代码满足多个客户的定制化需求]]></title>
         <id>https://fu1996.github.io/blog/如何一套代码满足多个客户的定制化需求</id>
