@@ -5,7 +5,8 @@ categories:
   - css
 tags:
   - css
-typora-root-url: ./css的选择器专题
+sidebar_position: 1
+slug: /
 date: 2021-02-24 22:09:11
 ---
 
