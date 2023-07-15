@@ -5,7 +5,8 @@ categories:
   - ts
 tags:
   - ts
-
+slug: /
+sidebar_position: 0
 date: 2020-12-29 10:52:39
 ---
 

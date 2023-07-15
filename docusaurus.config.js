@@ -170,12 +170,12 @@ const config = {
                 to: "/react",
               },
               {
-                label: "Webpack",
-                to: "/webpack",
+                label: "Babel 原理",
+                to: "/babel",
               },
               {
-                label: "Babel",
-                to: "/babel",
+                label: "Webpack 源码",
+                to: "/webpack",
               },
             ],
           },

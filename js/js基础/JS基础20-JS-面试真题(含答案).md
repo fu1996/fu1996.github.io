@@ -1,11 +1,10 @@
 ---
 authors: junkui
-title: JS基础20-JS-面试真题[含答案]
+title: JS基础20-JS-面试真题(含答案)
 categories:
   - js
 tags:
   - js
-typora-root-url: ./JS基础20-JS-面试真题[含答案]
 date: 2021-02-09 13:08:08
 ---
 
