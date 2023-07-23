@@ -215,6 +215,7 @@ const config = {
                 label: "Python",
                 to: "/python",
               },
+
               {
                 label: "Mysql",
                 to: "/mysql",
@@ -226,6 +227,52 @@ const config = {
               {
                 label: "K8s",
                 to: "/k8s",
+              },
+            ],
+          },
+          {
+            position: "right",
+            label: "学习课件 🏫",
+            items: [
+              {
+                label: "前端基础（老）",
+                to: "/fe/index.html",
+                target: "_blank",
+              },
+              {
+                label: "Python 高级（老）",
+                to: "/py/01day/01_操作系统（科普章节）.html",
+                target: "_blank",
+              },
+              {
+                label: "Flase（老）",
+                to: "/flask/index.html",
+                target: "_blank",
+              },
+              {
+                label: "Django（老）",
+                to: "/django/index.html",
+                target: "_blank",
+              },
+              {
+                label: "微信开发（老）",
+                to: "/py-mp/index.html",
+                target: "_blank",
+              },
+              {
+                label: "Redis（老）",
+                to: "/redis/index.html",
+                target: "_blank",
+              },
+              {
+                label: "Celery（老）",
+                to: "/celery/index.html",
+                target: "_blank",
+              },
+              {
+                label: "Scrapy（老）",
+                to: "/scrapy/index.html",
+                target: "_blank",
               },
             ],
           },
