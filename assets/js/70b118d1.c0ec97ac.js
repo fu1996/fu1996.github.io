@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2715],{99063:s=>{s.exports=JSON.parse('{"label":"\u7c7b","permalink":"/ts/tags/\u7c7b","allTagsPath":"/ts/tags","count":1,"items":[{"id":"ts\u4e2d\u7684\u63a5\u53e3","title":"03-ts\u4e2d\u7684\u63a5\u53e3","description":"1.\u6982\u5ff5","permalink":"/ts/ts\u4e2d\u7684\u63a5\u53e3"}]}')}}]);
