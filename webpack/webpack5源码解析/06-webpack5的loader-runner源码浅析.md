@@ -18,7 +18,7 @@ sidebar_position: 6
 3. loader-runner 中巧用 this 指向和闭包实现异步 loader
 4. 100 行代码递归调用实现一个 loader-runner 的迷你版
 
-# 0. 开篇
+## 0. 开篇
 
 今天换个学习方式去了解 `loader-runner` 的源代码，`手把手的带你去了解我是通过什么方式去学习源码的，希望能帮助到大家`。
 
@@ -28,7 +28,7 @@ sidebar_position: 6
 
 ![img](./06-webpack5的loaderRunner源码浅析/cmu4OTrxUtXaCDo4h8KaL52gQmSJcqjs.gif)
 
-# 1. 磨刀不误砍柴工，选择好的工具效率 10 倍加
+## 1. 磨刀不误砍柴工，选择好的工具效率 10 倍加
 
 loader-runner 的代码库地址：[Github 地址](https://github.com/webpack/loader-runner) 【强烈推荐打开慢的兄弟，使用 Gitee 导入的方式进行拉取】
 
@@ -58,7 +58,7 @@ loader-runner 的代码库地址：[Github 地址](https://github.com/webpack/lo
 
 目前来说，全部通过，我们就可以根据单元测试文件进行学习了。
 
-# 2. 开始跟着单元测试进行学习
+## 2. 开始跟着单元测试进行学习
 
 相关的单元测试文件一般在 test 目录，开整
 
@@ -68,7 +68,7 @@ loader-runner 的代码库地址：[Github 地址](https://github.com/webpack/lo
 
 ![img](./06-webpack5的loaderRunner源码浅析/af84a17e-abe8-492b-9bb8-1fd90759850b.png)
 
-## 2.1 来个简单的第一条，学习一下 loader-runner 的基础用法
+### 2.1 来个简单的第一条，学习一下 loader-runner 的基础用法
 
 ```
 it("should process only a resource", function(done) {
@@ -123,7 +123,7 @@ runLoaders({
 
 ![img](./06-webpack5的loaderRunner源码浅析/6596a2da-47ac-4ee9-8895-0a1012e27bee.png)
 
-## 2.2 测试 简单的 同步 loader
+### 2.2 测试 简单的 同步 loader
 
 代码如下：
 
@@ -163,7 +163,7 @@ module.exports = function(source) {
 
 这不又意外学习到了`如何编写一个简易的同步的loader`。
 
-## 2.3 同步会写了，不会写异步，作为一个追求完美的程序员，继续向下看
+### 2.3 同步会写了，不会写异步，作为一个追求完美的程序员，继续向下看
 
 ```
 it("should process a simple async loader", function(done) {
@@ -209,7 +209,7 @@ module.exports = function(source) {
 
 后期学习了源码以后我们一步一步的解答。
 
-## 2.4 异步可不仅仅是有定时器一种哦，试试 Promise
+### 2.4 异步可不仅仅是有定时器一种哦，试试 Promise
 
 ```
 it("should process a simple promise loader", function(done) {
@@ -241,7 +241,7 @@ module.exports = function(source) {
 
 这个`simple-promise-loader.js`的方法也太简单了把，它导出了一个函数，这个函数接收一个参数 source，并返回一个 Promise 对象。这个 Promise 对象的值是 source + "-promise-simple"，也就是将传入的 source 字符串加上一个后缀字符串 "-promise-simple"，然后作为 Promise 对象的值进行返回。
 
-## 2.5 同步学会了，异步也学了两种，来个合集吧？
+### 2.5 同步学会了，异步也学了两种，来个合集吧？
 
 ```
 it("should process multiple simple loaders", function(done) {
@@ -289,7 +289,7 @@ TODO:
 
 1. 为什么 loader 的执行顺序是从后向前执行的？
 
-## 2.6 总结
+### 2.6 总结
 
 我们大致看了几个简单的测试用例，总结一下目前的 TODO，就要开始简单的调试代码了
 
@@ -302,9 +302,9 @@ TODO:
 
 1. 为什么 loader 的执行顺序是从后向前执行的？
 
-# 3. 开始调试，理解 pitch loader 和 normal loader
+## 3. 开始调试，理解 pitch loader 和 normal loader
 
-## 3.1 对 loader 用到的物料进行组装
+### 3.1 对 loader 用到的物料进行组装
 
 我们选择测试用例的 `should process a simple async loader` 开始调试，使用 webstorm 的好处就是可以直接点击 测试用例旁边的 debug xxx 按钮开始调试
 
@@ -361,7 +361,7 @@ loader 处理完毕以后，开始处理 loader 用到的上下文。
 
 `iteratePitchingLoaders` 是 loader runner 中的核心业务逻辑。
 
-## 3.2 分析 `iteratePitchingLoaders` 的 大体逻辑
+### 3.2 分析 `iteratePitchingLoaders` 的 大体逻辑
 
 放上核心代码，贴心的我写了注释哦。 ![img](./06-webpack5的loaderRunner源码浅析/80.gif)
 
@@ -484,7 +484,7 @@ function processResource(options, loaderContext, callback) {
 1. 重置 上下文的 `loaderContext.loaderIndex` 为 最后一个 loader 的索引
 2. 开始调用 `iterateNormalLoaders` 方法，开始执行 `normal loader `的递归调用。
 
-## 3.3 分析 `iterateNormalLoaders` 的 大体逻辑
+### 3.3 分析 `iterateNormalLoaders` 的 大体逻辑
 
 直接上代码
 
@@ -522,7 +522,7 @@ function iterateNormalLoaders(options, loaderContext, args, callback) {
 
 到现在的话，才大致明白了 对 pitch loader 和 normal loader 的调度层的业务逻辑。关于 loader 中的 this 相关的疑问是在 `runSyncOrAsync` 方法中进行解答。
 
-# 4. 八股文之 this 的指向问题，闭包
+## 4. 八股文之 this 的指向问题，闭包
 
 不管是在 pitch loader 的执行中 还是在 normal loader 的执行中，最后的最后都是调用的 `runSyncOrAsync` 方法，只不过是传参的不同。
 
@@ -548,7 +548,7 @@ this 相关的 TODO 至此也全部解开了，接下来我们再去看下这个
 
 ![img](./06-webpack5的loaderRunner源码浅析/e30d279e-3a7e-4c83-a356-86762d944763.png)
 
-# 5. 100 行左右手写一个简单的 loader 调度
+## 5. 100 行左右手写一个简单的 loader 调度
 
 整体分析下来，发现 loader-runner 的实现中比较难以理解的就是关于 pitch loader 和 norma loader 的调度。稍微手写了一下简易版的实现。代码运行效果如下：
 

@@ -12,13 +12,13 @@ date: 2020-12-29 10:52:39
 
 https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html
 
-## 环境搭建
+### 环境搭建
 
 ```bash
 npm install -g typescript
 ```
 
-## 测试环境是否成功
+### 测试环境是否成功
 
 新建 greeter.ts
 
@@ -38,7 +38,7 @@ document.body.innerHTML = greeter(user);
 tsc greeter.ts
 ```
 
-## 1.添加类型注解 【和 java 一样】
+### 1.添加类型注解 【和 java 一样】
 
 ```typescript
 function greeter(person: string) {
@@ -64,7 +64,7 @@ let user = [1, 2, 3];
 
 `TypeScript提供了静态的代码分析，它可以分析代码结构和提供的类型注解。`
 
-## 2.使用接口
+### 2.使用接口
 
 接口描述对象，指明对象里面有哪些键
 
@@ -83,7 +83,7 @@ let user = { firstName: "Jane", lastName: "User" };
 document.body.innerHTML = greeter(user);
 ```
 
-## 3.接口描述类
+### 3.接口描述类
 
 ```typescript
 class Student {

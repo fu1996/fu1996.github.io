@@ -9,9 +9,9 @@ sidebar_position: 4
 date: 2021-01-27 23:52:58
 ---
 
-# 小 demo
+## 小 demo
 
-## 1.子类中没有复写父类的方法
+### 1.子类中没有复写父类的方法
 
 ```tsx
 export interface IDisposer {
@@ -76,7 +76,7 @@ bMulList.dispose();
 
 ![image-20210127235527033](./ts中的类和继承小demo/image-20210127235527033.png)
 
-## 2.子类中复写了父类的方法
+### 2.子类中复写了父类的方法
 
 ```tsx
 // super 是什么 https://www.jianshu.com/p/2a5a7352f4e5

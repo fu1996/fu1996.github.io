@@ -15,13 +15,13 @@ sidebar_position: 4
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/00Ij856KwySf46KdwTb6xuwyGLSJPRXI.gif)
 
-# 1. 浅析`Compiler` 中的第一个核心 hook 是 `compile`
+## 1. 浅析`Compiler` 中的第一个核心 hook 是 `compile`
 
 此 hook 的入参是 `params`
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/9d7c9ea1-8bf2-4e76-bacb-183709c6a810.png)
 
-## 1.1 查看绑定 `compile` 的插件的数据
+### 1.1 查看绑定 `compile` 的插件的数据
 
 进入此 hook，发现只有一个监听的插件：`ExternalModuleFactoryPlugin`。 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/bf3fa7cb-2fdf-4f92-94fc-f0721c8da533.png)
 
@@ -59,13 +59,13 @@ class ExternalsPlugin {
 
 会发现这个插件实际上也就是监听了一下 `normalModuleFactory.hooks.factorize` 的事件。
 
-## 1.2 总结
+### 1.2 总结
 
 总体来说：`Compiler` 里的 `hooks.compile` 的主要作用就是通过 `ExternalModuleFactoryPlugin` 监听了 `normalModuleFactory.hooks.factorize` 的事件。
 
-# 2. 继续调试 `Compiler` 的 `compile` hook
+## 2. 继续调试 `Compiler` 的 `compile` hook
 
-## 2.1 创建 `compilation` 天选打工人
+### 2.1 创建 `compilation` 天选打工人
 
 截图奉上 下一步的逻辑
 
@@ -102,9 +102,9 @@ createCompilation(params) {
 
 下一步就是开始调试 `thisCompilation` 的 hook。
 
-# 3. Compiler 创建了 compilation，开始调用 `thisCompilation` 的 hook
+## 3. Compiler 创建了 compilation，开始调用 `thisCompilation` 的 hook
 
-## 3.1 查看绑定 `compilation` 的插件的数据
+### 3.1 查看绑定 `compilation` 的插件的数据
 
 继续 调试进入此 hook
 
@@ -126,7 +126,7 @@ createCompilation(params) {
 
 好家伙，这是要把 `compilation` 给累死呀，
 
-## 3.2 `thisCompilation` 的 总结
+### 3.2 `thisCompilation` 的 总结
 
 总结：`Compiler` 中的 `thisCompilation` 的 hook，就是在疯狂的给 `compilation` 通过各种插件 挂各种的 监听事件，弹药准备完毕，等待一触即发。
 
@@ -134,9 +134,9 @@ createCompilation(params) {
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/rXvzbOjOrl1EiAuwtQpl2TmuwrVUJHJo.png)
 
-# 4. Compiler 继续 触发 `compilation` 的 hook
+## 4. Compiler 继续 触发 `compilation` 的 hook
 
-## 4.1 查看绑定`compilation`的插件的数据
+### 4.1 查看绑定`compilation`的插件的数据
 
 继续进行下一步 调试。
 
@@ -148,7 +148,7 @@ createCompilation(params) {
 
 我 giao 哥 直接疯掉。而我和大家作为优秀的 程序员，那不就是多点 54 次调试吗？ 进入第一个插件 `ChunkPrefetchPreloadPlugin`
 
-## 4.2 进入 `ChunkPrefetchPreloadPlugin` 插件
+### 4.2 进入 `ChunkPrefetchPreloadPlugin` 插件
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/f7793158-a1dd-4dad-8691-65bdd2245157.png)
 
@@ -158,7 +158,7 @@ createCompilation(params) {
 
 继续看下一个插件的，下一个插件是 `JavascriptModulesPlugin`
 
-## 4.3 进入 `JavascriptModulesPlugin` 插件
+### 4.3 进入 `JavascriptModulesPlugin` 插件
 
 `JavascriptModulesPlugin` 的代码如下： ![img](04-浅析webpack5中Compiler中重要的hook调用过程/56ee42c6-11b6-437f-9831-825eb2a77bd4.png)
 
@@ -172,21 +172,21 @@ createCompilation(params) {
 
 继续进入下一个插件
 
-## 4.4 进入 `JsonModulesPlugin` 插件
+### 4.4 进入 `JsonModulesPlugin` 插件
 
 给 `normalModuleFactory` 绑定 监听事件 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/cfd8ccf0-21e2-42c6-a7fc-29d6cd88ccbe.png)
 
-## 4.5 进入 `AssetModulesPlugin` 插件
+### 4.5 进入 `AssetModulesPlugin` 插件
 
 给 `normalModuleFactory`和`compilation` 绑定 监听事件 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/e684ce21-4400-4e24-a04a-e221d99a4bf7.png)
 
-## 4.6 进入 `EntryPlugin` 插件
+### 4.6 进入 `EntryPlugin` 插件
 
 这个插件 终于不绑定事件了，仅仅是 向 `compilation.dependencyFactories` 中塞入了一对数据。
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/865311bf-a72d-48ff-a9a7-6b3ee856255d.png)
 
-## 4.7 进入 `RuntimePlugin` 插件 【核心】
+### 4.7 进入 `RuntimePlugin` 插件 【核心】
 
 这个插件的代码量是真的多，看名字分析这个插件应该是处理运行时的数据 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/a60e5021-fc9a-4d17-92da-c9383bf6ebe3.png)
 
@@ -196,33 +196,33 @@ createCompilation(params) {
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/39ab49cf-df7c-4e3f-b1bd-819946aa622c.png)
 
-## 4.7 进入 `InferAsyncModulesPlugin` 插件
+### 4.7 进入 `InferAsyncModulesPlugin` 插件
 
 给 `compilation` 绑定 监听事件 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/92ae1364-cbe2-41c4-b2d2-870c1e4ae175.png)
 
-## 4.8 直接干到最后一个 `WarnCaseSensitiveModulesPlugin` 插件
+### 4.8 直接干到最后一个 `WarnCaseSensitiveModulesPlugin` 插件
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/1a54db9e-9875-41b5-85f5-bce46d92ff3f.png)
 
 也是在给 辛苦的 `compilation` 的身上 挂载监听事件。
 
-## 4.9 总结
+### 4.9 总结
 
 总的来说， Compiler 触发 `compilation` 的 hook 本质上是给我们辛勤的打工人 `compilation`对象 的 不同的数据处理阶段 绑定不同的插件。
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/CeOJzsla4jCASmTI8zY1mSjE96QDuVLx.gif)
 
-# 5 继续 `Compiler` 的下一个 hook `make`
+## 5 继续 `Compiler` 的下一个 hook `make`
 
 走完 `this.newCompilation(params);` 的调用流程后，下一步就是调用 `Compiler` 的 `make` 的 hook 了。
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/5a7543d1-cbbc-4273-ac8d-49b3150b5265.png)
 
-## 5.1 查看绑定`make`的插件的数据
+### 5.1 查看绑定`make`的插件的数据
 
 nice 的很，这个 hook 仅仅 有一个叫 `EntryPlugin` 的插件进行绑定。 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/e7acf69c-73dd-4e19-ae01-6e2acf442237.png)
 
-## 5.2 进入 `EntryPlugin` 插件 【 compilation 对象解析的开始】
+### 5.2 进入 `EntryPlugin` 插件 【 compilation 对象解析的开始】
 
 核心代码截图如下：
 
@@ -248,7 +248,7 @@ static createDependency(entry, options) {
 
 是不是看到了，熟悉的 webpack 中的 `entry 的路径` 和 此 dep 对象的 `request` 属性是一致的呢？
 
-## 5.3 进入 compilation 中 查看，`addEntry` 方法
+### 5.3 进入 compilation 中 查看，`addEntry` 方法
 
 上代码
 
@@ -275,19 +275,19 @@ addEntry(context, entry, optionsOrName, callback) {
 
 并没有插件 监听它，直接进入下一行代码：调用`this.addModuleTree` 方法。
 
-## 5.4 进入 `this.addModuleTree` 的方法
+### 5.4 进入 `this.addModuleTree` 的方法
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/f0adfbaf-ce49-4927-9332-c4d9cf083ae9.png)
 
 处理完数据以后，又进入一个 `this.handleModuleCreation` 的方法。
 
-## 5.5 进入`this.handleModuleCreation` 的方法
+### 5.5 进入`this.handleModuleCreation` 的方法
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/08888965-c64c-4ee0-993d-fe1de8ca158f.png)
 
 又进入 `this.factorizeModule` 的方法
 
-## 5.6 进入 `this.factorizeModule` 的方法
+### 5.6 进入 `this.factorizeModule` 的方法
 
 ```
 // Workaround for typescript as it doesn't support function overloading in jsdoc within a class
@@ -306,7 +306,7 @@ Compilation.prototype.factorizeModule = /** @type {{
 
 ![img](04-浅析webpack5中Compiler中重要的hook调用过程/o6nMBYRQV56H8lykZdw9VCrEh68zosR2.gif)
 
-# 老规矩：总结
+## 老规矩：总结
 
 1. `Compiler` 里的 `hooks.compile` 的主要作用就是通过 `ExternalModuleFactoryPlugin` 监听了 `normalModuleFactory.hooks.factorize` 的事件。
 2. `Compiler` 的 `compile` hook 传递 `compiler 和 params`参数 给 `createCompilation` 方法，创建 `Compilation` 的实例对象 `compilation`

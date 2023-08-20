@@ -12,11 +12,11 @@ date: 2021-08-26 22:50:00
 sidebar_position: 2
 ---
 
-# Webpack 打包原理
+## Webpack 打包原理
 
 本文适合于有一点点的 webpack 的基础，和 js 模块的基础的人群
 
-## 1. 示例代码的项目结构
+### 1. 示例代码的项目结构
 
 ```bash
 // 创建目录 安装依赖
@@ -46,7 +46,7 @@ module.exports = {
 
 ![image-20210826225544655](./webpack第一课：打包原理/image-20210826225544655.png)
 
-## 2.打包结果在 dist 目录
+### 2.打包结果在 dist 目录
 
 main.js 经过删除注释以后的代码如下
 
@@ -64,7 +64,7 @@ main.js 经过删除注释以后的代码如下
   var __webpack_modules__ = {
     "./src/a.js": (module) => {
       eval(
-        "module.exports = 'aaa'\n\n//# sourceURL=webpack://01-base/./src/a.js?"
+        "module.exports = 'aaa'\n\n//## sourceURL=webpack://01-base/./src/a.js?"
       );
     },
 
@@ -74,7 +74,7 @@ main.js 经过删除注释以后的代码如下
       __webpack_require__
     ) => {
       eval(
-        "const str = __webpack_require__(/*! ./a */ \"./src/a.js\")\nconsole.log('hello' + str);\n\n//# sourceURL=webpack://01-base/./src/index.js?"
+        "const str = __webpack_require__(/*! ./a */ \"./src/a.js\")\nconsole.log('hello' + str);\n\n//## sourceURL=webpack://01-base/./src/index.js?"
       );
     },
   };
@@ -109,11 +109,11 @@ main.js 经过删除注释以后的代码如下
 })();
 ```
 
-### a.整体分析 匿名函数自执行
+#### a.整体分析 匿名函数自执行
 
 - 避免了变量的污染详见文章：https://www.cnblogs.com/CurryLi/p/11652540.html
 
-### b.函数代码入口处在最下方
+#### b.函数代码入口处在最下方
 
 ```js
 // startup
@@ -122,7 +122,7 @@ main.js 经过删除注释以后的代码如下
 var __webpack_exports__ = __webpack_require__("./src/index.js");
 ```
 
-### c.’webpack_require 分析
+#### c.’webpack_require 分析
 
 ```js
 // The module cache
@@ -153,7 +153,7 @@ function __webpack_require__(moduleId) {
 }
 ```
 
-### d.变量 webpack_modules：**存储文件和代码的信息**
+#### d.变量 webpack_modules：**存储文件和代码的信息**
 
 将依赖 进行**数据化对象存储** 方便读取 各模块的代码信息
 
@@ -175,11 +175,11 @@ var __webpack_modules__ = {
 };
 ```
 
-### e:最后可以通过 node js 的调试功能 来断点查看 webpack 的运行原理
+#### e:最后可以通过 node js 的调试功能 来断点查看 webpack 的运行原理
 
 ![image-20210826232750947](./webpack第一课：打包原理/image-20210826232750947.png)
 
-## 3.关键词
+### 3.关键词
 
 - webpack
 - eval 函数

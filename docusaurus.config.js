@@ -245,7 +245,7 @@ const config = {
                 target: "_blank",
               },
               {
-                label: "Flase（老）",
+                label: "Flask（老）",
                 to: "/flask/index.html",
                 target: "_blank",
               },

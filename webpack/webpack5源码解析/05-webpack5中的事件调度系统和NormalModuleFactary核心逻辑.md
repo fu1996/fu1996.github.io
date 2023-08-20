@@ -11,7 +11,7 @@ date: 2021-08-26 22:50:00
 sidebar_position: 5
 ---
 
-# 1. 书接上回，从 `this.factorizeQueue.add(options, callback);` 开始
+## 1. 书接上回，从 `this.factorizeQueue.add(options, callback);` 开始
 
 不是很清楚上下文的兄弟，可以去看下我之前写的 `（源码篇01）浅析webpack5中Compiler中重要的hook调用过程`。
 
@@ -19,7 +19,7 @@ sidebar_position: 5
 
 ![img](05-webpack5中的事件调度系统和NormalModuleFactary核心逻辑/1N0ppVKhESQpOu9FLMPmDj0cX4MlDuDO.gif)
 
-## 1.1 通过 factorizeQueue 了解 AsyncQueue
+### 1.1 通过 factorizeQueue 了解 AsyncQueue
 
 那么 这个 `this.factorizeQueue` 指的是什么呢？谁来创建的呢？首先此处的 this 指的是 `Compilation` 的 实例对象，那就去 `Compilation` 查找，全局搜索一下 `Compilation.js` 文件，找到了，代码如下（中文注释是我加的）：
 
@@ -59,7 +59,7 @@ sidebar_position: 5
 
 你会发现好家伙，这不仅仅只有一个队列呀，这里是有一堆的队列。但是都是 `AsyncQueue` 创建的不同名称的实例。 那根据 `this.factorizeQueue.add(options, callback);` 我们下一步就是去看 `AsyncQueue` 中的 `add` 方法了。
 
-## 1.2 深入 `AsyncQueue` 中的 `add` 方法
+### 1.2 深入 `AsyncQueue` 中的 `add` 方法
 
 在深入了解 add 之前，我们先要了解 它的 构造函数都需要哪些参数，以便我们更好的理解其内部的工作原理。
 
@@ -191,16 +191,16 @@ class AsyncQueueEntry {
 
 至此同步的函数执行完毕了，别忘了之前还向定时器里丢了一个异步的 `父级(processDependencies)`的 `_ensureProcessing` 方法，下一步直接断点蹲在 `_ensureProcessing`处。
 
-## 1.3 浅浅的总结一下~
+### 1.3 浅浅的总结一下~
 
 1. webpack 中的 `Compilation` 实例，创建了 4 个有父子关系的异步队列
 2. 最先开始 工作的是 `factorizeQueue` 队列，执行了 `factorizeQueue` 队列的 add 方法。
 3. 在 add 方法中，将 `factorizeQueue`队列的`父级(processDependencies)`队列的`_ensureProcessing` 方法放入了定时器中。
 4. 至此，同步函数执行完毕，开始执行 `父级(processDependencies)`的 `_ensureProcessing` 的方法。
 
-# 2. 异步队列要开始了
+## 2. 异步队列要开始了
 
-## 2.1 执行 `processDependencies` 队列的 `_ensureProcessing` 方法
+### 2.1 执行 `processDependencies` 队列的 `_ensureProcessing` 方法
 
 直接断点到 `_ensureProcessing` 方法，验证一下猜想。
 
@@ -289,7 +289,7 @@ for (const child of this._children) {
 
 断点到 `_factorizeModule` 上，你会发现其主要执行的是 `factory.create` 方法，而此时的 `factory` 是 `NormalModuleFactary` 的实例，这里本质上也就是去 执行 `NormalModuleFactary` 类的 `create` 方法。
 
-## 2.2 执行 `NormalModuleFactary` 类的 `create` 方法
+### 2.2 执行 `NormalModuleFactary` 类的 `create` 方法
 
 断点进入该 `create` 函数，核心代码逻辑如下：
 
@@ -305,7 +305,7 @@ for (const child of this._children) {
 
 ![img](05-webpack5中的事件调度系统和NormalModuleFactary核心逻辑/96284def-7b29-4b87-aa65-a2f6ab8f4926.png) `err 和 result` 变量都是`undefined`，毫无疑问的又进入到了 801 行的 `factorize` 的 hook 了，那就继续断（慢慢的就会明白 webpack5 插件强大的背后，是难读的设计和调试）。开始调试 `NormalModuleFactary` 的 `factorize` 的 hook。
 
-## 2.3 调试 `NormalModuleFactary` 的 `factorize` 的 hook
+### 2.3 调试 `NormalModuleFactary` 的 `factorize` 的 hook
 
 老规矩，首先查看监听此 hook 的插件有哪些，见下图
 
@@ -323,7 +323,7 @@ for (const child of this._children) {
 
 ![img](05-webpack5中的事件调度系统和NormalModuleFactary核心逻辑/cfcfae75-27b2-48c0-815a-10a6255e03a0.png) 由于我们的本次的依赖是本地依赖，所以正则匹配失败了，那么结果就是要走到 `callback` 里了。转了一圈啥也没有做，callback 为空，那就继续断点，向下执行，进入 `NormalModuleFactory` 插件里。
 
-## 2.4 进入 `NormalModuleFactory` 插件执行`factorize` 的 hook 【核心逻辑】
+### 2.4 进入 `NormalModuleFactory` 插件执行`factorize` 的 hook 【核心逻辑】
 
 断点进入：
 
@@ -441,7 +441,7 @@ if (!scheme) {
 
 ![img](05-webpack5中的事件调度系统和NormalModuleFactary核心逻辑/a393fe43-937b-47e2-aaff-26193d908410.png) 这样就可以跳过`continueCallback`的部分，
 
-## 2.5 进入 `resolve` hook 的内部
+### 2.5 进入 `resolve` hook 的内部
 
 继续断点
 
@@ -453,7 +453,7 @@ if (!scheme) {
 
 进入此 hook 内部以后，又是一堆的错误判断，最后走进了 `createModule` 的 hook。
 
-## 2.6 进入 `createModule` 的 hook 【将路径等信息变为 Module】
+### 2.6 进入 `createModule` 的 hook 【将路径等信息变为 Module】
 
 此 hook 还是无插件监听，直接上图看其 callback 做了啥：
 
@@ -501,7 +501,7 @@ this.factorizeQueue = new AsyncQueue({
 
 ![img](05-webpack5中的事件调度系统和NormalModuleFactary核心逻辑/bc9f6d86-faa4-4a6a-8eb3-db9ab7caa18a.png) 再调用 `_handleResult` 去处理`_processor`后的结果。
 
-## 2.7 进入 `_handleResult` 方法
+### 2.7 进入 `_handleResult` 方法
 
 上图：
 
