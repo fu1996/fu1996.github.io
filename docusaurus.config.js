@@ -167,7 +167,7 @@ const config = {
               },
               {
                 label: "React",
-                to: "/react",
+                to: "/react/build-your-react-01",
               },
               {
                 label: "Babel 原理",
