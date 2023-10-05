@@ -369,8 +369,6 @@ const isGone = (prev, next) => (key) => !(key in next);
 
 ![image-20230918000242355](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20230918000242355.png)
 
-
-
 ```jsx
 
 const updateValue = (e) => {
@@ -402,15 +400,364 @@ Gitee: https://gitee.com/fujunkui1996/didact/tree/v4.0/
 
 Github: https://github.com/fu1996/didact/tree/v4.0
 
+## 4. 实现 支持函数组件和基础useState的 V5.0 版本
+
+### 4.1 改造现有代码支持函数组件
+
+函数组件和 直接使用 jsx 语法去书写组件是有着明显的区别的，对于创建一个 h1 标签的 dom元素。
+
+函数组件的写法如下：
+
+```jsx
+function App(props) {
+  return <h1>Hi {props.name}</h1>;
+}
+const element = <App name="foo" />;
+const container = document.getElementById("root");
+Didact.render(element, container);
+```
+
+经过编译后的函数组件如下：
+
+```jsx
+function App(props) {
+  return Didact.createElement(
+    "h1",
+    null,
+    "Hi ",
+    props.name
+  )
+}
+// 注意 此时 createElement 接受的 第一个入参 将作为 type 传入 fiber 节点，也就是 App 方法。
+const element = Didact.createElement(App, {
+  name: "foo",
+})
+```
+
+![image-20231004220551712](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231004220551712.png)
+
+可以直接的看到 关于函数组件和直接书写jsx的不同有以下两点：
+
+- 函数组件的 fiber 结构不存在 DOM 节点 （也就是无法直接通过 createElement 根据当前类型去创建）
+- 执行函数组件才能拿到函数组件的 children 属性。（类似于 `App()` ）
+
+在改写为函数式写法以后，当前的 `createElement` 方法 肯定是不支持的，我们要去改造 处理 fiber 节点渲染的 `performUnitOfWork` 函数。
+
+### 4.2 改造 performUnitOfWork 函数，使其支持 函数式组件。
+
+在performUnitOfWork的处理中，我们要对 fiber 节点的 type 类型进行判断，来区分 此组件是否是函数组件。
+
+```jsx
+// 是否是函数组件
+const isFunctionComponent = fiber.type instanceof Function;
+```
+
+然后将 函数组件的处理方式 和之前旧的 jsx 原生组件的渲染方式，单独抽离为对应的函数。
+
+- updateFunctionComponent 处理函数组件：接受传入的props，执行函数组件，返回其对应的 fiber 节点，并调用 `reconcileChildren` 去进行 fiber 节点的 协调
+- updateHostComponent 处理 原生 jsx逐渐：和之前写法一致，不做过多赘述
+
+```jsx
+/**
+ * 处理 函数组件的方法，其 children 是其函数的返回值
+ * @param {*} fiber 
+ */
+function updateFunctionComponent(fiber) {
+  // 接受传入的props，执行函数组件，返回其对应的 fiber 节点
+  const children = [fiber.type(fiber.props)];
+  reconcileChildren(fiber, children);
+}
+
+/**
+ * 保持原有的 jsx 处理逻辑
+ * @param {*} fiber 
+ */
+function updateHostComponent(fiber) {
+  // 当前fiber节点 不存在真实DOM，生成一个真实的DOM
+  if (!fiber.dom) {
+    fiber.dom = createDom(fiber);
+  }
+  // 遍历子节点，继续执行 children 属性来自于 createElement 函数。
+  const elements = fiber.props.children;
+  // 调和fiber节点
+  reconcileChildren(fiber, elements);
+}
+
+```
+
+performUnitOfWork 的改动如下截图：
+
+![image-20231004224546169](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231004224546169.png)
+
+函数组件的 fiber 结构不存在 DOM 节点的特性，除了 `performUnitOfWork` 方法要进行生成其对应的 children 属性的特殊处理以外，还要对其最后负责渲染的`commitWork`方法 进行改造。
+
+### 4.3 改造 commitWork 方法 使其 支持函数式组件
+
+既然当前 函数式组件 无 DOM 节点，那就需要找到其 父级的 DOM节点作为 children 内容的挂载点，如果其父级 也是一个函数式节点，那就继续找父级的父级，如果一直没找到 真实的 DOM 节点，最后就会找到 根挂载节点。
+
+上面的逻辑是新增 函数组件时候的逻辑，而 删除 函数组件的业务逻辑也是大致相同的。
+
+改造后的 代码如下：
+
+![image-20231004223242967](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231004223242967.png)
+
+成功显示了 函数组件的内容：
+
+![image-20231004224703682](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231004224703682.png)
+
+接下来 让我们继续去实现我们的 第一个 hook useState。
+
+### 4.4 实现 useState hook 的理论
+
+首先将我们的示例代码进行改造，使其使用 Didact的useState 方法。
+
+```jsx
+function useState(initial) {
+  // TODO
+}
+
+const Didact = {
+  createElement,
+  render,
+  useState,
+};
+
+/** @jsx Didact.createElement */
+function Counter() {
+  const [state, setState] = Didact.useState(1);
+  return <h1 onClick={() => setState((c) => c + 1)}>Count: {state}</h1>;
+}
+const element = <Counter />;
+```
+
+函数式组件的函数执行过程 是无状态的，比如上面的 Counter 组件，在点击了 h1 之后， state 的值 应该变为2，并且接下来会进行 rerender 。因为函数执行是无状态的，rerender 过程中，state 还是 0。
+
+如果想要存储当前 函数式组件执行的快照，就需要 另外声明一个 全局的变量，去记录函数式组件的调用完 setState 以后的 state 值，接下来我们通过一个简单的伪代码 案例去说明一下这两段话。
+
+### 4.5 实现 useState 的伪代码
+
+可以看下这个为 useState的代码：[借用数组，实现一个 伪 useState](https://codesandbox.io/s/fervent-david-sd576p?file=/index.html)
+
+![image-20231005110241272](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231005110241272.png)
+
+核心代码如下：
+
+1. 声明 3个数组，分别用于存储 组件的 当前 state 的快照（stateArray）、存储调用 setState方法 的队列（queueState） 和 存储 渲染 队列（queueRender）
+2. setState 做的事情是：
+   1. 把接受到的 newState 和 组件的索引一同关联起来，存入 queueState 中，这样可以记录用户点击了哪个组件，以及点击了几次。
+   2. 把 渲染 函数也 同步存储到 queueRender 中，以便调度完 queueState 后 执行 queueRender 把正确的结果响应到 界面上。
+3. 点击 调度开始按钮，即可开始state的变更逻辑处理，处理完毕以后，清空 之前存储的任务队列，但是不清空 存储 组件的state的 快照。
+
+```js
+      // 存储组件的 state的快照
+      let stateArray = [];
+      // 存储 修改 state 方法 的队列
+      let queueState = [];
+      // 存储 渲染 的队列
+      let queueRender = [];
+      const useState = (initState, render, index) => {
+        if (stateArray[index] === undefined) {
+          stateArray[index] = initState;
+        }
+        const setState = (newState) => {
+          const stateData = {
+            index: index,
+            newState: newState
+          };
+          const renderData = {
+            index: index,
+            render: render
+          };
+          queueRender.push(renderData);
+          queueState.push(stateData);
+          number.innerHTML = queueState.length;
+        };
+        return [stateArray[index], setState];
+      };
+			// 组件1 的点击函数
+      btn1.addEventListener("click", () => {
+        const [_, setCountState] = useState(
+          0,
+          (newState) => {
+            count1.innerHTML = newState;
+          },
+          0
+        );
+        setCountState((prevState) => prevState + 1);
+      });
+			// 组件2 的点击函数
+      btn2.addEventListener("click", () => {
+        const [countState, setCountState] = useState(
+          0,
+          (newState) => {
+            count2.innerHTML = newState;
+          },
+          1
+        );
+        setCountState(countState + 1);
+      });
+      function clearQueue() {
+        queueRender.length = 0;
+        queueState.length = 0;
+        number.innerHTML = queueState.length;
+      }
+			// 调度开始按钮的点击函数
+      btn3.addEventListener("click", () => {
+        // 调度 队列
+        queueState.forEach((queue) => {
+          console.log("queue", queue);
+          const { index, newState } = queue;
+          stateArray[index] =
+            typeof newState === "function"
+              ? newState(stateArray[index])
+              : newState;
+        });
+        queueRender.forEach((renderItem) => {
+          renderItem.render(stateArray[renderItem.index]);
+        });
+        clearQueue();
+      });
+```
+
+### 4.6 继续改造现有的 Didact
+
+首先声明部分全局变量去存储当前的 state的相关信息。
+
+```jsx
+// 函数组件专用
+// 记录当前工作的fiber节点 work in fiber
+let wipFiber = null;
+// 记录当前函数组件执行的 hook的索引 （这样一个函数组件可以支持多次 useState 调用）
+let hookIndex = null;
+```
+
+改造现有的针对函数组件更新的逻辑，使其可以记录到当前函数组件的state的相关信息。
+
+```jsx
+/**
+ * 处理 函数组件的方法，其 children 是其函数的返回值
+ * @param {*} fiber 
+ */
+function updateFunctionComponent(fiber) {
+  // 记录当前工作的函数组件节点
+  wipFiber = fiber
+  // 默认是第0个hook
+  hookIndex = 0
+  // 初始化当前函数组件的 hooks 队列，以便存储当前 fiber 的 hook
+  wipFiber.hooks = []
+  // 接受传入的props，执行函数组件，返回其对应的 fiber 节点
+  const children = [fiber.type(fiber.props)];
+  reconcileChildren(fiber, children);
+}
+```
+
+完善 useState 方法，使其可以正确的取到 state。
+
+```jsx
+function useState(initial) {
+  // 获取 旧fiber 节点的对应的 hook
+  const oldHook =
+    wipFiber.alternate &&
+    wipFiber.alternate.hooks &&
+    wipFiber.alternate.hooks[hookIndex]
+  const hook = {
+    // 如果旧fiber节点存在，就使用旧的 state，如果不存在，就使用初始化的 state
+    state: oldHook ? oldHook.state : initial,
+  }
+  // 存入当前fiber节点的 hooks 队列中。
+  wipFiber.hooks.push(hook)
+  // 当前 fiber节点 hook 索引 + 1
+  hookIndex++
+  return [hook.state]
+}
+
+```
+
+接下来我们要去实现 setState 的逻辑，我们要记录每次的 setState 的变更，在当前的hook里增加 queue 字段，完成记录，在我们调用完 setState的时候，我们应该将当前的 节点设置为下一个 工作单元，因为这样才能触发界面的更新。
+
+```jsx
+function useState(initial) {
+  // 获取 旧fiber 节点的对应的 hook
+  const oldHook =
+    wipFiber.alternate &&
+    wipFiber.alternate.hooks &&
+    wipFiber.alternate.hooks[hookIndex]
+  const hook = {
+    // 如果旧fiber节点存在，就使用旧的 state，如果不存在，就使用初始化的 state
+    state: oldHook ? oldHook.state : initial,
+    queue: [],
+  };
+  // 首先看下当前hook中是否有任务要执行，
+  const actions = oldHook ? oldHook.queue : [];
+  // 存在任务 就进行执行
+  actions.forEach((action) => {
+    hook.state = action(hook.state);
+  });
+  const setState = (action) => {
+    // 存入 当前 hook 的 队列中
+    hook.queue.push(action);
+    // 当前fiber节点设置为下一个工作单元，以便开始处理界面的更新逻辑
+    wipRoot = {
+      dom: currentRoot.dom,
+      props: currentRoot.props,
+      alternate: currentRoot,
+    };
+    nextUnitOfWork = wipRoot;
+    // 无需任何的deletions处理
+    deletions = [];
+  };
+  // 存入当前fiber节点的 hooks 队列中。
+  wipFiber.hooks.push(hook)
+  // 当前 fiber节点 hook 索引 + 1
+  hookIndex++
+  return [hook.state, setState];
+}
+```
+
+### 4.7 抛开 React 去继续理解 useState 
+
+```jsx
+function Counter() {
+  console.log('render');
+  const [state, setState] = Didact.useState(1);
+  return <h1 onClick={() => setState((c) => c + 1)}>Count: {state}</h1>;
+}
+```
+
+抛开React的心智模型，仔细看上面的代码：useState 本质上是一个函数，这个函数会返回 一个包含了两个长度的数组，数组第一位是这个 state 的 getter，数组第二位是这个 state 的 setter 方法。
+
+那么在React的 workLoop 中执行 Counter() 的时候，useState 都会执行一遍，又因为当前的 state 的值和 Counter 方法（函数组件）返回的 DOM 值进行绑定的【见下图】，所以可以在useState 里面取到上一次render 时候执行的结果，使得本次 rerender 的过程中可以知道上次的结果并可以继续做 setState。
+
+![image-20231005141030432](%E5%BB%BA%E9%80%A0%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84react%EF%BC%88%E4%B8%8B%EF%BC%89/image-20231005141030432.png)
 
 
 
+V5版本的相关代码库如下：
 
-## 4. 总结回顾
+Gitee: https://gitee.com/fujunkui1996/didact/tree/v5.0/
 
-我们当前的2个版本已经初步实现了，将 jsx 元素转为 虚拟 DOM，再通过 fiber节点和 requestIdleCallback 解决大数据量情况下的虚拟 DOM 转为真实 DOM 渲染时候的卡顿的问题。
+Github: https://github.com/fu1996/didact/tree/v5.0
 
-但是在最后的版本中 任务调度工作节点和节点渲染是在同一阶段的，可能存在渲染不完全的情况，我们将在接下来的文章中去解决此问题。
+
+
+## 5. 总结回顾
+
+本文除了帮助您理解React的工作原理，还可以使您更容易深入了解React代码库。这就是为什么我们几乎在所有地方都使用和React框架相同的变量和函数名称的原因。
+
+但是我们没有实现很多React官方的功能和优化。例如，React有一些不同的做法：
+在Didact中，我们在渲染阶段遍历整个树。而React使用一些提示和启发式方法跳过整个未更改的子树。
+我们还在提交阶段遍历整个树。React保留了一个仅具有影响的fiber的链接列表，并且仅访问这些fiber。
+每次我们构建新的工作进度树时，我们为每个fiber创建新对象。React从先前的树中回收fiber。
+当Didact在渲染阶段接收到新的更新时，它会丢弃工作进度树，并从根重新开始。React使用过期时间戳标记每个更新，并用它来决定哪个更新具有更高的优先级。
+
+除此之外，我们还可以继续实现如下功能：
+
+1. 支持对象作为 style 的属性
+2. [展平子数组](https://github.com/pomber/didact/issues/11)
+3. 添加useEffect钩子
+4. 通过key对其优化
+
+
 
 感谢您阅读我的文章！如果你发现这篇文章对你有所帮助，我会非常感激你给我的 GitHub/Gitee 项目点个赞（Star）。你可以在我的 GitHub/Gitee 页面（附带地址）找到更多相关的项目和资源。你的支持将是我持续分享有价值内容的动力。谢谢！
 
@@ -418,4 +765,4 @@ Gitee: https://gitee.com/fujunkui1996/didact
 
 Github: https://github.com/fu1996/didact
 
-博客地址：https://fu1996.github.io/react/build-your-react-01
+博客地址：https://fu1996.github.io/react/build-your-react-02
