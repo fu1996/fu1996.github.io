@@ -140,7 +140,7 @@ const config = {
 
             items: [
               {
-                label: "大学四年",
+                label: "从大学到社会",
                 href: "/me",
               },
               {
