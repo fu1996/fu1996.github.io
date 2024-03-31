@@ -10,6 +10,8 @@ tags:
   - ubuntu
   - linux
 
+slug: /
+
 date: 2021-01-02 11:24:26
 ---
 

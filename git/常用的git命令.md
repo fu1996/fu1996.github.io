@@ -7,6 +7,8 @@ categories:
 tags:
   - git
 
+slug: /
+
 date: 2021-01-12 20:07:13
 ---
 

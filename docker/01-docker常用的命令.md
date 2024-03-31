@@ -1,12 +1,12 @@
 ---
 authors: junkui
-title: docker常用的命令
+title: 01-docker常用的命令
 categories:
   - 后端
   - docker
 tags:
   - docker
-
+slug: /
 date: 2021-03-29 21:45:14
 ---
 

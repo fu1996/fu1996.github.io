@@ -6,7 +6,7 @@ categories:
   - 数据库
 tags:
   - mysql
-
+slug: /
 date: 2021-01-17 00:17:22
 ---
 

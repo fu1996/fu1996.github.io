@@ -7,6 +7,7 @@ categories:
 tags:
   - k8s
   - DevOps
+slug: /
 
 date: 2021-03-30 11:35:04
 ---
